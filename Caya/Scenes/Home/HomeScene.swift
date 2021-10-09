@@ -9,29 +9,20 @@ struct HomeScene: View {
     
     var body: some View {
         ZStack {
-            Color("Background")
+            Color.background
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing: 32) {
-                Text("Your ")
-                    .font(.title)
-                +
-                Text("History")
-                    .font(.title)
-                    .bold()
+            VStack {
+                HistorySectionView(entries: viewModel.history)
                 
-                ScrollView {
-                    ForEach(viewModel.history) { entry in
-                        HistoryView(entry)
-                    }
-                }
+                
             }
-            .padding(24)
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
+                .padding(24)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
         }
         .task {
             await viewModel.fetchHistory()

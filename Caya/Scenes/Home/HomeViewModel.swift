@@ -10,6 +10,7 @@ extension HomeScene {
 
 class HomeViewModel: ObservableObject {
     @Published var history: [HistoryEntry] = []
+    @Published var hasCurrent = false
     
     private let provider: HistoryProviding
     

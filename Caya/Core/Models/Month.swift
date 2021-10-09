@@ -23,3 +23,9 @@ extension Month {
         Self.dateFormatter.monthSymbols[value - 1]
     }
 }
+
+extension Month: Comparable {
+    static func < (lhs: Month, rhs: Month) -> Bool {
+        lhs.value < rhs.value
+    }
+}

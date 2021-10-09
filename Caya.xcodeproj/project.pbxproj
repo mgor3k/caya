@@ -24,6 +24,8 @@
 		B97F790127123A75003C97EC /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FF27123A75003C97EC /* Month.swift */; };
 		B97F790227123A75003C97EC /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790027123A75003C97EC /* Year.swift */; };
 		B97F790627123DC1003C97EC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790527123DC1003C97EC /* String+.swift */; };
+		B97F790927124077003C97EC /* HistorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790827124077003C97EC /* HistorySectionView.swift */; };
+		B97F790B271241B3003C97EC /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790A271241B3003C97EC /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		B97F78FF27123A75003C97EC /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = ../../../../Caya/Caya/Core/Models/Month.swift; sourceTree = "<group>"; };
 		B97F790027123A75003C97EC /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Year.swift; path = ../../../../Caya/Caya/Core/Models/Year.swift; sourceTree = "<group>"; };
 		B97F790527123DC1003C97EC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+.swift"; path = "../../../Caya/Caya/Extensions/String+.swift"; sourceTree = "<group>"; };
+		B97F790827124077003C97EC /* HistorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySectionView.swift; sourceTree = "<group>"; };
+		B97F790A271241B3003C97EC /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
+				B97F790A271241B3003C97EC /* Color+.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		B97F78DE27123619003C97EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B97F790727124065003C97EC /* Sections */,
 				B97F78F727123A2B003C97EC /* HomeCoordinator.swift */,
 				B97F78CD27122B63003C97EC /* HomeScene.swift */,
 				B97F78F827123A2B003C97EC /* HomeViewModel.swift */,
@@ -192,6 +198,14 @@
 				B97F78F527123A13003C97EC /* MockHistoryProvider.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B97F790727124065003C97EC /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				B97F790827124077003C97EC /* HistorySectionView.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +281,10 @@
 				B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
+				B97F790B271241B3003C97EC /* Color+.swift in Sources */,
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
+				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,
 				B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */,
 				B97F790227123A75003C97EC /* Year.swift in Sources */,
 				B97F790627123DC1003C97EC /* String+.swift in Sources */,

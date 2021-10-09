@@ -15,3 +15,9 @@ struct Year {
         }
     }
 }
+
+extension Year: Comparable {
+    static func < (lhs: Year, rhs: Year) -> Bool {
+        lhs.value < rhs.value
+    }
+}
