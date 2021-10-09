@@ -30,6 +30,11 @@
 		B97F791C2712476A003C97EC /* MonthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791B2712476A003C97EC /* MonthTests.swift */; };
 		B97F791E27124AAD003C97EC /* HistoryEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791D27124AAD003C97EC /* HistoryEntryTests.swift */; };
 		B97F792027124B90003C97EC /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791F27124B90003C97EC /* HomeViewModelTests.swift */; };
+		B97F792327124F9C003C97EC /* AddEntryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792227124F9C003C97EC /* AddEntryScene.swift */; };
+		B97F792527125261003C97EC /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792427125261003C97EC /* KeyValueView.swift */; };
+		B97F7927271253A0003C97EC /* TaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F7926271253A0003C97EC /* TaxManager.swift */; };
+		B97F792927125440003C97EC /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792827125440003C97EC /* AddEntryViewModel.swift */; };
+		B97F792B271254C4003C97EC /* MockTaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792A271254C4003C97EC /* MockTaxManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		B97F791B2712476A003C97EC /* MonthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTests.swift; sourceTree = "<group>"; };
 		B97F791D27124AAD003C97EC /* HistoryEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntryTests.swift; sourceTree = "<group>"; };
 		B97F791F27124B90003C97EC /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		B97F792227124F9C003C97EC /* AddEntryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryScene.swift; sourceTree = "<group>"; };
+		B97F792427125261003C97EC /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
+		B97F7926271253A0003C97EC /* TaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxManager.swift; sourceTree = "<group>"; };
+		B97F792827125440003C97EC /* AddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModel.swift; sourceTree = "<group>"; };
+		B97F792A271254C4003C97EC /* MockTaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaxManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +122,6 @@
 				B97F78BA27122AC4003C97EC /* CayaApp.swift */,
 				B97F78C827122B3C003C97EC /* Core */,
 				B97F78CC27122B57003C97EC /* Scenes */,
-				B97F78DF2712362F003C97EC /* Components */,
 				B97F78DA27123549003C97EC /* Extensions */,
 				B97F78DB27123550003C97EC /* Resources */,
 				B97F78C027122AC6003C97EC /* Preview Content */,
@@ -153,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78DE27123619003C97EC /* Home */,
+				B97F792127124F90003C97EC /* Add Entry */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -187,6 +197,7 @@
 		B97F78DE27123619003C97EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B97F792C27125577003C97EC /* Components */,
 				B97F790727124065003C97EC /* Sections */,
 				B97F78F727123A2B003C97EC /* HomeCoordinator.swift */,
 				B97F78CD27122B63003C97EC /* HomeScene.swift */,
@@ -198,7 +209,7 @@
 		B97F78DF2712362F003C97EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B97F78CE27122B63003C97EC /* HistoryView.swift */,
+				B97F792427125261003C97EC /* KeyValueView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78EF271239BF003C97EC /* HistoryProvider.swift */,
+				B97F7926271253A0003C97EC /* TaxManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -224,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78F527123A13003C97EC /* MockHistoryProvider.swift */,
+				B97F792A271254C4003C97EC /* MockTaxManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +258,24 @@
 				B97F791F27124B90003C97EC /* HomeViewModelTests.swift */,
 			);
 			path = CayaTests;
+			sourceTree = "<group>";
+		};
+		B97F792127124F90003C97EC /* Add Entry */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78DF2712362F003C97EC /* Components */,
+				B97F792227124F9C003C97EC /* AddEntryScene.swift */,
+				B97F792827125440003C97EC /* AddEntryViewModel.swift */,
+			);
+			path = "Add Entry";
+			sourceTree = "<group>";
+		};
+		B97F792C27125577003C97EC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78CE27122B63003C97EC /* HistoryView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,14 +381,19 @@
 				B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
+				B97F792B271254C4003C97EC /* MockTaxManager.swift in Sources */,
+				B97F792927125440003C97EC /* AddEntryViewModel.swift in Sources */,
 				B97F790B271241B3003C97EC /* Color+.swift in Sources */,
 				B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */,
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
 				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,
 				B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */,
+				B97F7927271253A0003C97EC /* TaxManager.swift in Sources */,
 				B97F790227123A75003C97EC /* Year.swift in Sources */,
+				B97F792527125261003C97EC /* KeyValueView.swift in Sources */,
 				B97F790627123DC1003C97EC /* String+.swift in Sources */,
+				B97F792327124F9C003C97EC /* AddEntryScene.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryView.swift in Sources */,
 				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
 				B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */,

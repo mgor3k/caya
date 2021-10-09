@@ -10,7 +10,7 @@ struct HomeScene: View {
     
     var body: some View {
         ZStack {
-            Color("Background")
+            Color.background
                 .ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 32) {
