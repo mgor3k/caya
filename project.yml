@@ -1,0 +1,11 @@
+name: Caya
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: [Caya]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gorecki.caya
+        TARGETED_DEVICE_FAMILY: 1
