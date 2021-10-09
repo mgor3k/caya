@@ -11,9 +11,19 @@
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
 		B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CA27122B51003C97EC /* HistoryEntry.swift */; };
-		B97F78D027122B63003C97EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeView.swift */; };
+		B97F78D027122B63003C97EC /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeScene.swift */; };
 		B97F78D127122B63003C97EC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CE27122B63003C97EC /* HistoryView.swift */; };
-		B97F78D227122B63003C97EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CF27122B63003C97EC /* ContentView.swift */; };
+		B97F78F0271239BF003C97EC /* HistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78EF271239BF003C97EC /* HistoryProvider.swift */; };
+		B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F1271239EB003C97EC /* DependencyManager.swift */; };
+		B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */; };
+		B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F527123A13003C97EC /* MockHistoryProvider.swift */; };
+		B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F727123A2B003C97EC /* HomeCoordinator.swift */; };
+		B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F827123A2B003C97EC /* HomeViewModel.swift */; };
+		B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FB27123A44003C97EC /* NumberFormatter+.swift */; };
+		B97F78FE27123A5F003C97EC /* Month+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FD27123A5F003C97EC /* Month+.swift */; };
+		B97F790127123A75003C97EC /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FF27123A75003C97EC /* Month.swift */; };
+		B97F790227123A75003C97EC /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790027123A75003C97EC /* Year.swift */; };
+		B97F790627123DC1003C97EC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790527123DC1003C97EC /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +32,19 @@
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B97F78C127122AC6003C97EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B97F78CA27122B51003C97EC /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
-		B97F78CD27122B63003C97EC /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B97F78CD27122B63003C97EC /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		B97F78CE27122B63003C97EC /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		B97F78CF27122B63003C97EC /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B97F78EF271239BF003C97EC /* HistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryProvider.swift; path = ../../../../Caya/Caya/Core/Services/HistoryProvider.swift; sourceTree = "<group>"; };
+		B97F78F1271239EB003C97EC /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = ../../../../Caya/Caya/Core/Dependencies/DependencyManager.swift; sourceTree = "<group>"; };
+		B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DependencyManager+Env.swift"; path = "../../../../Caya/Caya/Core/Dependencies/DependencyManager+Env.swift"; sourceTree = "<group>"; };
+		B97F78F527123A13003C97EC /* MockHistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockHistoryProvider.swift; path = "../../../../../Caya/Caya/Preview Content/Mocks/Services/MockHistoryProvider.swift"; sourceTree = "<group>"; };
+		B97F78F727123A2B003C97EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCoordinator.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeCoordinator.swift; sourceTree = "<group>"; };
+		B97F78F827123A2B003C97EC /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeViewModel.swift; sourceTree = "<group>"; };
+		B97F78FB27123A44003C97EC /* NumberFormatter+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NumberFormatter+.swift"; path = "../../../Caya/Caya/Extensions/NumberFormatter+.swift"; sourceTree = "<group>"; };
+		B97F78FD27123A5F003C97EC /* Month+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Month+.swift"; path = "../../../../Caya/Caya/Preview Content/Mocks/Month+.swift"; sourceTree = "<group>"; };
+		B97F78FF27123A75003C97EC /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = ../../../../Caya/Caya/Core/Models/Month.swift; sourceTree = "<group>"; };
+		B97F790027123A75003C97EC /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Year.swift; path = ../../../../Caya/Caya/Core/Models/Year.swift; sourceTree = "<group>"; };
+		B97F790527123DC1003C97EC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+.swift"; path = "../../../Caya/Caya/Extensions/String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +80,9 @@
 				B97F78BA27122AC4003C97EC /* CayaApp.swift */,
 				B97F78C827122B3C003C97EC /* Core */,
 				B97F78CC27122B57003C97EC /* Scenes */,
-				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
+				B97F78DF2712362F003C97EC /* Components */,
+				B97F78DA27123549003C97EC /* Extensions */,
+				B97F78DB27123550003C97EC /* Resources */,
 				B97F78C027122AC6003C97EC /* Preview Content */,
 			);
 			path = Caya;
@@ -69,6 +91,7 @@
 		B97F78C027122AC6003C97EC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B97F78D727123437003C97EC /* Mocks */,
 				B97F78C127122AC6003C97EC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -77,6 +100,8 @@
 		B97F78C827122B3C003C97EC /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B97F78E327123749003C97EC /* Dependencies */,
+				B97F78E02712369B003C97EC /* Services */,
 				B97F78C927122B40003C97EC /* Models */,
 			);
 			path = Core;
@@ -86,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				B97F78CA27122B51003C97EC /* HistoryEntry.swift */,
+				B97F78FF27123A75003C97EC /* Month.swift */,
+				B97F790027123A75003C97EC /* Year.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,11 +120,78 @@
 		B97F78CC27122B57003C97EC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B97F78CF27122B63003C97EC /* ContentView.swift */,
-				B97F78CE27122B63003C97EC /* HistoryView.swift */,
-				B97F78CD27122B63003C97EC /* HomeView.swift */,
+				B97F78DE27123619003C97EC /* Home */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B97F78D727123437003C97EC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78EC271238BC003C97EC /* Services */,
+				B97F78FD27123A5F003C97EC /* Month+.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B97F78DA27123549003C97EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78FB27123A44003C97EC /* NumberFormatter+.swift */,
+				B97F790527123DC1003C97EC /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B97F78DB27123550003C97EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B97F78DE27123619003C97EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78F727123A2B003C97EC /* HomeCoordinator.swift */,
+				B97F78CD27122B63003C97EC /* HomeScene.swift */,
+				B97F78F827123A2B003C97EC /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B97F78DF2712362F003C97EC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78CE27122B63003C97EC /* HistoryView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B97F78E02712369B003C97EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78EF271239BF003C97EC /* HistoryProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B97F78E327123749003C97EC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78F1271239EB003C97EC /* DependencyManager.swift */,
+				B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		B97F78EC271238BC003C97EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B97F78F527123A13003C97EC /* MockHistoryProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +265,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */,
-				B97F78D027122B63003C97EC /* HomeView.swift in Sources */,
-				B97F78D227122B63003C97EC /* ContentView.swift in Sources */,
+				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
+				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
+				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
+				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
+				B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */,
+				B97F790227123A75003C97EC /* Year.swift in Sources */,
+				B97F790627123DC1003C97EC /* String+.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryView.swift in Sources */,
+				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
+				B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
+				B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */,
+				B97F78F0271239BF003C97EC /* HistoryProvider.swift in Sources */,
+				B97F790127123A75003C97EC /* Month.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +417,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +427,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,7 +447,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,7 +457,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

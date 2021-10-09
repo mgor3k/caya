@@ -8,7 +8,7 @@ import SwiftUI
 struct CayaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeCoordinator()
         }
     }
 }

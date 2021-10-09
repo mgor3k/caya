@@ -4,7 +4,9 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeScene: View {
+    @StateObject var viewModel: ViewModel
+    
     var body: some View {
         ZStack {
             Color("Background")
@@ -17,6 +19,12 @@ struct HomeView: View {
                 Text("History")
                     .font(.title)
                     .bold()
+                
+                ScrollView {
+                    ForEach(viewModel.history) { entry in
+                        HistoryView(entry)
+                    }
+                }
             }
             .padding(24)
             .frame(
@@ -25,12 +33,19 @@ struct HomeView: View {
                 alignment: .topLeading
             )
         }
+        .task {
+            await viewModel.fetchHistory()
+        }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct HomeScene_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeScene(
+            viewModel: .init(
+                provider: MockHistoryProvider()
+            )
+        )
             .environment(\.colorScheme, .dark)
     }
 }

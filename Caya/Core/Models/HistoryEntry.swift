@@ -4,13 +4,20 @@
 
 import Foundation
 
-struct HistoryEntry {
+struct HistoryEntry: Identifiable {
     typealias Tax = (name: String, tax: Double)
     
-    let month: Int
-    let year: Int
+    let id = UUID()
+    let month: Month
+    let year: Year
     
     let income: Double
     let expenses: Double
     let taxes: [Tax]
+}
+
+extension HistoryEntry {
+    var savings: Double {
+        income - expenses - taxes.map(\.tax).reduce(0, +)
+    }
 }
