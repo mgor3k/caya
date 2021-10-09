@@ -6,16 +6,22 @@ import SwiftUI
 
 struct HomeScene: View {
     @StateObject var viewModel: ViewModel
+    let onAdd: () -> Void
     
     var body: some View {
         ZStack {
-            Color.background
+            Color("Background")
                 .ignoresSafeArea()
             
-            VStack {
-                HistorySectionView(entries: viewModel.history)
+            VStack(alignment: .leading, spacing: 32) {
+                SavingsSectionView(
+                    savings: viewModel.savings,
+                    onAdd: onAdd
+                )
                 
-                
+                HistorySectionView(
+                    entries: viewModel.history
+                )
             }
                 .padding(24)
                 .frame(
@@ -35,7 +41,8 @@ struct HomeScene_Previews: PreviewProvider {
         HomeScene(
             viewModel: .init(
                 provider: MockHistoryProvider()
-            )
+            ),
+            onAdd: {}
         )
             .environment(\.colorScheme, .dark)
     }

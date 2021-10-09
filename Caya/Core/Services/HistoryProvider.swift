@@ -12,6 +12,15 @@ struct HistoryProvider: HistoryProviding {
     func getHistory() async -> [HistoryEntry] {
         [
             .init(
+                month: .init(4)!,
+                year: .init(2010)!,
+                income: 6_000,
+                expenses: 1_000,
+                taxes: [
+                
+                ]
+            ),
+            .init(
                 month: .init(5)!,
                 year: .init(2010)!,
                 income: 5_000,

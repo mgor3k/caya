@@ -17,8 +17,10 @@ struct HistorySectionView: View {
                 .bold()
             
             ScrollView {
-                ForEach(entries) { entry in
-                    HistoryView(entry)
+                LazyVStack {
+                    ForEach(entries) { entry in
+                        HistoryView(entry)
+                    }
                 }
             }
         }

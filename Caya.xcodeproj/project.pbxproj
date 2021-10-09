@@ -26,6 +26,7 @@
 		B97F790627123DC1003C97EC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790527123DC1003C97EC /* String+.swift */; };
 		B97F790927124077003C97EC /* HistorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790827124077003C97EC /* HistorySectionView.swift */; };
 		B97F790B271241B3003C97EC /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790A271241B3003C97EC /* Color+.swift */; };
+		B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790C27124630003C97EC /* SavingsSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B97F790527123DC1003C97EC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+.swift"; path = "../../../Caya/Caya/Extensions/String+.swift"; sourceTree = "<group>"; };
 		B97F790827124077003C97EC /* HistorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySectionView.swift; sourceTree = "<group>"; };
 		B97F790A271241B3003C97EC /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		B97F790C27124630003C97EC /* SavingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F790827124077003C97EC /* HistorySectionView.swift */,
+				B97F790C27124630003C97EC /* SavingsSectionView.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
 				B97F790B271241B3003C97EC /* Color+.swift in Sources */,
+				B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */,
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
 				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,

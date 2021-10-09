@@ -11,7 +11,8 @@ struct HomeCoordinator: View {
         HomeScene(
             viewModel: .init(
                 provider: dependencies.historyProvider
-            )
+            ),
+            onAdd: {} // TODO: 
         )
     }
 }

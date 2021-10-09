@@ -10,11 +10,16 @@ extension HomeScene {
 
 class HomeViewModel: ObservableObject {
     @Published var history: [HistoryEntry] = []
-    @Published var hasCurrent = false
     
     private let provider: HistoryProviding
     
-    init(provider: HistoryProviding) {
+    var savings: Double {
+        history.map(\.savings).reduce(0, +)
+    }
+    
+    init(
+        provider: HistoryProviding
+    ) {
         self.provider = provider
     }
     
