@@ -6,6 +6,6 @@ import Foundation
 
 struct MockTaxManager: TaxManaging {
     func getUserTaxes() -> [String] {
-        []
+        ["VAT", "ZUS"]
     }
 }

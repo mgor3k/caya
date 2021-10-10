@@ -9,25 +9,20 @@ struct AddEntryScene: View {
     
     var body: some View {
         ZStack {
-            Color.background
-                .ignoresSafeArea()
+            BackgroundView()
             
-            VStack(spacing: 48) {
-                Text("September 2021")
-                    .font(.title)
-                    .bold()
+            VStack(alignment: .leading, spacing: 32) {
+                Text("**New** entry")
+                    .font(.title2)
+                    .padding(.horizontal, 24)
                 
-                VStack {
-                    KeyValueView(key: "Income", value: "?")
-                    KeyValueView(key: "Expenses", value: "?")
-                    ForEach(viewModel.taxes, id: \.self) { tax in
-                        KeyValueView(key: tax, value: "?")
-                    }
-                }
+                EntryDatePicker(
+                    viewModel: .init()
+                )
                 
                 Spacer()
             }
-            .padding(24)
+            .padding(.top, 48)
         }
     }
 }
