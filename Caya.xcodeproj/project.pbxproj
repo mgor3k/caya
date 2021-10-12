@@ -40,6 +40,7 @@
 		B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAD827137E14009762C7 /* EntryDatePicker.swift */; };
 		B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */; };
 		B9ADAAE127138579009762C7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAE027138579009762C7 /* BackgroundView.swift */; };
+		B9D0B0662714B1050018EC15 /* TitledMoneyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0652714B1050018EC15 /* TitledMoneyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		B9ADAAD827137E14009762C7 /* EntryDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDatePicker.swift; sourceTree = "<group>"; };
 		B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		B9ADAAE027138579009762C7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B9D0B0652714B1050018EC15 /* TitledMoneyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledMoneyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 				B9ADAADA271384A9009762C7 /* Styles */,
 				B9ADAAD727137D72009762C7 /* Date Picker */,
 				B9ADAAE027138579009762C7 /* BackgroundView.swift */,
+				B9D0B0652714B1050018EC15 /* TitledMoneyLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
 				B97F792B271254C4003C97EC /* MockTaxManager.swift in Sources */,
 				B97F792927125440003C97EC /* AddEntryViewModel.swift in Sources */,
+				B9D0B0662714B1050018EC15 /* TitledMoneyLabel.swift in Sources */,
 				B9ADAACE27136FAC009762C7 /* EntryDatePickerViewModel.swift in Sources */,
 				B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */,
 				B97F790B271241B3003C97EC /* Color+.swift in Sources */,

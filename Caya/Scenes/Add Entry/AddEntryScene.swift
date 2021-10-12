@@ -20,6 +20,14 @@ struct AddEntryScene: View {
                     viewModel: .init()
                 )
                 
+                Button(action: {  }) {
+                    TitledMoneyLabel(
+                        title: "Income",
+                        value: 4000
+                    )
+                }
+                .padding(.horizontal, 24)
+                
                 Spacer()
             }
             .padding(.top, 48)
