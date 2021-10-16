@@ -23,7 +23,7 @@ struct HomeScene: View {
                     entries: viewModel.history
                 )
             }
-                .padding(24)
+                .padding(CGFloat?.defaultPadding)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,
