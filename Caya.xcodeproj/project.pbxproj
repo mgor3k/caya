@@ -44,6 +44,7 @@
 		B9D0B074271B79710018EC15 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B073271B79710018EC15 /* CoreDataStorage.swift */; };
 		B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B096271B91670018EC15 /* EntryProviding.swift */; };
 		B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B099271B91E90018EC15 /* EntryStoring.swift */; };
+		B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B09E271B95A10018EC15 /* EditEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		B9D0B073271B79710018EC15 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		B9D0B096271B91670018EC15 /* EntryProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryProviding.swift; sourceTree = "<group>"; };
 		B9D0B099271B91E90018EC15 /* EntryStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStoring.swift; sourceTree = "<group>"; };
+		B9D0B09E271B95A10018EC15 /* EditEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				B97F78DE27123619003C97EC /* Home */,
 				B97F792127124F90003C97EC /* New Entry */,
+				B9D0B09B271B95780018EC15 /* Edit Entry */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -337,6 +340,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B9D0B09B271B95780018EC15 /* Edit Entry */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0B09E271B95A10018EC15 /* EditEntryView.swift */,
+			);
+			path = "Edit Entry";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,6 +480,7 @@
 				B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */,
 				B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */,
 				B97F790127123A75003C97EC /* Month.swift in Sources */,
+				B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

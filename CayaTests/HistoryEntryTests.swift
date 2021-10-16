@@ -8,8 +8,10 @@ import XCTest
 class HistoryEntryTests: XCTestCase {
     func test_calculateSavings() {
         let sut = Entry(
-            month: .init(1)!,
-            year: .init(2009)!,
+            date: .init(
+                month: .init(1)!,
+                year: .init(2009)!
+            ),
             income: 10_000,
             expenses: 4_500,
             taxes: [
