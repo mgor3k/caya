@@ -19,7 +19,7 @@ class HomeViewModelTests: XCTestCase {
 
 private extension HomeViewModelTests {
     struct Provider: HistoryProviding {
-        func getHistory() async -> [HistoryEntry] {
+        func getHistory() async -> [Entry] {
             [
                 .init(month: .init(1)!, year: .init(2009)!, income: 5_000, expenses: 300, taxes: [("1", 100)]),
                 .init(month: .init(2)!, year: .init(2009)!, income: 2_000, expenses: 9_000, taxes: [("1", 200)]),

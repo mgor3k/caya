@@ -20,7 +20,8 @@ struct HomeCoordinator: View {
             .sheet(isPresented: $isShowingAdd) {
                 NewEntryView(
                     viewModel: .init(
-                        preferences: dependencies.preferences
+                        preferences: dependencies.preferences,
+                        persistance: dependencies.persistance
                     )
                 )
             }

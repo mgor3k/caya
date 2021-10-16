@@ -29,6 +29,7 @@ struct HomeScene: View {
                     maxHeight: .infinity,
                     alignment: .topLeading
                 )
+                .onAppear(perform: viewModel.update)
         }
     }
 }

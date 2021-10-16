@@ -44,7 +44,8 @@ struct NewEntryView: View {
                 
                 if !isFocused {
                     EntryDatePicker(
-                        viewModel: .init()
+                        date: $viewModel.date,
+                        disabledEntries: viewModel.disabledDates
                     )
                 }
                 
@@ -106,7 +107,8 @@ struct AddEntryScene_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView(
             viewModel: .init(
-                preferences: MockPreferences()
+                preferences: MockPreferences(),
+                persistance: MockPersistanceManager()
             )
         )
             .environment(\.colorScheme, .dark)

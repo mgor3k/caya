@@ -3,10 +3,12 @@
 //
 
 struct MockPersistanceManager: PersistanceManaging {
-    static let entries: [HistoryEntry] = [
+    static let entries: [Entry] = [
         .init(
-            month: .january,
-            year: .init(2010)!,
+            date: .init(
+                month: .january,
+                year: .init(2010)!
+            ),
             income: 5_000,
             expenses: 4_000,
             taxes: [
@@ -15,7 +17,11 @@ struct MockPersistanceManager: PersistanceManaging {
         )
     ]
     
-    func getEntries() -> [HistoryEntry] {
+    func getEntries() -> [Entry] {
         Self.entries
+    }
+    
+    func storeEntry(_ entry: Entry) {
+        
     }
 }

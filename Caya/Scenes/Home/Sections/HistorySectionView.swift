@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct HistorySectionView: View {
-    let entries: [HistoryEntry]
+    let entries: [Entry]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 32) {
