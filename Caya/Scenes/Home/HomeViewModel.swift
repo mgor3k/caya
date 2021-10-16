@@ -15,22 +15,23 @@ class HomeViewModel: ObservableObject {
         history.map(\.savings).reduce(0, +)
     }
     
-    private let persistance: PersistanceManaging
+    private let provider: EntryProviding
     private var subscriptions: Set<AnyCancellable> = []
     
     init(
-        provider: PersistanceManaging
+        provider: EntryProviding
     ) {
-        self.persistance = provider
-        self.history = persistance.getEntries()
+        self.provider = provider
+        self.history = provider.getEntries()
         setupBindings()
     }
 }
 
 private extension HomeViewModel {
     func setupBindings() {
-        persistance
+        provider
             .getEntriesUpdates()
+            .dropFirst() // TODO: Fix this
             .assign(to: &$history)
     }
 }
