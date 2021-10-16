@@ -26,7 +26,7 @@ private extension HomeViewModelTests {
             ]
         }
         func getEntriesUpdates() -> AnyPublisher<[Entry], Never> {
-            Just([]).eraseToAnyPublisher()
+            Empty().eraseToAnyPublisher()
         }
     }
 }

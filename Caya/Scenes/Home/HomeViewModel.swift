@@ -31,7 +31,6 @@ private extension HomeViewModel {
     func setupBindings() {
         provider
             .getEntriesUpdates()
-            .dropFirst() // TODO: Fix this
             .assign(to: &$history)
     }
 }

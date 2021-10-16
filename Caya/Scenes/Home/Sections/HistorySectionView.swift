@@ -20,8 +20,10 @@ struct HistorySectionView: View {
                 LazyVStack {
                     ForEach(entries) { entry in
                         HistoryView(entry)
+                            .transition(.scale)
                     }
                 }
+                .animation(.spring().delay(0.2), value: entries)
             }
         }
     }

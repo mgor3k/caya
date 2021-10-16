@@ -41,6 +41,7 @@ extension CoreDataStorage: EntryProviding, EntryStoring {
             }
             
             return Entry(
+                id: entry.id ?? UUID(),
                 date: .init(
                     month: month,
                     year: year
@@ -57,6 +58,8 @@ extension CoreDataStorage: EntryProviding, EntryStoring {
     // TODO: Should be tested
     func storeEntry(_ entry: Entry) {
         let model = CDEntry(context: container.viewContext)
+        
+        model.id = entry.id
         
         if let expenses = entry.expenses {
             model.expenses = expenses
