@@ -5,9 +5,8 @@
 import Foundation
 
 class NewEntryViewModel: ObservableObject {
-    let taxes: [String]
+    @Published var income: Double?
+    @Published var expenses: Double?
     
-    init(taxManager: TaxManaging) {
-        self.taxes = taxManager.getUserTaxes()
-    }
+    let currency = "PLN"
 }

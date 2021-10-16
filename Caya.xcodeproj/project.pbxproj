@@ -31,9 +31,7 @@
 		B97F791E27124AAD003C97EC /* HistoryEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791D27124AAD003C97EC /* HistoryEntryTests.swift */; };
 		B97F792027124B90003C97EC /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791F27124B90003C97EC /* HomeViewModelTests.swift */; };
 		B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792227124F9C003C97EC /* NewEntryView.swift */; };
-		B97F7927271253A0003C97EC /* TaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F7926271253A0003C97EC /* TaxManager.swift */; };
 		B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792827125440003C97EC /* NewEntryViewModel.swift */; };
-		B97F792B271254C4003C97EC /* MockTaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F792A271254C4003C97EC /* MockTaxManager.swift */; };
 		B9ADAACE27136FAC009762C7 /* EntryDatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAACD27136FAC009762C7 /* EntryDatePickerViewModel.swift */; };
 		B9ADAAD4271378F2009762C7 /* EntryDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAD3271378F2009762C7 /* EntryDateView.swift */; };
 		B9ADAAD627137C96009762C7 /* EntryDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAD527137C96009762C7 /* EntryDate.swift */; };
@@ -80,9 +78,7 @@
 		B97F791D27124AAD003C97EC /* HistoryEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntryTests.swift; sourceTree = "<group>"; };
 		B97F791F27124B90003C97EC /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		B97F792227124F9C003C97EC /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
-		B97F7926271253A0003C97EC /* TaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxManager.swift; sourceTree = "<group>"; };
 		B97F792827125440003C97EC /* NewEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewModel.swift; sourceTree = "<group>"; };
-		B97F792A271254C4003C97EC /* MockTaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaxManager.swift; sourceTree = "<group>"; };
 		B9ADAACD27136FAC009762C7 /* EntryDatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDatePickerViewModel.swift; sourceTree = "<group>"; };
 		B9ADAAD3271378F2009762C7 /* EntryDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDateView.swift; sourceTree = "<group>"; };
 		B9ADAAD527137C96009762C7 /* EntryDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDate.swift; sourceTree = "<group>"; };
@@ -202,8 +198,8 @@
 		B97F78DB27123550003C97EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
 				B97F790A271241B3003C97EC /* Color+.swift */,
+				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				B97F78EF271239BF003C97EC /* HistoryProvider.swift */,
-				B97F7926271253A0003C97EC /* TaxManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -242,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				B97F78F527123A13003C97EC /* MockHistoryProvider.swift */,
-				B97F792A271254C4003C97EC /* MockTaxManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -415,7 +409,6 @@
 				B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
-				B97F792B271254C4003C97EC /* MockTaxManager.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,
 				B9ADAACE27136FAC009762C7 /* EntryDatePickerViewModel.swift in Sources */,
@@ -429,7 +422,6 @@
 				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,
 				B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */,
 				B9ADAAD4271378F2009762C7 /* EntryDateView.swift in Sources */,
-				B97F7927271253A0003C97EC /* TaxManager.swift in Sources */,
 				B97F790227123A75003C97EC /* Year.swift in Sources */,
 				B97F790627123DC1003C97EC /* String+.swift in Sources */,
 				B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */,

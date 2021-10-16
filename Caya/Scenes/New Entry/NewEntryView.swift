@@ -8,8 +8,9 @@ struct NewEntryView: View {
     @StateObject var viewModel: NewEntryViewModel
     @FocusState var focus: Int?
     
-    @State var first: Double?
-    @State var second: Double?
+    var isFocused: Bool {
+        focus != nil
+    }
     
     var body: some View {
         // Disable keyboard avoidance
@@ -27,41 +28,22 @@ struct NewEntryView: View {
                     .font(.title2)
                     .padding(.horizontal, 24)
                 
-                if focus == nil {
+                if !isFocused {
                     EntryDatePicker(
                         viewModel: .init()
                     )
                 }
                 
-                    VStack {
-                        if focus == nil || focus == 1 {
-                            Button(action: { focus = 1 }) {
-                                MoneyInputTextField(
-                                    title: "Income",
-                                    currency: "$",
-                                    value: $first
-                                )
-                                    .focused($focus, equals: 1)
-                            }
-                            .buttonStyle(CustomButtonStyle(isEnabled: focus != 1))
-                        }
-                        if focus == nil || focus == 2 {
-                            Button(action: { focus = 2 }) {
-                                MoneyInputTextField(
-                                    title: "Income",
-                                    currency: "$",
-                                    value: $second
-                                )
-                                    .focused($focus, equals: 2)
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 24)
+                VStack {
+                    field(title: "Income", id: 0, value: $viewModel.income)
+                    field(title: "Expenses", id: 1, value: $viewModel.expenses)
+                }
+                .padding(.horizontal, 24)
                 
                 Spacer()
                 VStack {
-                    if focus != nil {
-                        Button(action: onSave) {
+                    if isFocused {
+                        Button(action: clearFocus) {
                             Text("Done")
                                 .padding(.horizontal, 48)
                                 .padding(.vertical, 16)
@@ -81,8 +63,22 @@ struct NewEntryView: View {
 }
 
 private extension NewEntryView {
-    func onSave() {
-        // TODO: Save action
+    @ViewBuilder
+    func field(title: String, id: Int, value: Binding<Double?>) -> some View {
+        if !isFocused || focus == id {
+            Button(action: { focus = id }) {
+                MoneyInputTextField(
+                    title: title,
+                    currency: viewModel.currency,
+                    value: value
+                )
+                    .focused($focus, equals: id)
+            }
+            .buttonStyle(CustomButtonStyle(isEnabled: focus != id))
+        }
+    }
+    
+    func clearFocus() {
         focus = nil
     }
 }
@@ -90,7 +86,7 @@ private extension NewEntryView {
 struct AddEntryScene_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView(
-            viewModel: .init(taxManager: MockTaxManager())
+            viewModel: .init()
         )
             .environment(\.colorScheme, .dark)
     }
