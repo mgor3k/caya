@@ -36,7 +36,7 @@ struct NewEntryView: View {
                     VStack {
                         if focus == nil || focus == 1 {
                             Button(action: { focus = 1 }) {
-                                TitledMoneyLabel(
+                                MoneyInputTextField(
                                     title: "Income",
                                     currency: "$",
                                     value: $first
@@ -47,7 +47,7 @@ struct NewEntryView: View {
                         }
                         if focus == nil || focus == 2 {
                             Button(action: { focus = 2 }) {
-                                TitledMoneyLabel(
+                                MoneyInputTextField(
                                     title: "Income",
                                     currency: "$",
                                     value: $second

@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct TitledMoneyLabel: View {
+struct MoneyInputTextField: View {
     let title: String
     let currency: String
     @Binding var value: Double?
@@ -39,7 +39,7 @@ struct TitledMoneyLabel: View {
 
 struct TitledMoneyLabel_Previews: PreviewProvider {
     static var previews: some View {
-        TitledMoneyLabel(
+        MoneyInputTextField(
             title: "Test",
             currency: "$",
             value: .constant(3_000)
