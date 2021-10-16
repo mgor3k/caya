@@ -4,10 +4,6 @@
 
 import Foundation
 
-extension AddEntryScene {
-    typealias ViewModel = AddEntryViewModel
-}
-
 class AddEntryViewModel: ObservableObject {
     let taxes: [String]
     

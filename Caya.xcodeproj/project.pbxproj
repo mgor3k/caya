@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78DE27123619003C97EC /* Home */,
-				B97F792127124F90003C97EC /* Add Entry */,
+				B97F792127124F90003C97EC /* New Entry */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -266,13 +266,13 @@
 			path = CayaTests;
 			sourceTree = "<group>";
 		};
-		B97F792127124F90003C97EC /* Add Entry */ = {
+		B97F792127124F90003C97EC /* New Entry */ = {
 			isa = PBXGroup;
 			children = (
 				B97F792227124F9C003C97EC /* AddEntryScene.swift */,
 				B97F792827125440003C97EC /* AddEntryViewModel.swift */,
 			);
-			path = "Add Entry";
+			path = "New Entry";
 			sourceTree = "<group>";
 		};
 		B97F792C27125577003C97EC /* Components */ = {
