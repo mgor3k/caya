@@ -24,7 +24,7 @@
 		B97F790227123A75003C97EC /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790027123A75003C97EC /* Year.swift */; };
 		B97F790627123DC1003C97EC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790527123DC1003C97EC /* String+.swift */; };
 		B97F790927124077003C97EC /* HistorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790827124077003C97EC /* HistorySectionView.swift */; };
-		B97F790B271241B3003C97EC /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790A271241B3003C97EC /* Color+.swift */; };
+		B97F790B271241B3003C97EC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790A271241B3003C97EC /* Color.swift */; };
 		B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790C27124630003C97EC /* SavingsSectionView.swift */; };
 		B97F791C2712476A003C97EC /* MonthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791B2712476A003C97EC /* MonthTests.swift */; };
 		B97F791E27124AAD003C97EC /* HistoryEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F791D27124AAD003C97EC /* HistoryEntryTests.swift */; };
@@ -35,7 +35,7 @@
 		B9ADAAD627137C96009762C7 /* EntryDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAD527137C96009762C7 /* EntryDate.swift */; };
 		B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAD827137E14009762C7 /* EntryDatePicker.swift */; };
 		B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */; };
-		B9ADAAE127138579009762C7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAE027138579009762C7 /* BackgroundView.swift */; };
+		B9ADAAE127138579009762C7 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAE027138579009762C7 /* GradientBackgroundView.swift */; };
 		B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */; };
 		B9D0B068271B67450018EC15 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B067271B67450018EC15 /* Preferences.swift */; };
 		B9D0B06B271B68330018EC15 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06A271B68330018EC15 /* Currency.swift */; };
@@ -45,6 +45,7 @@
 		B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B096271B91670018EC15 /* EntryProviding.swift */; };
 		B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B099271B91E90018EC15 /* EntryStoring.swift */; };
 		B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B09E271B95A10018EC15 /* EditEntryView.swift */; };
+		B9D0B0A1271B9A190018EC15 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A0271B9A190018EC15 /* Padding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,7 @@
 		B97F790027123A75003C97EC /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Year.swift; path = ../../../../Caya/Caya/Core/Models/Year.swift; sourceTree = "<group>"; };
 		B97F790527123DC1003C97EC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+.swift"; path = "../../../Caya/Caya/Extensions/String+.swift"; sourceTree = "<group>"; };
 		B97F790827124077003C97EC /* HistorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySectionView.swift; sourceTree = "<group>"; };
-		B97F790A271241B3003C97EC /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		B97F790A271241B3003C97EC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B97F790C27124630003C97EC /* SavingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsSectionView.swift; sourceTree = "<group>"; };
 		B97F79122712475A003C97EC /* CayaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CayaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F791B2712476A003C97EC /* MonthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTests.swift; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		B9ADAAD527137C96009762C7 /* EntryDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDate.swift; sourceTree = "<group>"; };
 		B9ADAAD827137E14009762C7 /* EntryDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDatePicker.swift; sourceTree = "<group>"; };
 		B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
-		B9ADAAE027138579009762C7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B9ADAAE027138579009762C7 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyInputTextField.swift; sourceTree = "<group>"; };
 		B9D0B067271B67450018EC15 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B9D0B06A271B68330018EC15 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		B9D0B096271B91670018EC15 /* EntryProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryProviding.swift; sourceTree = "<group>"; };
 		B9D0B099271B91E90018EC15 /* EntryStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStoring.swift; sourceTree = "<group>"; };
 		B9D0B09E271B95A10018EC15 /* EditEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryView.swift; sourceTree = "<group>"; };
+		B9D0B0A0271B9A190018EC15 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +216,6 @@
 		B97F78DB27123550003C97EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B97F790A271241B3003C97EC /* Color+.swift */,
 				B97F78BE27122AC6003C97EC /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -299,8 +300,9 @@
 		B9ADAACF2713779D009762C7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0B0A2271B9B480018EC15 /* Constants */,
 				B9ADAADA271384A9009762C7 /* Styles */,
-				B9ADAAE027138579009762C7 /* BackgroundView.swift */,
+				B9ADAAE027138579009762C7 /* GradientBackgroundView.swift */,
 				B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */,
 			);
 			path = Components;
@@ -346,6 +348,15 @@
 				B9D0B09E271B95A10018EC15 /* EditEntryView.swift */,
 			);
 			path = "Edit Entry";
+			sourceTree = "<group>";
+		};
+		B9D0B0A2271B9B480018EC15 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0B0A0271B9A190018EC15 /* Padding.swift */,
+				B97F790A271241B3003C97EC /* Color.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +469,8 @@
 				B9D0B06B271B68330018EC15 /* Currency.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,
 				B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */,
-				B97F790B271241B3003C97EC /* Color+.swift in Sources */,
-				B9ADAAE127138579009762C7 /* BackgroundView.swift in Sources */,
+				B97F790B271241B3003C97EC /* Color.swift in Sources */,
+				B9ADAAE127138579009762C7 /* GradientBackgroundView.swift in Sources */,
 				B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */,
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
@@ -470,6 +481,7 @@
 				B9ADAAD4271378F2009762C7 /* EntryDateView.swift in Sources */,
 				B97F790227123A75003C97EC /* Year.swift in Sources */,
 				B97F790627123DC1003C97EC /* String+.swift in Sources */,
+				B9D0B0A1271B9A190018EC15 /* Padding.swift in Sources */,
 				B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */,
 				B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryView.swift in Sources */,

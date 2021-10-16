@@ -7,7 +7,7 @@ import SwiftUI
 struct EditEntryView: View {
     var body: some View {
         ZStack {
-            BackgroundView()
+            GradientBackgroundView(position: .leading)
         }
     }
 }

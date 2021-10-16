@@ -22,7 +22,7 @@ struct NewEntryView: View {
     
     var content: some View {
         ZStack {
-            BackgroundView()
+            GradientBackgroundView(position: .top)
             
             VStack(alignment: .leading, spacing: 32) {
                 HStack {
@@ -40,7 +40,7 @@ struct NewEntryView: View {
                         .foregroundColor(.white)
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, .defaultPadding)
                 
                 if !isFocused {
                     EntryDatePicker(
@@ -53,7 +53,7 @@ struct NewEntryView: View {
                     field(title: "Income", id: 0, value: $viewModel.income)
                     field(title: "Expenses", id: 1, value: $viewModel.expenses)
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, .defaultPadding)
                 
                 Spacer()
                 VStack {
