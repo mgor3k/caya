@@ -18,10 +18,8 @@ struct HomeCoordinator: View {
             }
         )
             .sheet(isPresented: $isShowingAdd) {
-                AddEntryScene(
-                    viewModel: .init(
-                        taxManager: dependencies.taxManager
-                    )
+                NewEntryView(
+                    viewModel: .init()
                 )
             }
     }
