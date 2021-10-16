@@ -9,4 +9,8 @@ class NewEntryViewModel: ObservableObject {
     @Published var expenses: Double?
     
     let currency = "PLN"
+    
+    func save() {
+        
+    }
 }

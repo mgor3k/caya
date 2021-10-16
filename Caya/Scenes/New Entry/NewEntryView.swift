@@ -6,7 +6,8 @@ import SwiftUI
 
 struct NewEntryView: View {
     @StateObject var viewModel: NewEntryViewModel
-    @FocusState var focus: Int?
+    @FocusState private var focus: Int?
+    @Environment(\.presentationMode) private var presentation
     
     var isFocused: Bool {
         focus != nil
@@ -24,9 +25,22 @@ struct NewEntryView: View {
             BackgroundView()
             
             VStack(alignment: .leading, spacing: 32) {
-                Text("**New** entry")
-                    .font(.title2)
-                    .padding(.horizontal, 24)
+                HStack {
+                    Text("**New** entry")
+                        .font(.title2)
+                    
+                    Spacer()
+                    
+                    Button(action: save) {
+                        HStack {
+                            Image(systemName: "pencil")
+                            Text("Save")
+                                .bold()
+                        }
+                        .foregroundColor(.white)
+                    }
+                }
+                .padding(.horizontal, 24)
                 
                 if !isFocused {
                     EntryDatePicker(
@@ -80,6 +94,11 @@ private extension NewEntryView {
     
     func clearFocus() {
         focus = nil
+    }
+    
+    func save() {
+        viewModel.save()
+        presentation.wrappedValue.dismiss()
     }
 }
 
