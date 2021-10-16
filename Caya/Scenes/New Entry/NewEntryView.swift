@@ -83,7 +83,7 @@ private extension NewEntryView {
             Button(action: { focus = id }) {
                 MoneyInputTextField(
                     title: title,
-                    currency: viewModel.currency,
+                    currency: viewModel.currency.value,
                     value: value
                 )
                     .focused($focus, equals: id)
@@ -105,7 +105,9 @@ private extension NewEntryView {
 struct AddEntryScene_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView(
-            viewModel: .init()
+            viewModel: .init(
+                preferences: MockPreferences()
+            )
         )
             .environment(\.colorScheme, .dark)
     }
