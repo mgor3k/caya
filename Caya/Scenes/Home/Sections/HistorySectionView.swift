@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct HistorySectionView: View {
-    let entries: [HistoryEntry]
+    let entries: [Entry]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 32) {
@@ -30,7 +30,7 @@ struct HistorySectionView: View {
 struct HistorySectionView_Previews: PreviewProvider {
     static var previews: some View {
         HistorySectionView(
-            entries: MockHistoryProvider.entries
+            entries: MockPersistanceManager().getEntries()
         )
             .background(Color.background)
             .environment(\.colorScheme, .dark)

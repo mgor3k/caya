@@ -30,9 +30,6 @@ struct HomeScene: View {
                     alignment: .topLeading
                 )
         }
-        .task {
-            await viewModel.fetchHistory()
-        }
     }
 }
 
@@ -40,7 +37,7 @@ struct HomeScene_Previews: PreviewProvider {
     static var previews: some View {
         HomeScene(
             viewModel: .init(
-                provider: MockHistoryProvider()
+                provider: MockPersistanceManager()
             ),
             onAdd: {}
         )

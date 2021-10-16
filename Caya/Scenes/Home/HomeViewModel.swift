@@ -2,28 +2,35 @@
 //  Created by Maciej Górecki on 09/10/2021
 //
 
-import Foundation
+import Combine
 
 extension HomeScene {
     typealias ViewModel = HomeViewModel
 }
 
 class HomeViewModel: ObservableObject {
-    @Published var history: [HistoryEntry] = []
-    
-    private let provider: HistoryProviding
-    
+    @Published var history: [Entry]
+        
     var savings: Double {
         history.map(\.savings).reduce(0, +)
     }
     
-    init(
-        provider: HistoryProviding
-    ) {
-        self.provider = provider
-    }
+    private let persistance: PersistanceManaging
+    private var subscriptions: Set<AnyCancellable> = []
     
-    func fetchHistory() async {
-        history = await provider.getHistory()
+    init(
+        provider: PersistanceManaging
+    ) {
+        self.persistance = provider
+        self.history = persistance.getEntries()
+        setupBindings()
+    }
+}
+
+private extension HomeViewModel {
+    func setupBindings() {
+        persistance
+            .getEntriesUpdates()
+            .assign(to: &$history)
     }
 }

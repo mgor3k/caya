@@ -6,21 +6,21 @@ import SwiftUI
 import Foundation
 
 struct HistoryView: View {
-    let entry: HistoryEntry
+    let entry: Entry
     
-    init(_ entry: HistoryEntry) {
+    init(_ entry: Entry) {
         self.entry = entry
     }
     
     var body: some View {
         HStack(spacing: 16) {
-            Text(String.twoDigited(entry.month.value))
+            Text(String.twoDigited(entry.date.month.value))
                 .bold()
                 .padding(12)
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(14)
             
-            Text(entry.month.symbol)
+            Text(entry.date.month.symbol)
                 .font(.subheadline)
                 .bold()
             
@@ -43,8 +43,10 @@ struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(
             .init(
-                month: .january,
-                year: .init(2009)!,
+                date: .init(
+                    month: .january,
+                    year: .init(2009)!
+                ),
                 income: 10_000,
                 expenses: 4_000,
                 taxes: []

@@ -7,7 +7,7 @@ import XCTest
 
 class HistoryEntryTests: XCTestCase {
     func test_calculateSavings() {
-        let sut = HistoryEntry(
+        let sut = Entry(
             month: .init(1)!,
             year: .init(2009)!,
             income: 10_000,

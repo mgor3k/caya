@@ -7,14 +7,36 @@ import Foundation
 class NewEntryViewModel: ObservableObject {
     @Published var income: Double?
     @Published var expenses: Double?
+    @Published var date: EntryDate
     
     let currency: Currency
+    let disabledDates: [EntryDate]
     
-    init(preferences: Preferences) {
+    private let persistance: PersistanceManaging
+    
+    init(preferences: Preferences, persistance: PersistanceManaging) {
         self.currency = preferences.getCurrency()
+        self.persistance = persistance
+        
+        // TODO: Make this better 
+        let components = Calendar.current.dateComponents([.month, .year], from: .now)
+        let currentYear = components.year!
+        let currentMonth = components.month!
+        
+        // FIX: check last available date
+        date = EntryDate(month: .init(currentMonth)!, year: .init(currentYear)!)
+        
+        // TODO: To be optimised
+        disabledDates = persistance.getEntries().map(\.date)
     }
     
     func save() {
-        
+        let entry = Entry(
+            date: date,
+            income: income,
+            expenses: expenses,
+            taxes: []
+        )
+        persistance.storeEntry(entry)
     }
 }
