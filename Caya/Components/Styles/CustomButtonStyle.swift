@@ -5,9 +5,12 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
+    var isEnabled = true
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .opacity(configuration.isPressed ? 0.7 : 1)
+            .contentShape(Rectangle())
+            .opacity(isEnabled && configuration.isPressed ? 0.7 : 1)
     }
 }

@@ -7,19 +7,7 @@ import SwiftUI
 struct TitledMoneyLabel: View {
     let title: String
     let currency: String
-    let value: Double
-        
-    @State private var text = "4,000.00"
-    
-    init(
-        title: String,
-        currency: String,
-        value: Double
-    ) {
-        self.title = title
-        self.currency = currency
-        self.value = value
-    }
+    @Binding var value: Double?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -33,10 +21,11 @@ struct TitledMoneyLabel: View {
                 
                 Spacer()
                 
-                TextField("-", text: $text)
+                TextField("-", value: $value, format: .currency(code: "US"))
                     .font(.title)
                     .keyboardType(.decimalPad)
                     .multilineTextAlignment(.trailing)
+                    .allowsHitTesting(false)
             }
         }
         .foregroundColor(.white)
@@ -53,7 +42,7 @@ struct TitledMoneyLabel_Previews: PreviewProvider {
         TitledMoneyLabel(
             title: "Test",
             currency: "$",
-            value: 3_000
+            value: .constant(3_000)
         )
             .padding()
             .background(Color.black)

@@ -8,6 +8,9 @@ struct AddEntryScene: View {
     @StateObject var viewModel: AddEntryViewModel
     @FocusState var focus: Int?
     
+    @State var first: Double?
+    @State var second: Double?
+    
     var body: some View {
         GeometryReader { _ in
             content
@@ -31,21 +34,22 @@ struct AddEntryScene: View {
                 
                     VStack {
                         if focus == nil || focus == 1 {
-                            Button(action: { focus = focus == nil ? 1 : nil }) {
+                            Button(action: { focus = 1 }) {
                                 TitledMoneyLabel(
                                     title: "Income",
                                     currency: "$",
-                                    value: 4000
+                                    value: $first
                                 )
                                     .focused($focus, equals: 1)
                             }
+                            .buttonStyle(CustomButtonStyle(isEnabled: focus != 1))
                         }
                         if focus == nil || focus == 2 {
-                            Button(action: { focus = focus == nil ? 2 : nil }) {
+                            Button(action: { focus = 2 }) {
                                 TitledMoneyLabel(
                                     title: "Income",
                                     currency: "$",
-                                    value: 5000
+                                    value: $second
                                 )
                                     .focused($focus, equals: 2)
                             }
@@ -53,24 +57,32 @@ struct AddEntryScene: View {
                     }
                     .padding(.horizontal, 24)
                 
-                Button(action: onSave) {
-                    Text("Save")
-                }
-                .background(Color.white)
-                .frame(maxWidth: .infinity)
-                
                 Spacer()
+                VStack {
+                    if focus != nil {
+                        Button(action: onSave) {
+                            Text("Done")
+                                .padding(.horizontal, 48)
+                                .padding(.vertical, 16)
+                                .background(Color.white)
+                                .cornerRadius(16)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 24)
+                    }
+                }
+                .animation(.default, value: focus)
             }
             .padding(.top, 48)
             .animation(.default, value: focus)
         }
-        .ignoresSafeArea(.keyboard)
     }
 }
 
 private extension AddEntryScene {
     func onSave() {
         // TODO: Save action
+        focus = nil
     }
 }
 
