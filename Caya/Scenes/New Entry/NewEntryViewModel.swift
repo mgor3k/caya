@@ -4,7 +4,7 @@
 
 import Foundation
 
-class AddEntryViewModel: ObservableObject {
+class NewEntryViewModel: ObservableObject {
     let taxes: [String]
     
     init(taxManager: TaxManaging) {

@@ -4,14 +4,15 @@
 
 import SwiftUI
 
-struct AddEntryScene: View {
-    @StateObject var viewModel: AddEntryViewModel
+struct NewEntryView: View {
+    @StateObject var viewModel: NewEntryViewModel
     @FocusState var focus: Int?
     
     @State var first: Double?
     @State var second: Double?
     
     var body: some View {
+        // Disable keyboard avoidance
         GeometryReader { _ in
             content
         }
@@ -79,7 +80,7 @@ struct AddEntryScene: View {
     }
 }
 
-private extension AddEntryScene {
+private extension NewEntryView {
     func onSave() {
         // TODO: Save action
         focus = nil
@@ -88,7 +89,7 @@ private extension AddEntryScene {
 
 struct AddEntryScene_Previews: PreviewProvider {
     static var previews: some View {
-        AddEntryScene(
+        NewEntryView(
             viewModel: .init(taxManager: MockTaxManager())
         )
             .environment(\.colorScheme, .dark)
