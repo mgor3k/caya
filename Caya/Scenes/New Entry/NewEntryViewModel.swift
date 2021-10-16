@@ -8,7 +8,11 @@ class NewEntryViewModel: ObservableObject {
     @Published var income: Double?
     @Published var expenses: Double?
     
-    let currency = "PLN"
+    let currency: Currency
+    
+    init(preferences: Preferences) {
+        self.currency = preferences.getCurrency()
+    }
     
     func save() {
         

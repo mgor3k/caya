@@ -19,7 +19,9 @@ struct HomeCoordinator: View {
         )
             .sheet(isPresented: $isShowingAdd) {
                 NewEntryView(
-                    viewModel: .init()
+                    viewModel: .init(
+                        preferences: dependencies.preferences
+                    )
                 )
             }
     }
