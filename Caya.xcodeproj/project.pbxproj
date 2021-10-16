@@ -41,7 +41,9 @@
 		B9D0B06B271B68330018EC15 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06A271B68330018EC15 /* Currency.swift */; };
 		B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06C271B69390018EC15 /* MockPreferences.swift */; };
 		B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */; };
-		B9D0B074271B79710018EC15 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B073271B79710018EC15 /* PersistanceManager.swift */; };
+		B9D0B074271B79710018EC15 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B073271B79710018EC15 /* CoreDataStorage.swift */; };
+		B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B096271B91670018EC15 /* EntryProviding.swift */; };
+		B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B099271B91E90018EC15 /* EntryStoring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +93,9 @@
 		B9D0B06A271B68330018EC15 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B9D0B06C271B69390018EC15 /* MockPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPreferences.swift; sourceTree = "<group>"; };
 		B9D0B071271B78C60018EC15 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		B9D0B073271B79710018EC15 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		B9D0B073271B79710018EC15 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		B9D0B096271B91670018EC15 /* EntryProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryProviding.swift; sourceTree = "<group>"; };
+		B9D0B099271B91E90018EC15 /* EntryStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStoring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78E327123749003C97EC /* Dependencies */,
+				B9D0B098271B918C0018EC15 /* Protocols */,
 				B97F78E02712369B003C97EC /* Services */,
 				B97F78C927122B40003C97EC /* Models */,
 			);
@@ -228,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D0B067271B67450018EC15 /* Preferences.swift */,
-				B9D0B073271B79710018EC15 /* PersistanceManager.swift */,
+				B9D0B073271B79710018EC15 /* CoreDataStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -321,6 +326,15 @@
 				B9ADAAD3271378F2009762C7 /* EntryDateView.swift */,
 			);
 			path = Picker;
+			sourceTree = "<group>";
+		};
+		B9D0B098271B918C0018EC15 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0B096271B91670018EC15 /* EntryProviding.swift */,
+				B9D0B099271B91E90018EC15 /* EntryStoring.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,9 +438,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97F78CB27122B51003C97EC /* Entry.swift in Sources */,
+				B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
+				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
 				B9D0B06B271B68330018EC15 /* Currency.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,
@@ -437,7 +453,7 @@
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
 				B9ADAAD627137C96009762C7 /* EntryDate.swift in Sources */,
-				B9D0B074271B79710018EC15 /* PersistanceManager.swift in Sources */,
+				B9D0B074271B79710018EC15 /* CoreDataStorage.swift in Sources */,
 				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,
 				B97F78F627123A13003C97EC /* MockPersistanceManager.swift in Sources */,
 				B9ADAAD4271378F2009762C7 /* EntryDateView.swift in Sources */,

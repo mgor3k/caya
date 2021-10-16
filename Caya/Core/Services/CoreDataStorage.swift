@@ -5,22 +5,9 @@
 import CoreData
 import Combine
 
-// TODO: Make separate
-protocol PersistanceManaging {
-    func getEntries() -> [Entry]
-    func storeEntry(_ entry: Entry)
-    func listenForEntryChanges() -> AnyPublisher<Void, Never>
-}
+typealias PersistanceManaging = EntryProviding & EntryStoring
 
-// TODO: Remove this
-extension PersistanceManaging {
-    func listenForEntryChanges() -> AnyPublisher<Void, Never> {
-        Just(()).eraseToAnyPublisher()
-    }
-}
-
-// TODO: Change name to coredatastorage
-class PersistanceManager {
+class CoreDataStorage {
     let container: NSPersistentContainer
     
     init(inMemory: Bool = false) {
@@ -30,24 +17,19 @@ class PersistanceManager {
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                Typical reasons for an error here include:
-                * The parent directory does not exist, cannot be created, or disallows writing.
-                * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                * The device is out of space.
-                * The store could not be migrated to the current model version.
-                Check the error message to determine what the actual problem was.
-                */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
     }
 }
 
-extension PersistanceManager: PersistanceManaging {
+extension CoreDataStorage: EntryProviding, EntryStoring {
+    func getEntriesUpdates() -> AnyPublisher<[Entry], Never> {
+        listenForEntryChanges()
+            .map(getEntries)
+            .eraseToAnyPublisher()
+    }
+    
     func getEntries() -> [Entry] {
         let request = CDEntry.fetchRequest()
         // TODO: Handle errors
@@ -96,10 +78,12 @@ extension PersistanceManager: PersistanceManaging {
     }
     
     func listenForEntryChanges() -> AnyPublisher<Void, Never> {
-        let notification = NSManagedObjectContext.didSaveObjectsNotification
-        return NotificationCenter
+        NotificationCenter
             .default
-            .publisher(for: notification, object: container.viewContext)
+            .publisher(
+                for: NSManagedObjectContext.didSaveObjectsNotification,
+                   object: container.viewContext
+            )
             .map { _ in }
             .eraseToAnyPublisher()
     }

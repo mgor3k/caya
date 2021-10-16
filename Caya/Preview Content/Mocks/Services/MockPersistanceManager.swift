@@ -2,6 +2,8 @@
 //  Created by Maciej Górecki on 09/10/2021
 //
 
+import Combine
+
 struct MockPersistanceManager: PersistanceManaging {
     static let entries: [Entry] = [
         .init(
@@ -19,6 +21,10 @@ struct MockPersistanceManager: PersistanceManaging {
     
     func getEntries() -> [Entry] {
         Self.entries
+    }
+    
+    func getEntriesUpdates() -> AnyPublisher<[Entry], Never> {
+        Just(Self.entries).eraseToAnyPublisher()
     }
     
     func storeEntry(_ entry: Entry) {

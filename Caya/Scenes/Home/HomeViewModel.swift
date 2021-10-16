@@ -9,7 +9,7 @@ extension HomeScene {
 }
 
 class HomeViewModel: ObservableObject {
-    @Published var history: [Entry] = []
+    @Published var history: [Entry]
         
     var savings: Double {
         history.map(\.savings).reduce(0, +)
@@ -22,21 +22,15 @@ class HomeViewModel: ObservableObject {
         provider: PersistanceManaging
     ) {
         self.persistance = provider
+        self.history = persistance.getEntries()
         setupBindings()
-    }
-    
-    func update() {
-        history = persistance.getEntries()
     }
 }
 
 private extension HomeViewModel {
     func setupBindings() {
         persistance
-            .listenForEntryChanges()
-            .sink { [weak self] _ in
-                self?.update()
-            }
-            .store(in: &subscriptions)
+            .getEntriesUpdates()
+            .assign(to: &$history)
     }
 }
