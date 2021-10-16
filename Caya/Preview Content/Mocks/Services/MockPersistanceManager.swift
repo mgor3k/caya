@@ -2,7 +2,7 @@
 //  Created by Maciej Górecki on 09/10/2021
 //
 
-struct MockHistoryProvider: HistoryProviding {
+struct MockPersistanceManager: PersistanceManaging {
     static let entries: [HistoryEntry] = [
         .init(
             month: .january,
@@ -15,7 +15,7 @@ struct MockHistoryProvider: HistoryProviding {
         )
     ]
     
-    func getHistory() async -> [HistoryEntry] {
+    func getEntries() -> [HistoryEntry] {
         Self.entries
     }
 }

@@ -1,15 +1,19 @@
 //
-//  Created by Maciej Górecki on 09/10/2021
+//  Created by Maciej Górecki on 16/10/2021
 //
 
 import Foundation
 
-protocol HistoryProviding {
-    func getHistory() async -> [HistoryEntry]
+protocol PersistanceManaging {
+    func getEntries() -> [HistoryEntry]
 }
 
-struct HistoryProvider: HistoryProviding {
-    func getHistory() async -> [HistoryEntry] {
+class PersistanceManager {
+    
+}
+
+extension PersistanceManager: PersistanceManaging {
+    func getEntries() -> [HistoryEntry] {
         [
             .init(
                 month: .init(4)!,

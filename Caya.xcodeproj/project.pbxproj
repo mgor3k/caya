@@ -13,10 +13,9 @@
 		B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CA27122B51003C97EC /* HistoryEntry.swift */; };
 		B97F78D027122B63003C97EC /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeScene.swift */; };
 		B97F78D127122B63003C97EC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CE27122B63003C97EC /* HistoryView.swift */; };
-		B97F78F0271239BF003C97EC /* HistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78EF271239BF003C97EC /* HistoryProvider.swift */; };
 		B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F1271239EB003C97EC /* DependencyManager.swift */; };
 		B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */; };
-		B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F527123A13003C97EC /* MockHistoryProvider.swift */; };
+		B97F78F627123A13003C97EC /* MockPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F527123A13003C97EC /* MockPersistanceManager.swift */; };
 		B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F727123A2B003C97EC /* HomeCoordinator.swift */; };
 		B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F827123A2B003C97EC /* HomeViewModel.swift */; };
 		B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FB27123A44003C97EC /* NumberFormatter+.swift */; };
@@ -39,9 +38,11 @@
 		B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */; };
 		B9ADAAE127138579009762C7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADAAE027138579009762C7 /* BackgroundView.swift */; };
 		B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */; };
-		B9D0B068271B67450018EC15 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B067271B67450018EC15 /* Defaults.swift */; };
+		B9D0B068271B67450018EC15 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B067271B67450018EC15 /* Preferences.swift */; };
 		B9D0B06B271B68330018EC15 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06A271B68330018EC15 /* Currency.swift */; };
 		B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06C271B69390018EC15 /* MockPreferences.swift */; };
+		B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */; };
+		B9D0B074271B79710018EC15 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B073271B79710018EC15 /* PersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +63,9 @@
 		B97F78CA27122B51003C97EC /* HistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
 		B97F78CD27122B63003C97EC /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		B97F78CE27122B63003C97EC /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		B97F78EF271239BF003C97EC /* HistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryProvider.swift; path = ../../../../Caya/Caya/Core/Services/HistoryProvider.swift; sourceTree = "<group>"; };
 		B97F78F1271239EB003C97EC /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = ../../../../Caya/Caya/Core/Dependencies/DependencyManager.swift; sourceTree = "<group>"; };
 		B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DependencyManager+Env.swift"; path = "../../../../Caya/Caya/Core/Dependencies/DependencyManager+Env.swift"; sourceTree = "<group>"; };
-		B97F78F527123A13003C97EC /* MockHistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockHistoryProvider.swift; path = "../../../../../Caya/Caya/Preview Content/Mocks/Services/MockHistoryProvider.swift"; sourceTree = "<group>"; };
+		B97F78F527123A13003C97EC /* MockPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPersistanceManager.swift; sourceTree = "<group>"; };
 		B97F78F727123A2B003C97EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCoordinator.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeCoordinator.swift; sourceTree = "<group>"; };
 		B97F78F827123A2B003C97EC /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeViewModel.swift; sourceTree = "<group>"; };
 		B97F78FB27123A44003C97EC /* NumberFormatter+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NumberFormatter+.swift"; path = "../../../Caya/Caya/Extensions/NumberFormatter+.swift"; sourceTree = "<group>"; };
@@ -89,9 +89,11 @@
 		B9ADAADB271384B5009762C7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		B9ADAAE027138579009762C7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyInputTextField.swift; sourceTree = "<group>"; };
-		B9D0B067271B67450018EC15 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		B9D0B067271B67450018EC15 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B9D0B06A271B68330018EC15 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B9D0B06C271B69390018EC15 /* MockPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPreferences.swift; sourceTree = "<group>"; };
+		B9D0B071271B78C60018EC15 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B9D0B073271B79710018EC15 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		B97F78C927122B40003C97EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0B06F271B78B50018EC15 /* Persistance */,
 				B97F78CA27122B51003C97EC /* HistoryEntry.swift */,
 				B9ADAAD527137C96009762C7 /* EntryDate.swift */,
 				B97F78FF27123A75003C97EC /* Month.swift */,
@@ -226,8 +229,8 @@
 		B97F78E02712369B003C97EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B9D0B069271B67BE0018EC15 /* Storage */,
-				B97F78EF271239BF003C97EC /* HistoryProvider.swift */,
+				B9D0B067271B67450018EC15 /* Preferences.swift */,
+				B9D0B073271B79710018EC15 /* PersistanceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,7 +247,7 @@
 		B97F78EC271238BC003C97EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B97F78F527123A13003C97EC /* MockHistoryProvider.swift */,
+				B97F78F527123A13003C97EC /* MockPersistanceManager.swift */,
 				B9D0B06C271B69390018EC15 /* MockPreferences.swift */,
 			);
 			path = Services;
@@ -315,12 +318,12 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
-		B9D0B069271B67BE0018EC15 /* Storage */ = {
+		B9D0B06F271B78B50018EC15 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				B9D0B067271B67450018EC15 /* Defaults.swift */,
+				B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */,
 			);
-			path = Storage;
+			path = Persistance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,7 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97F78CB27122B51003C97EC /* HistoryEntry.swift in Sources */,
-				B9D0B068271B67450018EC15 /* Defaults.swift in Sources */,
+				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
@@ -438,11 +441,13 @@
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeScene.swift in Sources */,
 				B9ADAAD627137C96009762C7 /* EntryDate.swift in Sources */,
+				B9D0B074271B79710018EC15 /* PersistanceManager.swift in Sources */,
 				B97F790927124077003C97EC /* HistorySectionView.swift in Sources */,
-				B97F78F627123A13003C97EC /* MockHistoryProvider.swift in Sources */,
+				B97F78F627123A13003C97EC /* MockPersistanceManager.swift in Sources */,
 				B9ADAAD4271378F2009762C7 /* EntryDateView.swift in Sources */,
 				B97F790227123A75003C97EC /* Year.swift in Sources */,
 				B97F790627123DC1003C97EC /* String+.swift in Sources */,
+				B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */,
 				B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryView.swift in Sources */,
 				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
@@ -450,7 +455,6 @@
 				B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
 				B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */,
-				B97F78F0271239BF003C97EC /* HistoryProvider.swift in Sources */,
 				B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */,
 				B97F790127123A75003C97EC /* Month.swift in Sources */,
 			);
@@ -730,6 +734,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B9D0B071271B78C60018EC15 /* Model.xcdatamodel */,
+			);
+			currentVersion = B9D0B071271B78C60018EC15 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B97F78AF27122AC4003C97EC /* Project object */;
 }

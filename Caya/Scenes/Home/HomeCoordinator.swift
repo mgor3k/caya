@@ -11,7 +11,7 @@ struct HomeCoordinator: View {
     var body: some View {
         HomeScene(
             viewModel: .init(
-                provider: dependencies.historyProvider
+                provider: dependencies.persistance
             ),
             onAdd: {
                 isShowingAdd = true

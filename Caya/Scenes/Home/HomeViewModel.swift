@@ -10,20 +10,14 @@ extension HomeScene {
 
 class HomeViewModel: ObservableObject {
     @Published var history: [HistoryEntry] = []
-    
-    private let provider: HistoryProviding
-    
+        
     var savings: Double {
         history.map(\.savings).reduce(0, +)
     }
     
     init(
-        provider: HistoryProviding
+        provider: PersistanceManaging
     ) {
-        self.provider = provider
-    }
-    
-    func fetchHistory() async {
-        history = await provider.getHistory()
+        history = provider.getEntries()
     }
 }
