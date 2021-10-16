@@ -37,7 +37,7 @@ struct MoneyInputTextField: View {
     }
 }
 
-struct TitledMoneyLabel_Previews: PreviewProvider {
+struct MoneyInputTextField_Previews: PreviewProvider {
     static var previews: some View {
         MoneyInputTextField(
             title: "Test",
