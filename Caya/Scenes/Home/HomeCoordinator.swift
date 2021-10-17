@@ -9,7 +9,7 @@ struct HomeCoordinator: View {
     @State private var isShowingAdd = false
 
     var body: some View {
-        HomeScene(
+        HomeView(
             viewModel: .init(
                 provider: dependencies.persistance
             ),

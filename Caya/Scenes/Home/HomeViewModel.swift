@@ -4,15 +4,11 @@
 
 import Combine
 
-extension HomeScene {
-    typealias ViewModel = HomeViewModel
-}
-
 class HomeViewModel: ObservableObject {
-    @Published var history: [Entry]
+    @Published var sections: [HomeSection]
         
     var savings: Double {
-        history.map(\.savings).reduce(0, +)
+        sections.flatMap(\.entries).map(\.savings).reduce(0, +)
     }
     
     private let provider: EntryProviding
@@ -22,7 +18,8 @@ class HomeViewModel: ObservableObject {
         provider: EntryProviding
     ) {
         self.provider = provider
-        self.history = provider.getEntries()
+        self.sections = [provider.getEntries()].flatMap(\.groupedByYear)
+        
         setupBindings()
     }
 }
@@ -31,6 +28,16 @@ private extension HomeViewModel {
     func setupBindings() {
         provider
             .getEntriesUpdates()
-            .assign(to: &$history)
+            .map(\.groupedByYear)
+            .assign(to: &$sections)
+    }
+}
+
+private extension Collection where Element == Entry {
+    var groupedByYear: [HomeSection] {
+        let groupedByYear = Dictionary(grouping: self, by: { $0.date.year })
+        return groupedByYear.keys
+            .map { HomeSection(year: $0, entries: groupedByYear[$0]?.sorted(by: { $0.date.month > $1.date.month }) ?? []) }
+            .sorted(by: { $0.title > $1.title })
     }
 }

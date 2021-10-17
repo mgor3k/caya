@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Year {
+struct Year: Hashable {
     let value: Int
     
     init?(_ value: Int) {

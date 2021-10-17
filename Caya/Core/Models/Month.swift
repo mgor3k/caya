@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Month {
+struct Month: Hashable {
     let value: Int
     
     init?(_ value: Int) {
