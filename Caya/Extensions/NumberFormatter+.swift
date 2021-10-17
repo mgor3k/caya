@@ -5,14 +5,14 @@
 import Foundation
 
 extension NumberFormatter {
-    static let currency: NumberFormatter = {
+    static var currency: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.currencyCode = "PLN"
         formatter.numberStyle = .currency
         return formatter
     }()
     
-    static func currency(from value: Double) -> String {
-        currency.string(from: NSNumber(value: value)) ?? ""
+    static func currency(from value: Double, code: String) -> String {
+        currency.currencyCode = code
+        return currency.string(from: NSNumber(value: value)) ?? ""
     }
 }

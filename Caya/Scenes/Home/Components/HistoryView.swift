@@ -7,9 +7,11 @@ import Foundation
 
 struct HistoryView: View {
     let entry: Entry
+    let currencyCode: String
     
-    init(_ entry: Entry) {
+    init(_ entry: Entry, currencyCode: String) {
         self.entry = entry
+        self.currencyCode = currencyCode
     }
     
     var body: some View {
@@ -27,7 +29,7 @@ struct HistoryView: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 6) {
-                Text(NumberFormatter.currency(from: entry.savings))
+                Text(NumberFormatter.currency(from: entry.savings, code: currencyCode))
                     .font(.headline)
                 
                 // TODO: Compute
@@ -50,7 +52,8 @@ struct HistoryView_Previews: PreviewProvider {
                 income: 10_000,
                 expenses: 4_000,
                 taxes: []
-            )
+            ),
+            currencyCode: "PLN"
         )
             .padding()
             .background(Color.black)

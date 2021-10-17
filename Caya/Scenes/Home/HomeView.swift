@@ -17,6 +17,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 32) {
                 SavingsSectionView(
                     savings: viewModel.savings,
+                    currencyCode: viewModel.currencyCode,
                     onAdd: onAdd
                 )
                 
@@ -43,7 +44,7 @@ private extension HomeView {
                     ForEach(viewModel.sections) { section in
                         Section {
                             ForEach(section.entries) { entry in
-                                HistoryView(entry)
+                                HistoryView(entry, currencyCode: viewModel.currencyCode)
                                     .transition(.scale)
                                     .padding(
                                         .bottom,
@@ -70,7 +71,8 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(
             viewModel: .init(
-                provider: MockPersistanceManager()
+                provider: MockPersistanceManager(),
+                preference: MockPreferences()
             ),
             onAdd: {}
         )

@@ -6,11 +6,12 @@ import SwiftUI
 
 struct SavingsSectionView: View {
     let savings: Double
+    let currencyCode: String
     let onAdd: () -> Void
     
     var body: some View {
         HStack {
-            Text(NumberFormatter.currency(from: savings))
+            Text(NumberFormatter.currency(from: savings, code: currencyCode))
                 .font(.title)
                 .bold()
             
@@ -34,6 +35,7 @@ struct SavingsSectionView_Previews: PreviewProvider {
     static var previews: some View {
         SavingsSectionView(
             savings: 500,
+            currencyCode: "PLN",
             onAdd: {}
         )
             .previewLayout(.sizeThatFits)
