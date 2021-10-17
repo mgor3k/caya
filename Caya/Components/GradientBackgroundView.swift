@@ -42,10 +42,11 @@ extension GradientBackgroundView {
     enum Position {
         case top
         case leading
+        case bottom
         
         var startPoint: UnitPoint {
             switch self {
-            case .top:
+            case .top, .bottom:
                 return .leading
             case .leading:
                 return .top
@@ -54,19 +55,23 @@ extension GradientBackgroundView {
         
         var endPoint: UnitPoint {
             switch self {
-            case .top:
+            case .top, .bottom:
                 return .trailing
             case .leading:
                 return .bottom
             }
         }
         
+        // TODO: This needs to be dynamic
+        // To look good for all devices
         var offset: CGSize {
             switch self {
             case .top:
                 return .init(width: 0, height: -220)
             case .leading:
                 return .init(width: -220, height: 0)
+            case .bottom:
+                return .init(width: 0, height: 700)
             }
         }
     }
@@ -74,6 +79,6 @@ extension GradientBackgroundView {
 
 struct GradientBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        GradientBackgroundView(position: .leading)
+        GradientBackgroundView(position: .bottom)
     }
 }

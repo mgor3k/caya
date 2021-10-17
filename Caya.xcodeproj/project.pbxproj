@@ -46,6 +46,8 @@
 		B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B09E271B95A10018EC15 /* EditEntryView.swift */; };
 		B9D0B0A1271B9A190018EC15 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A0271B9A190018EC15 /* Padding.swift */; };
 		B9D0B0A5271C3F5C0018EC15 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A4271C3F5C0018EC15 /* HomeSection.swift */; };
+		B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */; };
+		B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A9271C4A0B0018EC15 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		B9D0B09E271B95A10018EC15 /* EditEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryView.swift; sourceTree = "<group>"; };
 		B9D0B0A0271B9A190018EC15 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		B9D0B0A4271C3F5C0018EC15 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B9D0B0A9271C4A0B0018EC15 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78BA27122AC4003C97EC /* CayaApp.swift */,
+				B9D0B0A9271C4A0B0018EC15 /* AppState.swift */,
 				B97F78C827122B3C003C97EC /* Core */,
 				B97F78CC27122B57003C97EC /* Scenes */,
 				B9ADAACF2713779D009762C7 /* Components */,
@@ -188,6 +193,7 @@
 		B97F78CC27122B57003C97EC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0B0A6271C45710018EC15 /* Onboarding */,
 				B97F78DE27123619003C97EC /* Home */,
 				B97F792127124F90003C97EC /* New Entry */,
 				B9D0B09B271B95780018EC15 /* Edit Entry */,
@@ -359,6 +365,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		B9D0B0A6271C45710018EC15 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +476,7 @@
 				B97F78CB27122B51003C97EC /* Entry.swift in Sources */,
 				B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */,
 				B9D0B0A5271C3F5C0018EC15 /* HomeSection.swift in Sources */,
+				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
@@ -472,6 +487,7 @@
 				B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */,
 				B97F790B271241B3003C97EC /* Color.swift in Sources */,
 				B9ADAAE127138579009762C7 /* GradientBackgroundView.swift in Sources */,
+				B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */,
 				B97F790D27124630003C97EC /* SavingsSectionView.swift in Sources */,
 				B97F78FC27123A44003C97EC /* NumberFormatter+.swift in Sources */,
 				B97F78D027122B63003C97EC /* HomeView.swift in Sources */,

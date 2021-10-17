@@ -6,9 +6,16 @@ import SwiftUI
 
 @main
 struct CayaApp: App {
+    @StateObject var state = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            HomeCoordinator()
+            switch state.route {
+            case .home:
+                HomeCoordinator()
+            case .onboarding:
+                OnboardingView()
+            }
         }
     }
 }
