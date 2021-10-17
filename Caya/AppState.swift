@@ -5,7 +5,7 @@
 import Foundation
 
 class AppState: ObservableObject {
-    @Published var route: Route = .onboarding
+    @Published private(set) var route: Route = .onboarding
     
     init(preferences: Preferences) {
         if preferences.getCurrency() == nil {
@@ -13,6 +13,10 @@ class AppState: ObservableObject {
         } else {
             route = .home
         }
+    }
+    
+    func showHome() {
+        route = .home
     }
 }
 

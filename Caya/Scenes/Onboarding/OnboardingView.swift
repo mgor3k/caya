@@ -8,6 +8,8 @@ struct OnboardingView: View {
     @StateObject var viewModel: OnboardingViewModel
     @State var text = ""
     
+    let onCompleted: () -> Void
+    
     var body: some View {
         ZStack {
             GradientBackgroundView(
@@ -87,13 +89,15 @@ private extension OnboardingView {
     
     func onSaved() {
         viewModel.storeSelection()
+        onCompleted()
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView(
-            viewModel: .init(preferences: MockPreferences())
+            viewModel: .init(preferences: MockPreferences()),
+            onCompleted: {}
         )
             .environment(\.colorScheme, .dark)
     }

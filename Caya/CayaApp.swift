@@ -24,6 +24,7 @@ struct CayaApp: App {
     var body: some Scene {
         WindowGroup {
             content
+                .animation(.default, value: state.route)
                 .environment(\.dependencies, dependencies)
         }
     }
@@ -37,7 +38,8 @@ private extension CayaApp {
             HomeCoordinator()
         case .onboarding:
             OnboardingView(
-                viewModel: .init(preferences: dependencies.preferences)
+                viewModel: .init(preferences: dependencies.preferences),
+                onCompleted: state.showHome
             )
         }
     }

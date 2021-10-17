@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Codable {
     let code: String
     
     init(code: String) {

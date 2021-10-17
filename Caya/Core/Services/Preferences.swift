@@ -19,10 +19,19 @@ class Defaults {
 
 extension Defaults: Preferences {
     func setCurrency(_ currency: Currency) {
-        
+        let encoded = try? JSONEncoder().encode(currency)
+        defaults.set(encoded, forKey: Self.key)
     }
     
     func getCurrency() -> Currency? {
-        .init(code: "PLN")
+        guard let data = defaults.data(forKey: Self.key) else {
+            return nil
+        }
+        
+        return try? JSONDecoder().decode(Currency.self, from: data)
     }
+}
+
+private extension Defaults {
+    static let key = "currency"
 }
