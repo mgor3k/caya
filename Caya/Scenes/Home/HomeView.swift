@@ -31,7 +31,7 @@ struct HomeView: View {
 private extension HomeView {
     var headerSection: some View {
         HStack {
-            Text(NumberFormatter.currency(from: viewModel.savings, code: viewModel.currencyCode))
+            Text(viewModel.currency.formatted(viewModel.savings))
                 .font(.title)
                 .bold()
             
@@ -60,7 +60,7 @@ private extension HomeView {
                     ForEach(viewModel.sections) { section in
                         Section {
                             ForEach(section.entries) { entry in
-                                HomeCell(entry, currencyCode: viewModel.currencyCode)
+                                HomeCell(entry: entry, currency: viewModel.currency)
                                     .transition(.scale)
                                     .padding(
                                         .bottom,

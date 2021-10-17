@@ -4,10 +4,6 @@
 
 import Foundation
 
-struct MockPreferences: Preferences {
-    func getCurrency() -> Currency? {
-        .init(code: "PLN")
-    }
-    
-    func setCurrency(_ currency: Currency) {}
+class MockPreferences: Preferences {
+    var currencyCode: String? = "PLN"
 }

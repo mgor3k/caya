@@ -14,7 +14,6 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func storeSelection() {
-        let currency = Currency(code: selection)
-        preferences.setCurrency(currency)
+        preferences.currencyCode = selection
     }
 }

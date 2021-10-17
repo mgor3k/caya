@@ -7,12 +7,7 @@ import Foundation
 
 struct HomeCell: View {
     let entry: Entry
-    let currencyCode: String
-    
-    init(_ entry: Entry, currencyCode: String) {
-        self.entry = entry
-        self.currencyCode = currencyCode
-    }
+    let currency: Currency
     
     var body: some View {
         HStack(spacing: 16) {
@@ -29,7 +24,7 @@ struct HomeCell: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 6) {
-                Text(NumberFormatter.currency(from: entry.savings, code: currencyCode))
+                Text(currency.formatted(entry.savings))
                     .font(.headline)
                 
                 // TODO: Compute
@@ -44,7 +39,7 @@ struct HomeCell: View {
 struct HomeCell_Previews: PreviewProvider {
     static var previews: some View {
         HomeCell(
-            .init(
+            entry: .init(
                 date: .init(
                     month: .january,
                     year: .init(2009)!
@@ -53,7 +48,7 @@ struct HomeCell_Previews: PreviewProvider {
                 expenses: 4_000,
                 taxes: []
             ),
-            currencyCode: "PLN"
+            currency: .euro
         )
             .padding()
             .background(Color.black)

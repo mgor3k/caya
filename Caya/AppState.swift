@@ -8,7 +8,7 @@ class AppState: ObservableObject {
     @Published private(set) var route: Route = .onboarding
     
     init(preferences: Preferences) {
-        if preferences.getCurrency() == nil {
+        if preferences.currencyCode == nil {
             route = .onboarding
         } else {
             route = .home

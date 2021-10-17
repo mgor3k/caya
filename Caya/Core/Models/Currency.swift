@@ -4,15 +4,21 @@
 
 import Foundation
 
-// TODO: Make this a wrapper, with a formatter, etc
-struct Currency: Codable {
-    let code: String
+struct Currency {
+    private let formatter: NumberFormatter
     
     init(code: String) {
-        self.code = code
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = code
+        self.formatter = formatter
     }
     
     var symbol: String {
-        "$"
+        formatter.currencySymbol
+    }
+    
+    func formatted(_ value: Double) -> String {
+        formatter.string(from: NSNumber(value: value))!
     }
 }
