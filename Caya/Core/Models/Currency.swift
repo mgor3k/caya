@@ -4,11 +4,14 @@
 
 import Foundation
 
-// TODO: Make some validation?
 struct Currency {
-    let value: String
+    let code: String
     
-    init(_ value: String) {
-        self.value = value
+    init(code: String) {
+        self.code = code
+    }
+    
+    var symbol: String {
+        "$"
     }
 }

@@ -5,6 +5,7 @@
 import Foundation
 
 protocol Preferences {
+    func setCurrency(_ currency: Currency)
     func getCurrency() -> Currency?
 }
 
@@ -17,7 +18,11 @@ class Defaults {
 }
 
 extension Defaults: Preferences {
+    func setCurrency(_ currency: Currency) {
+        
+    }
+    
     func getCurrency() -> Currency? {
-        .init("PLN")
+        .init(code: "PLN")
     }
 }

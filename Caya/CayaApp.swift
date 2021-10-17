@@ -36,7 +36,9 @@ private extension CayaApp {
         case .home:
             HomeCoordinator()
         case .onboarding:
-            OnboardingView(viewModel: .init())
+            OnboardingView(
+                viewModel: .init(preferences: dependencies.preferences)
+            )
         }
     }
 }

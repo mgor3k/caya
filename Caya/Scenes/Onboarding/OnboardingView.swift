@@ -6,7 +6,6 @@ import SwiftUI
 
 struct OnboardingView: View {
     @StateObject var viewModel: OnboardingViewModel
-    @State var selection: String = "EUR"
     @State var text = ""
     
     var body: some View {
@@ -63,7 +62,7 @@ private extension OnboardingView {
                 .multilineTextAlignment(.center)
                 .disableAutocorrection(true)
             
-            Picker("Pick your currency", selection: $selection) {
+            Picker("Pick your currency", selection: $viewModel.selection) {
                 ForEach(Locale.isoCurrencyCodes, id: \.self) { code in
                     let string = Locale.current.localizedString(forCurrencyCode: code) ?? ""
                     if text.isEmpty || string.contains(text) {
@@ -74,7 +73,7 @@ private extension OnboardingView {
             }
             .pickerStyle(.wheel)
             
-            Button(action: {}) {
+            Button(action: onSaved) {
                 Text("Done")
                     .padding()
                     .background(Color.background)
@@ -85,11 +84,17 @@ private extension OnboardingView {
         .padding(CGFloat?.defaultPadding)
         .padding(.top, 32)
     }
+    
+    func onSaved() {
+        viewModel.storeSelection()
+    }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(viewModel: .init())
+        OnboardingView(
+            viewModel: .init(preferences: MockPreferences())
+        )
             .environment(\.colorScheme, .dark)
     }
 }

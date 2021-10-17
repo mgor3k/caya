@@ -5,5 +5,16 @@
 import Foundation
 
 class OnboardingViewModel: ObservableObject {
+    @Published var selection: String = "EUR"
     
+    private let preferences: Preferences
+    
+    init(preferences: Preferences) {
+        self.preferences = preferences
+    }
+    
+    func storeSelection() {
+        let currency = Currency(code: selection)
+        preferences.setCurrency(currency)
+    }
 }
