@@ -4,6 +4,7 @@
 
 import Foundation
 
+// TODO: Make this a wrapper, with a formatter, etc
 struct Currency: Codable {
     let code: String
     

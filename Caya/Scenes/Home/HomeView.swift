@@ -15,12 +15,7 @@ struct HomeView: View {
             )
             
             VStack(alignment: .leading, spacing: 32) {
-                SavingsSectionView(
-                    savings: viewModel.savings,
-                    currencyCode: viewModel.currencyCode,
-                    onAdd: onAdd
-                )
-                
+                headerSection
                 historySection
             }
                 .padding(CGFloat?.defaultPadding)
@@ -34,6 +29,27 @@ struct HomeView: View {
 }
 
 private extension HomeView {
+    var headerSection: some View {
+        HStack {
+            Text(NumberFormatter.currency(from: viewModel.savings, code: viewModel.currencyCode))
+                .font(.title)
+                .bold()
+            
+            Spacer()
+            
+            Button(action: onAdd) {
+                Image(systemName: "plus")
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .stroke(Color(uiColor: .label).opacity(0.5), lineWidth: 1)
+                )
+            }
+            .foregroundColor(Color(uiColor: .label))
+        }
+    }
+    
     var historySection: some View {
         VStack(alignment: .leading, spacing: 32) {
             Text("Your **History**")
@@ -44,7 +60,7 @@ private extension HomeView {
                     ForEach(viewModel.sections) { section in
                         Section {
                             ForEach(section.entries) { entry in
-                                HistoryView(entry, currencyCode: viewModel.currencyCode)
+                                HomeCell(entry, currencyCode: viewModel.currencyCode)
                                     .transition(.scale)
                                     .padding(
                                         .bottom,
