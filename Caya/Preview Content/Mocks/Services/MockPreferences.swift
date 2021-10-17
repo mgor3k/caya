@@ -5,7 +5,7 @@
 import Foundation
 
 struct MockPreferences: Preferences {
-    func getCurrency() -> Currency {
+    func getCurrency() -> Currency? {
         .init("PLN")
     }
 }

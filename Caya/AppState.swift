@@ -7,8 +7,12 @@ import Foundation
 class AppState: ObservableObject {
     @Published var route: Route = .onboarding
     
-    init() {
-        // TODO: Check if first open
+    init(preferences: Preferences) {
+        if preferences.getCurrency() == nil {
+            route = .onboarding
+        } else {
+            route = .home
+        }
     }
 }
 

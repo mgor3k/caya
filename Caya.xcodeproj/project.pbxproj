@@ -48,6 +48,7 @@
 		B9D0B0A5271C3F5C0018EC15 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A4271C3F5C0018EC15 /* HomeSection.swift */; };
 		B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */; };
 		B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A9271C4A0B0018EC15 /* AppState.swift */; };
+		B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		B9D0B0A4271C3F5C0018EC15 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B9D0B0A9271C4A0B0018EC15 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */,
+				B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
+				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+.swift in Sources */,
 				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
