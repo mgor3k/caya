@@ -5,6 +5,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State var selection: String = "EUR"
+    @State var text = ""
+    
     var body: some View {
         ZStack {
             GradientBackgroundView(
@@ -19,6 +22,7 @@ struct OnboardingView: View {
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
                 .foregroundColor(.white)
             }
+            .ignoresSafeArea(.keyboard)
         }
     }
 }
@@ -27,7 +31,9 @@ private extension OnboardingView {
     func page1(proxy: GeometryProxy) -> some View {
         VStack(spacing: 24) {
             // TODO: Add image
-            Color.blue
+            Image("Project")
+                .resizable()
+                .scaledToFit()
                 .frame(maxHeight: proxy.size.height / 2)
             
             Text("Get inspired")
@@ -42,12 +48,47 @@ private extension OnboardingView {
     }
     
     var page2: some View {
-        Text("haha")
+        VStack(spacing: 24) {
+            Text("Pick your currency")
+                .font(.title)
+                .tracking(2)
+            
+            Text("Something something")
+                        
+            TextField("Tap to search", text: $text)
+                .padding()
+                .background(Color.background)
+                .cornerRadius(12)
+                .multilineTextAlignment(.center)
+                .disableAutocorrection(true)
+            
+            Picker("Pick your currency", selection: $selection) {
+                ForEach(Locale.isoCurrencyCodes, id: \.self) { code in
+                    let string = Locale.current.localizedString(forCurrencyCode: code) ?? ""
+                    if text.isEmpty || string.contains(text) {
+                        Text(string)
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+            .pickerStyle(.wheel)
+            
+            Button(action: {}) {
+                Text("Done")
+                    .padding()
+                    .background(Color.background)
+            }
+            
+            Spacer()
+        }
+        .padding(CGFloat?.defaultPadding)
+        .padding(.top, 32)
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
+            .environment(\.colorScheme, .dark)
     }
 }
