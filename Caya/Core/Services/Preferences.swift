@@ -4,8 +4,8 @@
 
 import Foundation
 
-protocol Preferences {
-    func getCurrency() -> Currency
+protocol Preferences: AnyObject {
+    var currencyCode: String? { get set }
 }
 
 class Defaults {
@@ -17,7 +17,16 @@ class Defaults {
 }
 
 extension Defaults: Preferences {
-    func getCurrency() -> Currency {
-        .init("PLN")
+    var currencyCode: String? {
+        get {
+            defaults.string(forKey: Self.key)
+        }
+        set {
+            defaults.set(newValue, forKey: Self.key)
+        }
     }
+}
+
+private extension Defaults {
+    static let key = "currency"
 }

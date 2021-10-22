@@ -11,14 +11,18 @@ class HomeViewModel: ObservableObject {
         sections.flatMap(\.entries).map(\.savings).reduce(0, +)
     }
     
+    let currency: Currency
+    
     private let provider: EntryProviding
     private var subscriptions: Set<AnyCancellable> = []
     
     init(
-        provider: EntryProviding
+        provider: EntryProviding,
+        preference: Preferences
     ) {
         self.provider = provider
         self.sections = [provider.getEntries()].flatMap(\.groupedByYear)
+        self.currency = Currency(code: preference.currencyCode!)
         
         setupBindings()
     }

@@ -84,7 +84,7 @@ private extension NewEntryView {
             Button(action: { focus = id }) {
                 MoneyInputTextField(
                     title: title,
-                    currency: viewModel.currency.value,
+                    currencySymbol: viewModel.currency.symbol,
                     value: value
                 )
                     .focused($focus, equals: id)

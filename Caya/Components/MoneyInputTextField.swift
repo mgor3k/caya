@@ -6,7 +6,7 @@ import SwiftUI
 
 struct MoneyInputTextField: View {
     let title: String
-    let currency: String
+    let currencySymbol: String
     @Binding var value: Double?
     
     var body: some View {
@@ -16,7 +16,7 @@ struct MoneyInputTextField: View {
                 .foregroundColor(.gray)
             
             HStack {
-                Text(currency)
+                Text(currencySymbol)
                     .font(.title3)
                 
                 Spacer()
@@ -41,7 +41,7 @@ struct MoneyInputTextField_Previews: PreviewProvider {
     static var previews: some View {
         MoneyInputTextField(
             title: "Test",
-            currency: "$",
+            currencySymbol: "$",
             value: .constant(3_000)
         )
             .padding()

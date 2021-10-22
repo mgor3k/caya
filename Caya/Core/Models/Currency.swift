@@ -4,11 +4,21 @@
 
 import Foundation
 
-// TODO: Make some validation?
 struct Currency {
-    let value: String
+    private let formatter: NumberFormatter
     
-    init(_ value: String) {
-        self.value = value
+    init(code: String) {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = code
+        self.formatter = formatter
+    }
+    
+    var symbol: String {
+        formatter.currencySymbol
+    }
+    
+    func formatted(_ value: Double) -> String {
+        formatter.string(from: NSNumber(value: value))!
     }
 }

@@ -15,7 +15,7 @@ class NewEntryViewModel: ObservableObject {
     private let persistance: PersistanceManaging
     
     init(preferences: Preferences, persistance: PersistanceManaging) {
-        self.currency = preferences.getCurrency()
+        self.currency = Currency(code: preferences.currencyCode!)
         self.persistance = persistance
         
         // TODO: Make this better 

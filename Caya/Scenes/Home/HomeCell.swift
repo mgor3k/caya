@@ -5,12 +5,9 @@
 import SwiftUI
 import Foundation
 
-struct HistoryView: View {
+struct HomeCell: View {
     let entry: Entry
-    
-    init(_ entry: Entry) {
-        self.entry = entry
-    }
+    let currency: Currency
     
     var body: some View {
         HStack(spacing: 16) {
@@ -27,22 +24,22 @@ struct HistoryView: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 6) {
-                Text(NumberFormatter.currency(from: entry.savings))
+                Text(currency.formatted(entry.savings))
                     .font(.headline)
                 
                 // TODO: Compute
-                Text("-20%")
-                    .font(.caption)
-                    .foregroundColor(.red)
+//                Text("-20%")
+//                    .font(.caption)
+//                    .foregroundColor(.red)
             }
         }
     }
 }
 
-struct HistoryView_Previews: PreviewProvider {
+struct HomeCell_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(
-            .init(
+        HomeCell(
+            entry: .init(
                 date: .init(
                     month: .january,
                     year: .init(2009)!
@@ -50,7 +47,8 @@ struct HistoryView_Previews: PreviewProvider {
                 income: 10_000,
                 expenses: 4_000,
                 taxes: []
-            )
+            ),
+            currency: .euro
         )
             .padding()
             .background(Color.black)
