@@ -28,9 +28,9 @@ struct HomeCell: View {
                     .font(.headline)
                 
                 // TODO: Compute
-                Text("-20%")
-                    .font(.caption)
-                    .foregroundColor(.red)
+//                Text("-20%")
+//                    .font(.caption)
+//                    .foregroundColor(.red)
             }
         }
     }
