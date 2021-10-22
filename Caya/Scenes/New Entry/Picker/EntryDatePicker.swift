@@ -38,20 +38,25 @@ struct EntryDatePicker: View {
                 .padding(.horizontal, 24)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 12) {
-                    ForEach(entries, id: \.self) { date in
-                        Button(action: { selectedDate = date }) {
-                            EntryDateView(
-                                date,
-                                isSelected: selectedDate == date
-                            )
+                ScrollViewReader { reader in
+                    LazyHStack(spacing: 12) {
+                        ForEach(entries, id: \.self) { date in
+                            Button(action: { selectedDate = date }) {
+                                EntryDateView(
+                                    date,
+                                    isSelected: selectedDate == date
+                                )
+                            }
+                            .buttonStyle(CustomButtonStyle())
+                            .disabled(disabledEntries.contains(date))
+                            .opacity(disabledEntries.contains(date) ? 0.1 : 1)
                         }
-                        .buttonStyle(CustomButtonStyle())
-                        .disabled(disabledEntries.contains(date))
-                        .opacity(disabledEntries.contains(date) ? 0.1 : 1)
+                        .onAppear {
+                            reader.scrollTo(selectedDate, anchor: .center)
+                        }
                     }
+                    .padding(.horizontal, 24)
                 }
-                .padding(.horizontal, 24)
             }
             .frame(height: 150)
         }

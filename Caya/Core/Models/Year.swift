@@ -20,4 +20,8 @@ extension Year: Comparable {
     static func < (lhs: Year, rhs: Year) -> Bool {
         lhs.value < rhs.value
     }
+    
+    static func - (lhs: Year, rhs: Int) -> Year? {
+        Year(lhs.value - rhs)
+    }
 }

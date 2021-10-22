@@ -28,4 +28,8 @@ extension Month: Comparable {
     static func < (lhs: Month, rhs: Month) -> Bool {
         lhs.value < rhs.value
     }
+    
+    static func - (lhs: Month, rhs: Int) -> Month? {
+        Month(lhs.value - rhs)
+    }
 }
