@@ -3,6 +3,7 @@
 //
 
 import SwiftUI
+import FloatingBar
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
@@ -82,6 +83,8 @@ private extension HomeView {
         )
     }
 }
+
+extension HomeMenuItem: FloatingBarItem {}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -41,5 +41,6 @@ struct FloatingBarButton_Previews: PreviewProvider {
             isSelected: true,
             onTapped: {}
         )
+            .background(Color.black)
     }
 }

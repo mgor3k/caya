@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B91D367C27248847003EC604 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91D367B27248847003EC604 /* ModalView.swift */; };
-		B944145827249DAF00EE0A69 /* FloatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145727249DAF00EE0A69 /* FloatingBar.swift */; };
-		B944145A27249DC300EE0A69 /* FloatingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145927249DC300EE0A69 /* FloatingBarButton.swift */; };
-		B944145C2724A30100EE0A69 /* FloatingBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145B2724A30100EE0A69 /* FloatingBarItem.swift */; };
 		B944145E2724A45600EE0A69 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145D2724A45600EE0A69 /* HomeMenuItem.swift */; };
+		B94414622724A62600EE0A69 /* FloatingBar in Frameworks */ = {isa = PBXBuildFile; productRef = B94414612724A62600EE0A69 /* FloatingBar */; };
 		B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78BA27122AC4003C97EC /* CayaApp.swift */; };
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
@@ -67,10 +65,8 @@
 
 /* Begin PBXFileReference section */
 		B91D367B27248847003EC604 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
-		B944145727249DAF00EE0A69 /* FloatingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBar.swift; sourceTree = "<group>"; };
-		B944145927249DC300EE0A69 /* FloatingBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBarButton.swift; sourceTree = "<group>"; };
-		B944145B2724A30100EE0A69 /* FloatingBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBarItem.swift; sourceTree = "<group>"; };
 		B944145D2724A45600EE0A69 /* HomeMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
+		B944145F2724A5D100EE0A69 /* FloatingBar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FloatingBar; sourceTree = "<group>"; };
 		B97F78B727122AC4003C97EC /* Caya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F78BA27122AC4003C97EC /* CayaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayaApp.swift; sourceTree = "<group>"; };
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94414622724A62600EE0A69 /* FloatingBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,22 +131,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B944145627249DA100EE0A69 /* Floating Bar */ = {
+		B94414602724A62600EE0A69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B944145727249DAF00EE0A69 /* FloatingBar.swift */,
-				B944145B2724A30100EE0A69 /* FloatingBarItem.swift */,
-				B944145927249DC300EE0A69 /* FloatingBarButton.swift */,
 			);
-			path = "Floating Bar";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B97F78AE27122AC4003C97EC = {
 			isa = PBXGroup;
 			children = (
+				B944145F2724A5D100EE0A69 /* FloatingBar */,
 				B97F78B927122AC4003C97EC /* Caya */,
 				B97F79132712475A003C97EC /* CayaTests */,
 				B97F78B827122AC4003C97EC /* Products */,
+				B94414602724A62600EE0A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,7 +309,6 @@
 				B9D0B0A2271B9B480018EC15 /* Constants */,
 				B9ADAADA271384A9009762C7 /* Styles */,
 				B9ADAAE027138579009762C7 /* GradientBackgroundView.swift */,
-				B944145627249DA100EE0A69 /* Floating Bar */,
 				B91D367B27248847003EC604 /* ModalView.swift */,
 				B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */,
 			);
@@ -396,6 +391,9 @@
 			dependencies = (
 			);
 			name = Caya;
+			packageProductDependencies = (
+				B94414612724A62600EE0A69 /* FloatingBar */,
+			);
 			productName = Caya;
 			productReference = B97F78B727122AC4003C97EC /* Caya.app */;
 			productType = "com.apple.product-type.application";
@@ -488,9 +486,7 @@
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
 				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
-				B944145C2724A30100EE0A69 /* FloatingBarItem.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */,
-				B944145827249DAF00EE0A69 /* FloatingBar.swift in Sources */,
 				B944145E2724A45600EE0A69 /* HomeMenuItem.swift in Sources */,
 				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
 				B91D367C27248847003EC604 /* ModalView.swift in Sources */,
@@ -498,7 +494,6 @@
 				B9D0B06B271B68330018EC15 /* Currency.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,
 				B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */,
-				B944145A27249DC300EE0A69 /* FloatingBarButton.swift in Sources */,
 				B97F790B271241B3003C97EC /* Color.swift in Sources */,
 				B9ADAAE127138579009762C7 /* GradientBackgroundView.swift in Sources */,
 				B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */,
@@ -800,6 +795,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B94414612724A62600EE0A69 /* FloatingBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FloatingBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */ = {

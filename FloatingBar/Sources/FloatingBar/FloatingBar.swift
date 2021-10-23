@@ -4,14 +4,18 @@
 
 import SwiftUI
 
-struct FloatingBar<Item: FloatingBarItem>: View {
+public struct FloatingBar<Item: FloatingBarItem>: View {
     @Namespace private var namespace
     
     let items: [Item]
-    
     @Binding var selectedItem: Item
     
-    var body: some View {
+    public init(items: [Item], selectedItem: Binding<Item>) {
+        self.items = items
+        self._selectedItem = selectedItem
+    }
+    
+    public var body: some View {
         HStack(spacing: 32) {
             ForEach(items) { item in
                 FloatingBarButton(
@@ -39,6 +43,7 @@ struct FloatingBar_Previews: PreviewProvider {
             .init(), .init()
         ]
         return FloatingBar(items: items, selectedItem: .constant(items.first!))
+            .environment(\.colorScheme, .dark)
             .padding()
             .background(Color.white)
     }

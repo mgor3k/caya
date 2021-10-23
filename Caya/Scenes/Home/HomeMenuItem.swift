@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-enum HomeMenuItem: String, FloatingBarItem, CaseIterable {
+enum HomeMenuItem: String, CaseIterable {
     case home
     case profile
     
