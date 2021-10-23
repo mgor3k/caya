@@ -33,6 +33,7 @@ struct HomeCell: View {
 //                    .foregroundColor(.red)
             }
         }
+        .padding(.horizontal, Padding.screenEdge)
     }
 }
 

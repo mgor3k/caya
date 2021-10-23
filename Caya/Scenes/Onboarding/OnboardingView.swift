@@ -46,7 +46,7 @@ private extension OnboardingView {
             
             Spacer()
         }
-        .padding(CGFloat?.defaultPadding)
+        .padding(Padding.screenEdge)
     }
     
     var page2: some View {
@@ -83,7 +83,7 @@ private extension OnboardingView {
             
             Spacer()
         }
-        .padding(CGFloat?.defaultPadding)
+        .padding(Padding.screenEdge)
         .padding(.top, 32)
     }
     

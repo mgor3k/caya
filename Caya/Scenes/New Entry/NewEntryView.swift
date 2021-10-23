@@ -40,7 +40,7 @@ struct NewEntryView: View {
                         .foregroundColor(.white)
                     }
                 }
-                .padding(.horizontal, .defaultPadding)
+                .padding(.horizontal, Padding.screenEdge)
                 
                 if !isFocused {
                     EntryDatePicker(
@@ -53,7 +53,7 @@ struct NewEntryView: View {
                     field(title: "Income", id: 0, value: $viewModel.income)
                     field(title: "Expenses", id: 1, value: $viewModel.expenses)
                 }
-                .padding(.horizontal, .defaultPadding)
+                .padding(.horizontal, Padding.screenEdge)
                 
                 Spacer()
                 VStack {

@@ -16,9 +16,10 @@ struct HomeView: View {
             
             VStack(alignment: .leading, spacing: 32) {
                 headerSection
+                    .padding(.horizontal, Padding.screenEdge)
                 historySection
             }
-                .padding(CGFloat?.defaultPadding)
+                .padding(.top, Padding.screenEdge)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,
@@ -53,6 +54,7 @@ private extension HomeView {
     var historySection: some View {
         VStack(alignment: .leading, spacing: 32) {
             Text("Your **History**")
+                .padding(.horizontal, Padding.screenEdge)
                 .font(.title)
             
             ScrollView {
@@ -71,6 +73,7 @@ private extension HomeView {
                             Text("\(section.title)")
                                 .font(.title3)
                                 .tracking(6)
+                                .padding(.horizontal, Padding.screenEdge)
                         }
                     }
                 }
