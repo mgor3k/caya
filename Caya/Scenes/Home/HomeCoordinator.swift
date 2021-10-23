@@ -9,24 +9,27 @@ struct HomeCoordinator: View {
     @State private var isShowingAdd = false
 
     var body: some View {
-        HomeView(
-            viewModel: .init(
-                provider: dependencies.persistance,
-                preference: dependencies.preferences
-            ),
-            onAdd: {
-                isShowingAdd = true
-            }
-        )
-            .sheet(isPresented: $isShowingAdd) {
-                ModalView {
-                    NewEntryView(
-                        viewModel: .init(
-                            preferences: dependencies.preferences,
-                            persistance: dependencies.persistance
-                        )
-                    )
+        NavigationView {
+            HomeView(
+                viewModel: .init(
+                    provider: dependencies.persistance,
+                    preference: dependencies.preferences
+                ),
+                onAdd: {
+                    isShowingAdd = true
                 }
-            }
+            )
+                .sheet(isPresented: $isShowingAdd) {
+                    ModalView {
+                        NewEntryView(
+                            viewModel: .init(
+                                preferences: dependencies.preferences,
+                                persistance: dependencies.persistance
+                            )
+                        )
+                    }
+                }
+        }
+        .navigationViewStyle(.stack)
     }
 }

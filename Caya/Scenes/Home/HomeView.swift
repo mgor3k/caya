@@ -14,75 +14,61 @@ struct HomeView: View {
                 position: .leading
             )
             
-            VStack(alignment: .leading, spacing: 32) {
-                headerSection
-                    .padding(.horizontal, Padding.screenEdge)
-                historySection
+            list
+        }
+        .navigationTitle(viewModel.currency.formatted(viewModel.savings))
+        .toolbar {
+            ToolbarItem {
+                Button(action: onAdd) {
+                    Image(systemName: "plus.app.fill")
+                }
+                .foregroundColor(Color(uiColor: .label))
             }
-                .padding(.top, Padding.screenEdge)
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
         }
     }
 }
 
 private extension HomeView {
-    var headerSection: some View {
-        HStack {
-            Text(viewModel.currency.formatted(viewModel.savings))
-                .font(.title)
-                .bold()
-            
-            Spacer()
-            
-            Button(action: onAdd) {
-                Image(systemName: "plus")
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .stroke(Color(uiColor: .label).opacity(0.5), lineWidth: 1)
-                )
+    var list: some View {
+        List {
+            Section {
+                Text("Your **History**")
+                    .padding(.horizontal, Padding.screenEdge)
+                    .font(.title)
             }
-            .foregroundColor(Color(uiColor: .label))
-        }
-    }
-    
-    var historySection: some View {
-        VStack(alignment: .leading, spacing: 32) {
-            Text("Your **History**")
-                .padding(.horizontal, Padding.screenEdge)
-                .font(.title)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
             
-            ScrollView {
-                LazyVStack(alignment: .leading, pinnedViews: .sectionHeaders) {
-                    ForEach(viewModel.sections) { section in
-                        Section {
-                            ForEach(section.entries) { entry in
-                                HomeCell(entry: entry, currency: viewModel.currency)
-                                    .transition(.scale)
-                                    .padding(
-                                        .bottom,
-                                        section.isLast(entry) ? 16 : 0
-                                    )
-                            }
-                        } header: {
-                            Text("\(section.title)")
-                                .font(.title3)
-                                .tracking(6)
-                                .padding(.horizontal, Padding.screenEdge)
-                        }
+            ForEach(viewModel.sections) { section in
+                Section {
+                    ForEach(section.entries) { entry in
+                        HomeCell(entry: entry, currency: viewModel.currency)
+                            .transition(.scale)
+                            .padding(
+                                .bottom,
+                                section.isLast(entry) ? 16 : 0
+                            )
                     }
+                    .onDelete { row in
+                        viewModel.deleteEntry(section.entries[row.first!])
+                    }
+                } header: {
+                    Text("\(section.title)")
+                        .font(.title3)
+                        .tracking(6)
                 }
-                .animation(
-                    .spring().delay(0.2),
-                    value: viewModel.sections
-                )
             }
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
         }
+        .listStyle(.plain)
+        .animation(
+            .spring().delay(0.2),
+            value: viewModel.sections
+        )
     }
 }
 

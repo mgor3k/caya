@@ -80,6 +80,24 @@ extension CoreDataStorage: EntryProviding, EntryStoring {
         }
     }
     
+    func removeEntries(_ entries: [Entry]) {
+        let request = CDEntry.fetchRequest()
+        // TODO: Handle errors
+        
+        let idsToRemove = entries.map(\.id)
+        
+        do {
+            let fetched = try container.viewContext.fetch(request)
+            let toDelete = fetched.filter { idsToRemove.contains($0.id!) }
+            for object in toDelete {
+                container.viewContext.delete(object)
+            }
+            try container.viewContext.save()
+        } catch {
+            
+        }
+    }
+    
     func listenForEntryChanges() -> AnyPublisher<Void, Never> {
         NotificationCenter
             .default

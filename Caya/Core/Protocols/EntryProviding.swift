@@ -7,4 +7,5 @@ import Combine
 protocol EntryProviding {
     func getEntries() -> [Entry]
     func getEntriesUpdates() -> AnyPublisher<[Entry], Never>
+    func removeEntries(_ entries: [Entry])
 }

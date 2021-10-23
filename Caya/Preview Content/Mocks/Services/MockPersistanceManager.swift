@@ -30,4 +30,8 @@ struct MockPersistanceManager: PersistanceManaging {
     func storeEntry(_ entry: Entry) {
         
     }
+    
+    func removeEntries(_ entries: [Entry]) {
+        
+    }
 }

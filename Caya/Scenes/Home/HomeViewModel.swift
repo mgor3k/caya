@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var sections: [HomeSection]
@@ -13,6 +14,7 @@ class HomeViewModel: ObservableObject {
     
     let currency: Currency
     
+    // TODO: Change naming
     private let provider: EntryProviding
     private var subscriptions: Set<AnyCancellable> = []
     
@@ -25,6 +27,10 @@ class HomeViewModel: ObservableObject {
         self.currency = Currency(code: preference.currencyCode!)
         
         setupBindings()
+    }
+    
+    func deleteEntry(_ entry: Entry) {
+        provider.removeEntries([entry])
     }
 }
 
