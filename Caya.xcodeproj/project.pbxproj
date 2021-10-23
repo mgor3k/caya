@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91D367C27248847003EC604 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91D367B27248847003EC604 /* ModalView.swift */; };
 		B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78BA27122AC4003C97EC /* CayaApp.swift */; };
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B91D367B27248847003EC604 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		B97F78B727122AC4003C97EC /* Caya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F78BA27122AC4003C97EC /* CayaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayaApp.swift; sourceTree = "<group>"; };
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				B9D0B0A2271B9B480018EC15 /* Constants */,
 				B9ADAADA271384A9009762C7 /* Styles */,
 				B9ADAAE027138579009762C7 /* GradientBackgroundView.swift */,
+				B91D367B27248847003EC604 /* ModalView.swift */,
 				B9D0B0652714B1050018EC15 /* MoneyInputTextField.swift */,
 			);
 			path = Components;
@@ -467,6 +470,7 @@
 				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */,
 				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
+				B91D367C27248847003EC604 /* ModalView.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
 				B9D0B06B271B68330018EC15 /* Currency.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,

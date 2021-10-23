@@ -71,7 +71,7 @@ struct NewEntryView: View {
                 }
                 .animation(.default, value: focus)
             }
-            .padding(.top, 48)
+            .padding(.top, 32)
             .animation(.default, value: focus)
         }
     }

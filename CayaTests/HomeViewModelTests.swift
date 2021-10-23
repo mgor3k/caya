@@ -9,7 +9,8 @@ import XCTest
 class HomeViewModelTests: XCTestCase {
     func test_calculateTotalSavings() async throws {
         let sut = HomeViewModel(
-            provider: Provider()
+            provider: Provider(),
+            preference: MockPreferences()
         )
         
         XCTAssertEqual(sut.savings, -2_500)
