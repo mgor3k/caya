@@ -10,6 +10,8 @@
 		B91D367C27248847003EC604 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91D367B27248847003EC604 /* ModalView.swift */; };
 		B944145827249DAF00EE0A69 /* FloatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145727249DAF00EE0A69 /* FloatingBar.swift */; };
 		B944145A27249DC300EE0A69 /* FloatingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145927249DC300EE0A69 /* FloatingBarButton.swift */; };
+		B944145C2724A30100EE0A69 /* FloatingBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145B2724A30100EE0A69 /* FloatingBarItem.swift */; };
+		B944145E2724A45600EE0A69 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145D2724A45600EE0A69 /* HomeMenuItem.swift */; };
 		B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78BA27122AC4003C97EC /* CayaApp.swift */; };
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		B91D367B27248847003EC604 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		B944145727249DAF00EE0A69 /* FloatingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBar.swift; sourceTree = "<group>"; };
 		B944145927249DC300EE0A69 /* FloatingBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBarButton.swift; sourceTree = "<group>"; };
+		B944145B2724A30100EE0A69 /* FloatingBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBarItem.swift; sourceTree = "<group>"; };
+		B944145D2724A45600EE0A69 /* HomeMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
 		B97F78B727122AC4003C97EC /* Caya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F78BA27122AC4003C97EC /* CayaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayaApp.swift; sourceTree = "<group>"; };
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B944145727249DAF00EE0A69 /* FloatingBar.swift */,
+				B944145B2724A30100EE0A69 /* FloatingBarItem.swift */,
 				B944145927249DC300EE0A69 /* FloatingBarButton.swift */,
 			);
 			path = "Floating Bar";
@@ -246,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				B97F78F727123A2B003C97EC /* HomeCoordinator.swift */,
+				B944145D2724A45600EE0A69 /* HomeMenuItem.swift */,
 				B97F78CE27122B63003C97EC /* HomeCell.swift */,
 				B97F78CD27122B63003C97EC /* HomeView.swift */,
 				B9D0B0A4271C3F5C0018EC15 /* HomeSection.swift */,
@@ -482,8 +488,10 @@
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
 				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
+				B944145C2724A30100EE0A69 /* FloatingBarItem.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */,
 				B944145827249DAF00EE0A69 /* FloatingBar.swift in Sources */,
+				B944145E2724A45600EE0A69 /* HomeMenuItem.swift in Sources */,
 				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
 				B91D367C27248847003EC604 /* ModalView.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,

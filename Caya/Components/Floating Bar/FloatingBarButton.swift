@@ -7,13 +7,13 @@ import SwiftUI
 struct FloatingBarButton: View {
     let namespace: Namespace.ID
     
-    let systemName: String
+    let image: Image
     let isSelected: Bool
     let onTapped: () -> Void
     
     var body: some View {
         Button(action: onTapped) {
-            Image(systemName: systemName)
+            image
                 .foregroundColor(.white)
                 .padding(12)
                 .padding(.horizontal, 8)
@@ -37,7 +37,7 @@ struct FloatingBarButton_Previews: PreviewProvider {
     static var previews: some View {
         FloatingBarButton(
             namespace: namespace,
-            systemName: "person.fill",
+            image: Image(systemName: "person.fill"),
             isSelected: true,
             onTapped: {}
         )

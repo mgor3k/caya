@@ -7,6 +7,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var sections: [HomeSection]
+    @Published var selectedMenuItem: HomeMenuItem = .home
         
     var savings: Double {
         sections.flatMap(\.entries).map(\.savings).reduce(0, +)

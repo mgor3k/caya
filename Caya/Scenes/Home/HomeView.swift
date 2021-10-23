@@ -21,7 +21,10 @@ struct HomeView: View {
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .ignoresSafeArea()
             
-            FloatingBar()
+            FloatingBar(
+                items: HomeMenuItem.allCases,
+                selectedItem: $viewModel.selectedMenuItem
+            )
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .navigationTitle(viewModel.currency.formatted(viewModel.savings))
