@@ -19,6 +19,10 @@ class HomeViewModelTests: XCTestCase {
 
 private extension HomeViewModelTests {
     struct Provider: EntryProviding {
+        func removeEntries(_ entries: [Entry]) {
+            
+        }
+        
         func getEntries() -> [Entry] {
             [
                 .init(date: .init(month: .init(1)!, year: .init(2009)!), income: 5_000, expenses: 300, taxes: [("1", 100)]),

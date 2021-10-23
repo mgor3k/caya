@@ -15,6 +15,14 @@ struct HomeView: View {
             )
             
             list
+            
+            LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
+                .frame(height: 150)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+            
+            FloatingBar()
+                .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .navigationTitle(viewModel.currency.formatted(viewModel.savings))
         .toolbar {
