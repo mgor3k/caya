@@ -27,7 +27,10 @@ struct HomeCoordinator: View {
                             onProfileRoute: showProfileDetail
                         )
                     case .credits:
-                        Text("TODO")
+                        CreditsView()
+                            .background(NavigationConfigurator(configure: { nav in
+                                nav.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+                            }))
                     }
                 }
             case .newEntry:
@@ -65,4 +68,18 @@ extension HomeCoordinator {
             stack.push(.credits)
         }
     }
+}
+
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var configure: (UINavigationController) -> Void = { _ in }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+        UIViewController()
+    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let nc = uiViewController.navigationController {
+            self.configure(nc)
+        }
+    }
+
 }

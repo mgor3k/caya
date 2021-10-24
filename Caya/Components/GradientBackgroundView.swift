@@ -33,6 +33,7 @@ struct GradientBackgroundView: View {
                 
                 Spacer()
             }
+            .opacity(0.5)
         }
         .ignoresSafeArea()
     }
