@@ -8,6 +8,7 @@ import FloatingBar
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     let onAdd: () -> Void
+    let onProfileRoute: (ProfileRoute) -> Void
     
     // TODO: Temp
     @Environment(\.dependencies) var dependencies
@@ -34,7 +35,7 @@ struct HomeView: View {
                     viewModel: .init(
                         preferences: dependencies.preferences
                     ),
-                    onRoute: { _ in }
+                    onRoute: onProfileRoute
                 )
                     .navigationTitle("Profile")
             }
@@ -83,7 +84,8 @@ struct HomeView_Previews: PreviewProvider {
                 provider: MockPersistanceManager(),
                 preference: MockPreferences()
             ),
-            onAdd: {}
+            onAdd: {},
+            onProfileRoute: { _ in }
         )
             .environment(\.colorScheme, .dark)
     }

@@ -35,7 +35,9 @@ private extension CayaApp {
     var content: some View {
         switch state.route {
         case .home:
-            HomeCoordinator()
+            NavigationView {
+                HomeCoordinator()
+            }
         case .onboarding:
             OnboardingView(
                 viewModel: .init(preferences: dependencies.preferences),
