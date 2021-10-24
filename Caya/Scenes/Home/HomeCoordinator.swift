@@ -18,10 +18,25 @@ struct HomeCoordinator: View {
                 NStack($stack) { screen in
                     switch screen {
                     case .main:
-                        HomeContainerView(
-                            onAdd: showNewEntry,
-                            onProfileRoute: showProfileDetail
-                        )
+                        HomeContainerView { page in
+                            switch page {
+                            case .home:
+                                HistoryView(
+                                    viewModel: .init(
+                                        provider: dependencies.persistance,
+                                        preference: dependencies.preferences
+                                    ),
+                                    onAdd: showNewEntry
+                                )
+                            case .profile:
+                                ProfileView(
+                                    viewModel: .init(
+                                        preferences: dependencies.preferences
+                                    ),
+                                    onRoute: showProfileDetail
+                                )
+                            }
+                        }
                     case .credits:
                         CreditsView()
                     }

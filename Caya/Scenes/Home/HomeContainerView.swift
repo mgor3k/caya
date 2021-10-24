@@ -5,26 +5,30 @@
 import SwiftUI
 import FloatingBar
 
-struct HomeContainerView: View {
-    @State var selectedMenuItem: HomeMenuItem = .home
-    let onAdd: () -> Void
-    let onProfileRoute: (ProfileRoute) -> Void
+struct HomeContainerView<Content: View>: View {
+    @State private var selectedMenuItem: HomeMenuItem = .home
     
-    @Environment(\.dependencies) private var dependencies
+    let items: [HomeMenuItem]
     
+    @ViewBuilder
+    var content: (HomeMenuItem) -> Content
+
+    init(
+        items: [HomeMenuItem] = HomeMenuItem.allCases,
+        @ViewBuilder content: @escaping (HomeMenuItem) -> Content
+    ) {
+        self.items = items
+        self.content = content
+    }
+        
     var body: some View {
         ZStack {
             GradientBackgroundView(
                 position: selectedMenuItem.gradientPosition
             )
                 .animation(.default, value: selectedMenuItem)
-                        
-            switch selectedMenuItem {
-            case .home:
-                list
-            case .profile:
-                profile
-            }
+            
+            content(selectedMenuItem)
             
             LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
                 .frame(height: 150)
@@ -32,7 +36,7 @@ struct HomeContainerView: View {
                 .ignoresSafeArea()
             
             FloatingBar(
-                items: HomeMenuItem.allCases,
+                items: items,
                 selectedItem: $selectedMenuItem
             )
                 .frame(maxHeight: .infinity, alignment: .bottom)
@@ -40,46 +44,13 @@ struct HomeContainerView: View {
     }
 }
 
-private extension HomeContainerView {
-    var list: some View {
-        HistoryView(
-            viewModel: .init(
-                provider: dependencies.persistance,
-                preference: dependencies.preferences
-            ),
-            onAdd: onAdd
-        )
-    }
-    
-    var profile: some View {
-        ProfileView(
-            viewModel: .init(
-                preferences: dependencies.preferences
-            ),
-            onRoute: onProfileRoute
-        )
-    }
-}
-
 extension HomeMenuItem: FloatingBarItem {}
-
-private extension HomeMenuItem {
-    var gradientPosition: GradientBackgroundView.Position {
-        switch self {
-        case .home:
-            return .leading
-        case .profile:
-            return .center
-        }
-    }
-}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeContainerView(
-            onAdd: {},
-            onProfileRoute: { _ in }
-        )
+        HomeContainerView(items: HomeMenuItem.allCases) { item in
+            Text("Test")
+        }
             .environment(\.colorScheme, .dark)
     }
 }
