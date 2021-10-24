@@ -50,44 +50,10 @@ struct HomeView: View {
 
 private extension HomeView {
     var list: some View {
-        List {
-            Section {
-                Text("Your **History**")
-                    .padding(.horizontal, Padding.screenEdge)
-                    .font(.title)
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            .listSectionSeparator(.hidden)
-            .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
-            
-            ForEach(viewModel.sections) { section in
-                Section {
-                    ForEach(section.entries) { entry in
-                        HomeCell(entry: entry, currency: viewModel.currency)
-                            .transition(.scale)
-                            .padding(
-                                .bottom,
-                                viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
-                            )
-                    }
-                    .onDelete { row in
-                        viewModel.deleteEntry(section.entries[row.first!])
-                    }
-                } header: {
-                    Text("\(section.title)")
-                        .font(.title3)
-                        .tracking(6)
-                }
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            .listSectionSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .animation(
-            .spring().delay(0.2),
-            value: viewModel.sections
+        HistoryView(
+            sections: viewModel.sections,
+            currency: viewModel.currency,
+            onDelete: viewModel.deleteEntry
         )
     }
 }
