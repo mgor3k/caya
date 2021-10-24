@@ -12,10 +12,16 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             GradientBackgroundView(
-                position: .leading
+                position: viewModel.selectedMenuItem.gradientPosition
             )
+                .animation(.default, value: viewModel.selectedMenuItem)
             
-            list
+            switch viewModel.selectedMenuItem {
+            case .home:
+                list
+            case .profile:
+                Text("TODO")
+            }
             
             LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
                 .frame(height: 150)
@@ -28,19 +34,32 @@ struct HomeView: View {
             )
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
-        .navigationTitle(viewModel.currency.formatted(viewModel.savings))
+        .navigationTitle(navigationTitle)
         .toolbar {
-            ToolbarItem {
-                Button(action: onAdd) {
-                    Image(systemName: "plus.app.fill")
+            ToolbarItemGroup {
+                if case .home = viewModel.selectedMenuItem {
+                    Button(action: onAdd) {
+                        Image(systemName: "plus.app.fill")
+                    }
+                    .foregroundColor(Color(uiColor: .label))
+                } else {
+                    Spacer()
                 }
-                .foregroundColor(Color(uiColor: .label))
             }
         }
     }
 }
 
 private extension HomeView {
+    var navigationTitle: String {
+        switch viewModel.selectedMenuItem {
+        case .home:
+            return viewModel.currency.formatted(viewModel.savings)
+        case .profile:
+            return "Profile"
+        }
+    }
+    
     var list: some View {
         List {
             Section {
@@ -85,6 +104,17 @@ private extension HomeView {
 }
 
 extension HomeMenuItem: FloatingBarItem {}
+
+private extension HomeMenuItem {
+    var gradientPosition: GradientBackgroundView.Position {
+        switch self {
+        case .home:
+            return .leading
+        case .profile:
+            return .trailing
+        }
+    }
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

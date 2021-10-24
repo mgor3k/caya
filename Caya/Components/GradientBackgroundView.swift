@@ -42,13 +42,14 @@ extension GradientBackgroundView {
     enum Position {
         case top
         case leading
+        case trailing
         case bottom
         
         var startPoint: UnitPoint {
             switch self {
             case .top, .bottom:
                 return .leading
-            case .leading:
+            case .leading, .trailing:
                 return .top
             }
         }
@@ -57,7 +58,7 @@ extension GradientBackgroundView {
             switch self {
             case .top, .bottom:
                 return .trailing
-            case .leading:
+            case .leading, .trailing:
                 return .bottom
             }
         }
@@ -72,6 +73,8 @@ extension GradientBackgroundView {
                 return .init(width: -220, height: 0)
             case .bottom:
                 return .init(width: 0, height: 700)
+            case .trailing:
+                return .init(width: 220, height: 0)
             }
         }
     }
@@ -79,6 +82,6 @@ extension GradientBackgroundView {
 
 struct GradientBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        GradientBackgroundView(position: .bottom)
+        GradientBackgroundView(position: .trailing)
     }
 }
