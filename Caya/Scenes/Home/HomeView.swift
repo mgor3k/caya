@@ -97,7 +97,7 @@ private extension HomeMenuItem {
         case .home:
             return .leading
         case .profile:
-            return .trailing
+            return .center
         }
     }
 }

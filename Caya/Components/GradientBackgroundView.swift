@@ -44,10 +44,11 @@ extension GradientBackgroundView {
         case leading
         case trailing
         case bottom
+        case center
         
         var startPoint: UnitPoint {
             switch self {
-            case .top, .bottom:
+            case .top, .bottom, .center:
                 return .leading
             case .leading, .trailing:
                 return .top
@@ -56,7 +57,7 @@ extension GradientBackgroundView {
         
         var endPoint: UnitPoint {
             switch self {
-            case .top, .bottom:
+            case .top, .bottom, .center:
                 return .trailing
             case .leading, .trailing:
                 return .bottom
@@ -75,6 +76,8 @@ extension GradientBackgroundView {
                 return .init(width: 0, height: 700)
             case .trailing:
                 return .init(width: 220, height: 0)
+            case .center:
+                return .init(width: 0, height: 100)
             }
         }
     }
@@ -82,6 +85,6 @@ extension GradientBackgroundView {
 
 struct GradientBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        GradientBackgroundView(position: .trailing)
+        GradientBackgroundView(position: .center)
     }
 }
