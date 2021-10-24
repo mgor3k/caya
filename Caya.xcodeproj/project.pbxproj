@@ -51,6 +51,7 @@
 		B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A9271C4A0B0018EC15 /* AppState.swift */; };
 		B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */; };
 		B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0AD271CBE370018EC15 /* Currency+Mocks.swift */; };
+		B9E6C4C8272584F400328AEA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4C7272584F400328AEA /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		B9D0B0A9271C4A0B0018EC15 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B9D0B0AD271CBE370018EC15 /* Currency+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Mocks.swift"; sourceTree = "<group>"; };
+		B9E6C4C7272584F400328AEA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		B97F78CC27122B57003C97EC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B9E6C4C6272584EA00328AEA /* Profile */,
 				B9D0B0A6271C45710018EC15 /* Onboarding */,
 				B97F78DE27123619003C97EC /* Home */,
 				B97F792127124F90003C97EC /* New Entry */,
@@ -375,6 +378,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		B9E6C4C6272584EA00328AEA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B9E6C4C7272584F400328AEA /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97F78CB27122B51003C97EC /* Entry.swift in Sources */,
+				B9E6C4C8272584F400328AEA /* ProfileView.swift in Sources */,
 				B9D0B097271B91670018EC15 /* EntryProviding.swift in Sources */,
 				B9D0B0A5271C3F5C0018EC15 /* HomeSection.swift in Sources */,
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,

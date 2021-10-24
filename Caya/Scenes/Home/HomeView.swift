@@ -19,8 +19,16 @@ struct HomeView: View {
             switch viewModel.selectedMenuItem {
             case .home:
                 list
+                    .navigationTitle(viewModel.currency.formatted(viewModel.savings))
+                    .toolbar {
+                        Button(action: onAdd) {
+                            Image(systemName: "plus.app.fill")
+                        }
+                        .foregroundColor(Color(uiColor: .label))
+                    }
             case .profile:
-                Text("TODO")
+                ProfileView()
+                    .navigationTitle("Profile")
             }
             
             LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
@@ -34,32 +42,10 @@ struct HomeView: View {
             )
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
-        .navigationTitle(navigationTitle)
-        .toolbar {
-            ToolbarItemGroup {
-                if case .home = viewModel.selectedMenuItem {
-                    Button(action: onAdd) {
-                        Image(systemName: "plus.app.fill")
-                    }
-                    .foregroundColor(Color(uiColor: .label))
-                } else {
-                    Spacer()
-                }
-            }
-        }
     }
 }
 
 private extension HomeView {
-    var navigationTitle: String {
-        switch viewModel.selectedMenuItem {
-        case .home:
-            return viewModel.currency.formatted(viewModel.savings)
-        case .profile:
-            return "Profile"
-        }
-    }
-    
     var list: some View {
         List {
             Section {
