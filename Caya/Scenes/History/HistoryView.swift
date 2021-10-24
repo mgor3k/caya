@@ -7,6 +7,7 @@ import SwiftUI
 struct HistoryView: View {
     @StateObject var viewModel: HistoryViewModel
     let onAdd: () -> Void
+    let onEdit: (Entry) -> Void
     
     var body: some View {
         List {
@@ -23,12 +24,15 @@ struct HistoryView: View {
             ForEach(viewModel.sections) { section in
                 Section {
                     ForEach(section.entries) { entry in
-                        HistoryCell(entry: entry, currency: viewModel.currency)
-                            .transition(.scale)
-                            .padding(
-                                .bottom,
-                                viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
+                        Button(action: { onEdit(entry) }) {
+                            HistoryCell(entry: entry, currency: viewModel.currency)
+                                .transition(.scale)
+                                .padding(
+                                    .bottom,
+                                    viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
                             )
+                        }
+                        .buttonStyle(CustomButtonStyle())
                     }
                     .onDelete { row in
                         viewModel.deleteEntry(section.entries[row.first!])
@@ -65,7 +69,8 @@ struct HistoryView_Previews: PreviewProvider {
                 provider: MockPersistanceManager(),
                 preference: MockPreferences()
             ),
-            onAdd: {}
+            onAdd: {},
+            onEdit: { _ in }
         )
     }
 }

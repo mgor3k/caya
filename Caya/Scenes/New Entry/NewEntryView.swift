@@ -26,7 +26,7 @@ struct NewEntryView: View {
             
             VStack(alignment: .leading, spacing: 32) {
                 HStack {
-                    Text("**New** entry")
+                    Text("**\(viewModel.isEditing ? "Editing" : "New")** entry")
                         .font(.title2)
                     
                     Spacer()
@@ -45,8 +45,11 @@ struct NewEntryView: View {
                 if !isFocused {
                     EntryDatePicker(
                         date: $viewModel.date,
-                        disabledEntries: viewModel.disabledDates
+                        disabledEntries: viewModel.disabledDates,
+                        isDisabled: viewModel.isEditing
                     )
+                        .disabled(viewModel.isEditing)
+                        .opacity(viewModel.isEditing ? 0.5 : 1)
                 }
                 
                 VStack {
@@ -107,8 +110,10 @@ struct AddEntryScene_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView(
             viewModel: .init(
-                preferences: MockPreferences(),
-                persistance: MockPersistanceManager()
+                NewEntryController(
+                    preferences: MockPreferences(),
+                    service: MockPersistanceManager()
+                )
             )
         )
             .environment(\.colorScheme, .dark)

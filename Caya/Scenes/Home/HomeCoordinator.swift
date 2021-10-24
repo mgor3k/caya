@@ -26,7 +26,8 @@ struct HomeCoordinator: View {
                                         provider: dependencies.persistance,
                                         preference: dependencies.preferences
                                     ),
-                                    onAdd: showNewEntry
+                                    onAdd: showNewEntry,
+                                    onEdit: showEditEntry
                                 )
                             case .profile:
                                 ProfileView(
@@ -45,8 +46,22 @@ struct HomeCoordinator: View {
                 ModalView {
                     NewEntryView(
                         viewModel: .init(
-                            preferences: dependencies.preferences,
-                            persistance: dependencies.persistance
+                            NewEntryController(
+                                preferences: dependencies.preferences,
+                                service: dependencies.persistance
+                            )
+                        )
+                    )
+                }
+            case let .editEntry(entry):
+                ModalView {
+                    NewEntryView(
+                        viewModel: .init(
+                            EditEntryController(
+                                entry: entry,
+                                preferences: dependencies.preferences,
+                                service: dependencies.persistance
+                            )
                         )
                     )
                 }
@@ -64,10 +79,15 @@ extension HomeCoordinator {
     enum Modal {
         case main
         case newEntry
+        case editEntry(Entry)
     }
     
     func showNewEntry() {
-        modal.present(.newEntry, style: .sheet)
+        modal.present(.newEntry)
+    }
+    
+    func showEditEntry(_ entry: Entry) {
+        modal.present(.editEntry(entry))
     }
     
     func showProfileDetail(_ route: ProfileRoute) {

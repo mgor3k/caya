@@ -12,32 +12,22 @@ class NewEntryViewModel: ObservableObject {
     let currency: Currency
     let disabledDates: [EntryDate]
     
-    private let persistance: PersistanceManaging
+    private let onSave: (Entry) -> Void
+    private let entry: Entry?
     
-    init(preferences: Preferences, persistance: PersistanceManaging) {
-        self.currency = Currency(code: preferences.currencyCode!)
-        self.persistance = persistance
+    var isEditing: Bool {
+        entry != nil
+    }
+    
+    init(_ controller: EntryViewModelProtocol) {
+        self.currency = Currency(code: controller.currencyCode)
+        self.disabledDates = controller.disabledDates
+        self.entry = (controller as? EntryEditing)?.entry
+        self.onSave = controller.storeEntry
+        self.date = controller.selectedDate
         
-        let components = Calendar.current.dateComponents([.month, .year], from: .now)
-        let currentYear = components.year!
-        let currentMonth = components.month!
-        
-        var date: EntryDate = EntryDate(month: .init(currentMonth)!, year: .init(currentYear)!)
-        
-        disabledDates = persistance.getEntries().map(\.date)
-        
-        // Get the closes date available
-        while disabledDates.contains(where: { $0 == date }) {
-            if let newMonth = date.month - 1 {
-                date = EntryDate(month: newMonth, year: date.year)
-            } else if let newYear = date.year - 1, let newMonth = Month(12) {
-                date = EntryDate(month: newMonth, year: newYear)
-            } else {
-                break
-            }
-        }
-        
-        self.date = date
+        income = entry?.income
+        expenses = entry?.expenses
     }
     
     func save() {
@@ -47,6 +37,31 @@ class NewEntryViewModel: ObservableObject {
             expenses: expenses,
             taxes: []
         )
-        persistance.storeEntry(entry)
+        onSave(entry)
+    }
+}
+
+protocol EntryViewModelProtocol {
+    var preferences: Preferences { get }
+    var service: EntryProviding & EntryStoring { get }
+    
+    var disabledDates: [EntryDate] { get }
+    var currencyCode: String { get }
+    var selectedDate: EntryDate { get }
+    
+    func storeEntry(_ entry: Entry)
+}
+
+protocol EntryEditing {
+    var entry: Entry { get }
+}
+
+extension EntryViewModelProtocol {
+    var disabledDates: [EntryDate] {
+        service.getEntries().map(\.date)
+    }
+    
+    var currencyCode: String {
+        preferences.currencyCode!
     }
 }

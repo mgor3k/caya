@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Foundation
 
 struct MockPersistanceManager: PersistanceManaging {
     static let entries: [Entry] = [
@@ -32,6 +33,10 @@ struct MockPersistanceManager: PersistanceManaging {
     }
     
     func removeEntries(_ entries: [Entry]) {
+        
+    }
+    
+    func updateEntry(withUUID uuid: UUID, entry: Entry) {
         
     }
 }

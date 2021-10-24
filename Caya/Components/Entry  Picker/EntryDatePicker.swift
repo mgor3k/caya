@@ -8,13 +8,16 @@ struct EntryDatePicker: View {
     @Binding private var selectedDate: EntryDate
     private let entries: [EntryDate]
     private let disabledEntries: [EntryDate]
+    private let isDisabled: Bool
     
     init(
         date: Binding<EntryDate>,
-        disabledEntries: [EntryDate]
+        disabledEntries: [EntryDate],
+        isDisabled: Bool
     ) {
         self._selectedDate = date
         self.disabledEntries = disabledEntries
+        self.isDisabled = isDisabled
         
         let components = Calendar.current.dateComponents([.year, .month], from: .now)
         let currentYear = components.year!
@@ -32,10 +35,12 @@ struct EntryDatePicker: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Select a date")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .padding(.horizontal, 24)
+            if !isDisabled {
+                Text("Select a date")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.horizontal, 24)
+            }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 ScrollViewReader { reader in
@@ -69,7 +74,8 @@ struct EntryDatePicker_Previews: PreviewProvider {
             Color.background.ignoresSafeArea()
             EntryDatePicker(
                 date: .constant(.init(month: .january, year: .init(2021)!)),
-                disabledEntries: []
+                disabledEntries: [],
+                isDisabled: false
             )
         }
             .environment(\.colorScheme, .dark)

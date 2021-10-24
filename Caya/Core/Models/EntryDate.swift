@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct EntryDate: Hashable {
+struct EntryDate: Hashable, Equatable {
     let month: Month
     let year: Year
 }

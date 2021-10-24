@@ -80,6 +80,32 @@ extension CoreDataStorage: EntryProviding, EntryStoring {
         }
     }
     
+    func updateEntry(withUUID uuid: UUID, entry: Entry) {
+        // TODO: Do more core data way
+        let request = CDEntry.fetchRequest()
+        // TODO: Handle errors
+        let fetched = try? container.viewContext.fetch(request)
+        
+        if let fetchedEntry = fetched?.first(where: { $0.id == uuid }) {
+            if let expenses = entry.expenses {
+                fetchedEntry.expenses = expenses
+            }
+            
+            if let income = entry.income {
+                fetchedEntry.income = income
+            }
+            
+            do {
+                try container.viewContext.save()
+            } catch {
+                fatalError()
+            }
+            
+        } else {
+            fatalError()
+        }
+    }
+    
     func removeEntries(_ entries: [Entry]) {
         let request = CDEntry.fetchRequest()
         // TODO: Handle errors
