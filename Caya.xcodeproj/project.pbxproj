@@ -149,7 +149,6 @@
 		B97F78AE27122AC4003C97EC = {
 			isa = PBXGroup;
 			children = (
-				B944145F2724A5D100EE0A69 /* FloatingBar */,
 				B97F78B927122AC4003C97EC /* Caya */,
 				B97F79132712475A003C97EC /* CayaTests */,
 				B97F78B827122AC4003C97EC /* Products */,
@@ -169,6 +168,7 @@
 		B97F78B927122AC4003C97EC /* Caya */ = {
 			isa = PBXGroup;
 			children = (
+				B9E6C4D02725A4AF00328AEA /* Modules */,
 				B97F78BA27122AC4003C97EC /* CayaApp.swift */,
 				B9D0B0A9271C4A0B0018EC15 /* AppState.swift */,
 				B97F78C827122B3C003C97EC /* Core */,
@@ -401,6 +401,14 @@
 				B9E6C4CE2725A42200328AEA /* Collection+HistorySection.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		B9E6C4D02725A4AF00328AEA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B944145F2724A5D100EE0A69 /* FloatingBar */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
