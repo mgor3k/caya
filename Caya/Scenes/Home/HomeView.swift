@@ -60,7 +60,7 @@ private extension HomeView {
                             .transition(.scale)
                             .padding(
                                 .bottom,
-                                section.isLast(entry) ? 16 : 0
+                                viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
                             )
                     }
                     .onDelete { row in
