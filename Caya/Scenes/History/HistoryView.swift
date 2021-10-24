@@ -5,10 +5,8 @@
 import SwiftUI
 
 struct HistoryView: View {
-    let sections: [HistorySection]
-    let currency: Currency
-    
-    let onDelete: (Entry) -> Void
+    @StateObject var viewModel: HistoryViewModel
+    let onAdd: () -> Void
     
     var body: some View {
         List {
@@ -22,18 +20,18 @@ struct HistoryView: View {
             .listSectionSeparator(.hidden)
             .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
             
-            ForEach(sections) { section in
+            ForEach(viewModel.sections) { section in
                 Section {
                     ForEach(section.entries) { entry in
-                        HistoryCell(entry: entry, currency: currency)
+                        HistoryCell(entry: entry, currency: viewModel.currency)
                             .transition(.scale)
                             .padding(
                                 .bottom,
-                                sections.last == section && section.isLast(entry) ? 100 : 0
+                                viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
                             )
                     }
                     .onDelete { row in
-                        onDelete(section.entries[row.first!])
+                        viewModel.deleteEntry(section.entries[row.first!])
                     }
                 } header: {
                     Text("\(section.title)")
@@ -48,17 +46,26 @@ struct HistoryView: View {
         .listStyle(.plain)
         .animation(
             .spring().delay(0.2),
-            value: sections
+            value: viewModel.sections
         )
+        .navigationTitle(viewModel.currency.formatted(viewModel.savings))
+        .toolbar {
+            Button(action: onAdd) {
+                Image(systemName: "plus.app.fill")
+            }
+            .foregroundColor(Color(uiColor: .label))
+        }
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(
-            sections: [MockPersistanceManager.entries].flatMap(\.groupedByYear),
-            currency: .euro,
-            onDelete: { _ in }
+            viewModel: .init(
+                provider: MockPersistanceManager(),
+                preference: MockPreferences()
+            ),
+            onAdd: {}
         )
     }
 }

@@ -59,6 +59,7 @@ struct ProfileView: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.insetGrouped)
+        .navigationTitle("Profile")
     }
 }
 

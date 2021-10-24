@@ -6,7 +6,7 @@ import SwiftUI
 import FloatingBar
 
 struct HomeContainerView: View {
-    @StateObject var viewModel: HomeViewModel
+    @State var selectedMenuItem: HomeMenuItem = .home
     let onAdd: () -> Void
     let onProfileRoute: (ProfileRoute) -> Void
     
@@ -15,23 +15,15 @@ struct HomeContainerView: View {
     var body: some View {
         ZStack {
             GradientBackgroundView(
-                position: viewModel.selectedMenuItem.gradientPosition
+                position: selectedMenuItem.gradientPosition
             )
-                .animation(.default, value: viewModel.selectedMenuItem)
+                .animation(.default, value: selectedMenuItem)
                         
-            switch viewModel.selectedMenuItem {
+            switch selectedMenuItem {
             case .home:
                 list
-                    .navigationTitle(viewModel.currency.formatted(viewModel.savings))
-                    .toolbar {
-                        Button(action: onAdd) {
-                            Image(systemName: "plus.app.fill")
-                        }
-                        .foregroundColor(Color(uiColor: .label))
-                    }
             case .profile:
                 profile
-                    .navigationTitle("Profile")
             }
             
             LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
@@ -41,7 +33,7 @@ struct HomeContainerView: View {
             
             FloatingBar(
                 items: HomeMenuItem.allCases,
-                selectedItem: $viewModel.selectedMenuItem
+                selectedItem: $selectedMenuItem
             )
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
@@ -51,9 +43,11 @@ struct HomeContainerView: View {
 private extension HomeContainerView {
     var list: some View {
         HistoryView(
-            sections: viewModel.sections,
-            currency: viewModel.currency,
-            onDelete: viewModel.deleteEntry
+            viewModel: .init(
+                provider: dependencies.persistance,
+                preference: dependencies.preferences
+            ),
+            onAdd: onAdd
         )
     }
     
@@ -83,10 +77,6 @@ private extension HomeMenuItem {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeContainerView(
-            viewModel: .init(
-                provider: MockPersistanceManager(),
-                preference: MockPreferences()
-            ),
             onAdd: {},
             onProfileRoute: { _ in }
         )

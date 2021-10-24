@@ -14,13 +14,12 @@
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
 		B97F78CB27122B51003C97EC /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CA27122B51003C97EC /* Entry.swift */; };
-		B97F78D027122B63003C97EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeView.swift */; };
+		B97F78D027122B63003C97EC /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeContainerView.swift */; };
 		B97F78D127122B63003C97EC /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CE27122B63003C97EC /* HistoryCell.swift */; };
 		B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F1271239EB003C97EC /* DependencyManager.swift */; };
 		B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */; };
 		B97F78F627123A13003C97EC /* MockPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F527123A13003C97EC /* MockPersistanceManager.swift */; };
 		B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F727123A2B003C97EC /* HomeCoordinator.swift */; };
-		B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F827123A2B003C97EC /* HomeViewModel.swift */; };
 		B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FD27123A5F003C97EC /* Month+Mocks.swift */; };
 		B97F790127123A75003C97EC /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FF27123A75003C97EC /* Month.swift */; };
 		B97F790227123A75003C97EC /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F790027123A75003C97EC /* Year.swift */; };
@@ -58,6 +57,7 @@
 		B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4D12725A51C00328AEA /* ProfileRoute.swift */; };
 		B9E6C4D52725A6D100328AEA /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = B9E6C4D42725A6D100328AEA /* FlowStacks */; };
 		B9E6C4D82725E1FC00328AEA /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4D72725E1FC00328AEA /* CreditsView.swift */; };
+		B9E6C4DC2725EA4B00328AEA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4DB2725EA4B00328AEA /* HistoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,13 +79,12 @@
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B97F78C127122AC6003C97EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B97F78CA27122B51003C97EC /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		B97F78CD27122B63003C97EC /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B97F78CD27122B63003C97EC /* HomeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
 		B97F78CE27122B63003C97EC /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		B97F78F1271239EB003C97EC /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = ../../../../Caya/Caya/Core/Dependencies/DependencyManager.swift; sourceTree = "<group>"; };
 		B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DependencyManager+Env.swift"; path = "../../../../Caya/Caya/Core/Dependencies/DependencyManager+Env.swift"; sourceTree = "<group>"; };
 		B97F78F527123A13003C97EC /* MockPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPersistanceManager.swift; sourceTree = "<group>"; };
 		B97F78F727123A2B003C97EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCoordinator.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeCoordinator.swift; sourceTree = "<group>"; };
-		B97F78F827123A2B003C97EC /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeViewModel.swift; sourceTree = "<group>"; };
 		B97F78FD27123A5F003C97EC /* Month+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Month+Mocks.swift"; sourceTree = "<group>"; };
 		B97F78FF27123A75003C97EC /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = ../../../../Caya/Caya/Core/Models/Month.swift; sourceTree = "<group>"; };
 		B97F790027123A75003C97EC /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Year.swift; path = ../../../../Caya/Caya/Core/Models/Year.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		B9E6C4CE2725A42200328AEA /* Collection+HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+HistorySection.swift"; sourceTree = "<group>"; };
 		B9E6C4D12725A51C00328AEA /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
 		B9E6C4D72725E1FC00328AEA /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		B9E6C4DB2725EA4B00328AEA /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,8 +265,7 @@
 			children = (
 				B97F78F727123A2B003C97EC /* HomeCoordinator.swift */,
 				B944145D2724A45600EE0A69 /* HomeMenuItem.swift */,
-				B97F78CD27122B63003C97EC /* HomeView.swift */,
-				B97F78F827123A2B003C97EC /* HomeViewModel.swift */,
+				B97F78CD27122B63003C97EC /* HomeContainerView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -404,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E6C4CC2725A26E00328AEA /* HistoryView.swift */,
+				B9E6C4DB2725EA4B00328AEA /* HistoryViewModel.swift */,
 				B9D0B0A4271C3F5C0018EC15 /* HistorySection.swift */,
 				B97F78CE27122B63003C97EC /* HistoryCell.swift */,
 				B9E6C4CE2725A42200328AEA /* Collection+HistorySection.swift */,
@@ -544,6 +544,7 @@
 				B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
+				B9E6C4DC2725EA4B00328AEA /* HistoryViewModel.swift in Sources */,
 				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
 				B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */,
 				B9E6C4CF2725A42200328AEA /* Collection+HistorySection.swift in Sources */,
@@ -558,7 +559,7 @@
 				B97F790B271241B3003C97EC /* Color.swift in Sources */,
 				B9ADAAE127138579009762C7 /* GradientBackgroundView.swift in Sources */,
 				B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */,
-				B97F78D027122B63003C97EC /* HomeView.swift in Sources */,
+				B97F78D027122B63003C97EC /* HomeContainerView.swift in Sources */,
 				B9ADAAD627137C96009762C7 /* EntryDate.swift in Sources */,
 				B9D0B074271B79710018EC15 /* CoreDataStorage.swift in Sources */,
 				B97F78F627123A13003C97EC /* MockPersistanceManager.swift in Sources */,
@@ -570,7 +571,6 @@
 				B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryCell.swift in Sources */,
 				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
-				B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */,
 				B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */,
 				B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,

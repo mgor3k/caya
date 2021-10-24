@@ -18,11 +18,7 @@ struct HomeCoordinator: View {
                 NStack($stack) { screen in
                     switch screen {
                     case .main:
-                        HomeView(
-                            viewModel: .init(
-                                provider: dependencies.persistance,
-                                preference: dependencies.preferences
-                            ),
+                        HomeContainerView(
                             onAdd: showNewEntry,
                             onProfileRoute: showProfileDetail
                         )
