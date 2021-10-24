@@ -5,24 +5,30 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel: ProfileViewModel
     
-    init() {
+    init(viewModel: ProfileViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
         UITableView.appearance().backgroundColor = .clear
     }
     
     var body: some View {
         List {
             Section {
-                HStack {
-                    Text("Currency")
-                    Spacer()
-                    Text("$")
+                Button(action: {}) {
+                    HStack {
+                        Text("Currency")
+                        Spacer()
+                        Text(viewModel.currency?.symbol ?? "")
+                    }
                 }
+                .buttonStyle(CustomButtonStyle())
+                
             } header: {
                 Text("Settings")
             }
             .listRowBackground(Color.white.opacity(0.2))
-            .listRowSeparatorTint(.white)
+            .listRowSeparator(.hidden)
             
             Section {
                 Text("Export to CSV")
@@ -39,7 +45,11 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(
+            viewModel: .init(
+                preferences: MockPreferences()
+            )
+        )
             .background(Color.blue)
     }
 }

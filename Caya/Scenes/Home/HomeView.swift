@@ -9,6 +9,9 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     let onAdd: () -> Void
     
+    // TODO: Temp
+    @Environment(\.dependencies) var dependencies
+    
     var body: some View {
         ZStack {
             GradientBackgroundView(
@@ -27,7 +30,7 @@ struct HomeView: View {
                         .foregroundColor(Color(uiColor: .label))
                     }
             case .profile:
-                ProfileView()
+                ProfileView(viewModel: .init(preferences: dependencies.preferences))
                     .navigationTitle("Profile")
             }
             

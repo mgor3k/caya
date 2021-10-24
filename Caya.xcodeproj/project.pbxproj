@@ -52,6 +52,8 @@
 		B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */; };
 		B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0AD271CBE370018EC15 /* Currency+Mocks.swift */; };
 		B9E6C4C8272584F400328AEA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4C7272584F400328AEA /* ProfileView.swift */; };
+		B9E6C4CA2725A12300328AEA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */; };
+		B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4CC2725A26E00328AEA /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		B9D0B0AB271C96E70018EC15 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B9D0B0AD271CBE370018EC15 /* Currency+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Mocks.swift"; sourceTree = "<group>"; };
 		B9E6C4C7272584F400328AEA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B9E6C4CC2725A26E00328AEA /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 		B97F78CC27122B57003C97EC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B9E6C4CB2725A26500328AEA /* History */,
 				B9E6C4C6272584EA00328AEA /* Profile */,
 				B9D0B0A6271C45710018EC15 /* Onboarding */,
 				B97F78DE27123619003C97EC /* Home */,
@@ -382,8 +387,17 @@
 			isa = PBXGroup;
 			children = (
 				B9E6C4C7272584F400328AEA /* ProfileView.swift */,
+				B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B9E6C4CB2725A26500328AEA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				B9E6C4CC2725A26E00328AEA /* HistoryView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +517,7 @@
 				B9D0B09A271B91E90018EC15 /* EntryStoring.swift in Sources */,
 				B91D367C27248847003EC604 /* ModalView.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
+				B9E6C4CA2725A12300328AEA /* ProfileViewModel.swift in Sources */,
 				B9D0B06B271B68330018EC15 /* Currency.swift in Sources */,
 				B9D0B0662714B1050018EC15 /* MoneyInputTextField.swift in Sources */,
 				B9ADAAD927137E14009762C7 /* EntryDatePicker.swift in Sources */,
@@ -523,6 +538,7 @@
 				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
 				B97F78FA27123A2B003C97EC /* HomeViewModel.swift in Sources */,
 				B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */,
+				B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
 				B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */,
 				B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */,
