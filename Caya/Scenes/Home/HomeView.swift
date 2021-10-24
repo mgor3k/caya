@@ -10,16 +10,13 @@ struct HomeView: View {
     let onAdd: () -> Void
     let onProfileRoute: (ProfileRoute) -> Void
     
-    // TODO: Temp
-    @Environment(\.dependencies) var dependencies
-    
     var body: some View {
         ZStack {
             GradientBackgroundView(
                 position: viewModel.selectedMenuItem.gradientPosition
             )
                 .animation(.default, value: viewModel.selectedMenuItem)
-            
+                        
             switch viewModel.selectedMenuItem {
             case .home:
                 list
@@ -31,12 +28,7 @@ struct HomeView: View {
                         .foregroundColor(Color(uiColor: .label))
                     }
             case .profile:
-                ProfileView(
-                    viewModel: .init(
-                        preferences: dependencies.preferences
-                    ),
-                    onRoute: onProfileRoute
-                )
+                profile
                     .navigationTitle("Profile")
             }
             
@@ -60,6 +52,15 @@ private extension HomeView {
             sections: viewModel.sections,
             currency: viewModel.currency,
             onDelete: viewModel.deleteEntry
+        )
+    }
+    
+    var profile: some View {
+        ProfileView(
+            viewModel: .init(
+                preferences: viewModel.preferences
+            ),
+            onRoute: onProfileRoute
         )
     }
 }
