@@ -30,7 +30,12 @@ struct HomeView: View {
                         .foregroundColor(Color(uiColor: .label))
                     }
             case .profile:
-                ProfileView(viewModel: .init(preferences: dependencies.preferences))
+                ProfileView(
+                    viewModel: .init(
+                        preferences: dependencies.preferences
+                    ),
+                    onRoute: { _ in }
+                )
                     .navigationTitle("Profile")
             }
             

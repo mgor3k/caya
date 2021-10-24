@@ -7,8 +7,11 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject var viewModel: ProfileViewModel
     
-    init(viewModel: ProfileViewModel) {
+    let onRoute: (ProfileRoute) -> Void
+    
+    init(viewModel: ProfileViewModel, onRoute: @escaping (ProfileRoute) -> Void) {
         self._viewModel = StateObject(wrappedValue: viewModel)
+        self.onRoute = onRoute
         UITableView.appearance().backgroundColor = .clear
     }
     
@@ -38,6 +41,22 @@ struct ProfileView: View {
             }
             .listRowBackground(Color.white.opacity(0.2))
             .listRowSeparatorTint(.white)
+            
+            Section {
+                Button(action: { onRoute(.credits) }) {
+                    HStack {
+                        Text("Credits")
+                        Spacer()
+                        Image(systemName: "chevron.forward")
+                    }
+                }
+                .buttonStyle(CustomButtonStyle())
+                
+            } header: {
+                Text("Other")
+            }
+            .listRowBackground(Color.white.opacity(0.2))
+            .listRowSeparator(.hidden)
         }
         .listStyle(.insetGrouped)
     }
@@ -48,7 +67,8 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView(
             viewModel: .init(
                 preferences: MockPreferences()
-            )
+            ),
+            onRoute: { _ in }
         )
             .background(Color.blue)
     }

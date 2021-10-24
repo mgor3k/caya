@@ -55,6 +55,7 @@
 		B9E6C4CA2725A12300328AEA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */; };
 		B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4CC2725A26E00328AEA /* HistoryView.swift */; };
 		B9E6C4CF2725A42200328AEA /* Collection+HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4CE2725A42200328AEA /* Collection+HistorySection.swift */; };
+		B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4D12725A51C00328AEA /* ProfileRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B9E6C4CC2725A26E00328AEA /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		B9E6C4CE2725A42200328AEA /* Collection+HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+HistorySection.swift"; sourceTree = "<group>"; };
+		B9E6C4D12725A51C00328AEA /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E6C4C7272584F400328AEA /* ProfileView.swift */,
+				B9E6C4D12725A51C00328AEA /* ProfileRoute.swift */,
 				B9E6C4C92725A12300328AEA /* ProfileViewModel.swift */,
 			);
 			path = Profile;
@@ -520,6 +523,7 @@
 				B9D0B0A5271C3F5C0018EC15 /* HistorySection.swift in Sources */,
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
+				B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */,
 				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
 				B9D0B0AC271C96E70018EC15 /* OnboardingViewModel.swift in Sources */,
