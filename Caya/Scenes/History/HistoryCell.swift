@@ -5,7 +5,7 @@
 import SwiftUI
 import Foundation
 
-struct HomeCell: View {
+struct HistoryCell: View {
     let entry: Entry
     let currency: Currency
     
@@ -36,9 +36,9 @@ struct HomeCell: View {
     }
 }
 
-struct HomeCell_Previews: PreviewProvider {
+struct HistoryCell_Previews: PreviewProvider {
     static var previews: some View {
-        HomeCell(
+        HistoryCell(
             entry: .init(
                 date: .init(
                     month: .january,

@@ -5,9 +5,12 @@
 import SwiftUI
 import FloatingBar
 
-struct HomeView: View {
+struct HomeContainerView: View {
     @StateObject var viewModel: HomeViewModel
     let onAdd: () -> Void
+    let onProfileRoute: (ProfileRoute) -> Void
+    
+    @Environment(\.dependencies) private var dependencies
     
     var body: some View {
         ZStack {
@@ -15,7 +18,7 @@ struct HomeView: View {
                 position: viewModel.selectedMenuItem.gradientPosition
             )
                 .animation(.default, value: viewModel.selectedMenuItem)
-            
+                        
             switch viewModel.selectedMenuItem {
             case .home:
                 list
@@ -27,7 +30,7 @@ struct HomeView: View {
                         .foregroundColor(Color(uiColor: .label))
                     }
             case .profile:
-                ProfileView()
+                profile
                     .navigationTitle("Profile")
             }
             
@@ -45,46 +48,21 @@ struct HomeView: View {
     }
 }
 
-private extension HomeView {
+private extension HomeContainerView {
     var list: some View {
-        List {
-            Section {
-                Text("Your **History**")
-                    .padding(.horizontal, Padding.screenEdge)
-                    .font(.title)
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            .listSectionSeparator(.hidden)
-            .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
-            
-            ForEach(viewModel.sections) { section in
-                Section {
-                    ForEach(section.entries) { entry in
-                        HomeCell(entry: entry, currency: viewModel.currency)
-                            .transition(.scale)
-                            .padding(
-                                .bottom,
-                                viewModel.sections.last == section && section.isLast(entry) ? 100 : 0
-                            )
-                    }
-                    .onDelete { row in
-                        viewModel.deleteEntry(section.entries[row.first!])
-                    }
-                } header: {
-                    Text("\(section.title)")
-                        .font(.title3)
-                        .tracking(6)
-                }
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            .listSectionSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .animation(
-            .spring().delay(0.2),
-            value: viewModel.sections
+        HistoryView(
+            sections: viewModel.sections,
+            currency: viewModel.currency,
+            onDelete: viewModel.deleteEntry
+        )
+    }
+    
+    var profile: some View {
+        ProfileView(
+            viewModel: .init(
+                preferences: dependencies.preferences
+            ),
+            onRoute: onProfileRoute
         )
     }
 }
@@ -104,12 +82,13 @@ private extension HomeMenuItem {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(
+        HomeContainerView(
             viewModel: .init(
                 provider: MockPersistanceManager(),
                 preference: MockPreferences()
             ),
-            onAdd: {}
+            onAdd: {},
+            onProfileRoute: { _ in }
         )
             .environment(\.colorScheme, .dark)
     }

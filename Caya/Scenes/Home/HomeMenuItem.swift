@@ -20,4 +20,13 @@ enum HomeMenuItem: String, CaseIterable {
             return Image(systemName: "person.fill")
         }
     }
+    
+    var gradientPosition: GradientBackgroundView.Position {
+        switch self {
+        case .home:
+            return .leading
+        case .profile:
+            return .center
+        }
+    }
 }

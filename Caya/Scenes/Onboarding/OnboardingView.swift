@@ -29,7 +29,7 @@ struct OnboardingView: View {
     }
 }
 
-private extension OnboardingView {
+extension OnboardingView {
     func page1(proxy: GeometryProxy) -> some View {
         VStack(spacing: 24) {
             // TODO: Add image

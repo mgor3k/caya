@@ -5,8 +5,8 @@
 import Combine
 import Foundation
 
-class HomeViewModel: ObservableObject {
-    @Published var sections: [HomeSection]
+class HistoryViewModel: ObservableObject {
+    @Published var sections: [HistorySection]
     @Published var selectedMenuItem: HomeMenuItem = .home
         
     var savings: Double {
@@ -26,7 +26,6 @@ class HomeViewModel: ObservableObject {
         self.provider = provider
         self.sections = [provider.getEntries()].flatMap(\.groupedByYear)
         self.currency = Currency(code: preference.currencyCode!)
-        
         setupBindings()
     }
     
@@ -35,20 +34,11 @@ class HomeViewModel: ObservableObject {
     }
 }
 
-private extension HomeViewModel {
+private extension HistoryViewModel {
     func setupBindings() {
         provider
             .getEntriesUpdates()
             .map(\.groupedByYear)
             .assign(to: &$sections)
-    }
-}
-
-private extension Collection where Element == Entry {
-    var groupedByYear: [HomeSection] {
-        let groupedByYear = Dictionary(grouping: self, by: { $0.date.year })
-        return groupedByYear.keys
-            .map { HomeSection(year: $0, entries: groupedByYear[$0]?.sorted(by: { $0.date.month > $1.date.month }) ?? []) }
-            .sorted(by: { $0.title > $1.title })
     }
 }

@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct HomeSection: Equatable {
+struct HistorySection: Equatable {
     private let year: Year
     let entries: [Entry]
     
@@ -22,7 +22,7 @@ struct HomeSection: Equatable {
     }
 }
 
-extension HomeSection: Identifiable {
+extension HistorySection: Identifiable {
     var id: Int {
         year.value
     }
