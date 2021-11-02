@@ -23,7 +23,7 @@ struct HomeCoordinator: View {
                             case .home:
                                 HistoryView(
                                     viewModel: .init(
-                                        provider: dependencies.persistance,
+                                        repository: dependencies.repository,
                                         preference: dependencies.preferences
                                     ),
                                     onAdd: showNewEntry,
@@ -48,7 +48,7 @@ struct HomeCoordinator: View {
                         viewModel: .init(
                             NewEntryController(
                                 preferences: dependencies.preferences,
-                                service: dependencies.persistance
+                                repository: dependencies.repository
                             )
                         )
                     )
@@ -60,7 +60,7 @@ struct HomeCoordinator: View {
                             EditEntryController(
                                 entry: entry,
                                 preferences: dependencies.preferences,
-                                service: dependencies.persistance
+                                repository: dependencies.repository
                             )
                         )
                     )

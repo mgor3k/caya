@@ -66,7 +66,7 @@ struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(
             viewModel: .init(
-                provider: MockPersistanceManager(),
+                repository: PreviewEntryRepository(),
                 preference: MockPreferences()
             ),
             onAdd: {},

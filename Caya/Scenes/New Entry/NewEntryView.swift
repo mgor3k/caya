@@ -112,7 +112,7 @@ struct AddEntryScene_Previews: PreviewProvider {
             viewModel: .init(
                 NewEntryController(
                     preferences: MockPreferences(),
-                    service: MockPersistanceManager()
+                    repository: PreviewEntryRepository()
                 )
             )
         )

@@ -1,11 +1,11 @@
 //
-//  Created by Maciej Górecki on 09/10/2021
+//  Created by Maciej Gorecki on 02/11/2021
 //
 
-import Combine
 import Foundation
+import Combine
 
-struct MockPersistanceManager: PersistanceManaging {
+final class PreviewEntryRepository: EntryRepositoryProtocol {
     static let entries: [Entry] = [
         .init(
             date: .init(
@@ -28,15 +28,7 @@ struct MockPersistanceManager: PersistanceManaging {
         Just(Self.entries).eraseToAnyPublisher()
     }
     
-    func storeEntry(_ entry: Entry) {
-        
-    }
-    
-    func removeEntries(_ entries: [Entry]) {
-        
-    }
-    
-    func updateEntry(withUUID uuid: UUID, entry: Entry) {
-        
-    }
+    func removeEntries(_ entries: [Entry]) {}
+    func storeEntry(_ entry: Entry) {}
+    func updateEntry(withUUID uuid: UUID, entry: Entry) {}
 }

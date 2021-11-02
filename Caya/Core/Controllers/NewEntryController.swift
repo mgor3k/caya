@@ -6,7 +6,7 @@ import Foundation
 
 struct NewEntryController: EntryViewModelProtocol {
     let preferences: Preferences
-    let service: EntryProviding & EntryStoring
+    let repository: EntryRepositoryProtocol
     
     var selectedDate: EntryDate {
         let components = Calendar.current.dateComponents([.month, .year], from: .now)
@@ -30,6 +30,6 @@ struct NewEntryController: EntryViewModelProtocol {
     }
     
     func storeEntry(_ entry: Entry) {
-        service.storeEntry(entry)
+        repository.storeEntry(entry)
     }
 }

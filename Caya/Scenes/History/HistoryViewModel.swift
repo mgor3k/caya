@@ -16,27 +16,27 @@ class HistoryViewModel: ObservableObject {
     let currency: Currency
     
     // TODO: Change naming
-    private let provider: EntryProviding
+    private let repository: EntryRepositoryProtocol
     private var subscriptions: Set<AnyCancellable> = []
     
     init(
-        provider: EntryProviding,
+        repository: EntryRepositoryProtocol,
         preference: Preferences
     ) {
-        self.provider = provider
-        self.sections = [provider.getEntries()].flatMap(\.groupedByYear)
+        self.repository = repository
+        self.sections = [repository.getEntries()].flatMap(\.groupedByYear)
         self.currency = Currency(code: preference.currencyCode!)
         setupBindings()
     }
     
     func deleteEntry(_ entry: Entry) {
-        provider.removeEntries([entry])
+        repository.removeEntries([entry])
     }
 }
 
 private extension HistoryViewModel {
     func setupBindings() {
-        provider
+        repository
             .getEntriesUpdates()
             .map(\.groupedByYear)
             .assign(to: &$sections)

@@ -43,7 +43,7 @@ class NewEntryViewModel: ObservableObject {
 
 protocol EntryViewModelProtocol {
     var preferences: Preferences { get }
-    var service: EntryProviding & EntryStoring { get }
+    var repository: EntryRepositoryProtocol { get }
     
     var disabledDates: [EntryDate] { get }
     var currencyCode: String { get }
@@ -58,7 +58,7 @@ protocol EntryEditing {
 
 extension EntryViewModelProtocol {
     var disabledDates: [EntryDate] {
-        service.getEntries().map(\.date)
+        repository.getEntries().map(\.date)
     }
     
     var currencyCode: String {
