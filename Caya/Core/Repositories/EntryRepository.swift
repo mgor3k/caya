@@ -130,7 +130,7 @@ private extension CDEntry {
         }
         
         return Entry(
-            id: id ?? UUID(),
+            id: id!,
             date: .init(
                 month: month,
                 year: year

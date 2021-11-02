@@ -205,6 +205,7 @@
 			children = (
 				B9E6C4DE2726092F00328AEA /* Controllers */,
 				B97F78E327123749003C97EC /* Dependencies */,
+				B9A5C9B32731CB9000381363 /* Repositories */,
 				B97F78E02712369B003C97EC /* Services */,
 				B97F78C927122B40003C97EC /* Models */,
 			);
@@ -278,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				B9D0B067271B67450018EC15 /* Preferences.swift */,
-				B9A5C9AD2731BF7C00381363 /* EntryRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -317,6 +317,14 @@
 				B97F792827125440003C97EC /* NewEntryViewModel.swift */,
 			);
 			path = "New Entry";
+			sourceTree = "<group>";
+		};
+		B9A5C9B32731CB9000381363 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B9A5C9AD2731BF7C00381363 /* EntryRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B9ADAACF2713779D009762C7 /* Components */ = {
