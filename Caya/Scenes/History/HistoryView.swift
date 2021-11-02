@@ -49,7 +49,7 @@ struct HistoryView: View {
         }
         .listStyle(.plain)
         .animation(
-            .spring().delay(0.2),
+            .spring(),
             value: viewModel.sections
         )
         .navigationTitle(viewModel.currency.formatted(viewModel.savings))

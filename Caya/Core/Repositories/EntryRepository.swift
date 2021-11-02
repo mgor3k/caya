@@ -4,7 +4,6 @@
 
 import Foundation
 import Combine
-import CoreDataStorage
 import CoreData
 
 protocol EntryRepositoryProtocol {
@@ -20,7 +19,6 @@ protocol EntryRepositoryProtocol {
 final class EntryRepository: EntryRepositoryProtocol {
     private let storage: CoreDataStorage
     
-    // TODO: To be removed
     private var context: NSManagedObjectContext {
         storage.context
     }
@@ -32,7 +30,8 @@ final class EntryRepository: EntryRepositoryProtocol {
 
 extension EntryRepository {
     func getEntries() -> [Entry] {
-        (try? storage.fetch(CDEntry.fetchRequest(), map: \.toEntry)) ?? []
+        let results = try? context.fetch(CDEntry.fetchRequest())
+        return (results ?? []).compactMap(\.toEntry)
     }
     
     func getEntriesUpdates() -> AnyPublisher<[Entry], Never> {
@@ -42,20 +41,19 @@ extension EntryRepository {
     }
     
     func removeEntries(_ entries: [Entry]) {
-        let request = CDEntry.fetchRequest()
-        // TODO: Handle errors
+        let idsToRemove = entries.map(\.id) // move level up
 
-        let idsToRemove = entries.map(\.id)
+        let request = CDEntry.fetchRequest()
+        request.predicate = .init(format: "id IN %@", idsToRemove)
+        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request as! NSFetchRequest<NSFetchRequestResult>)
+        deleteRequest.resultType = .resultTypeObjectIDs
 
         do {
-            let fetched = try context.fetch(request)
-            let toDelete = fetched.filter { idsToRemove.contains($0.id!) }
-            for object in toDelete {
-                context.delete(object)
-            }
+            try context.execute(deleteRequest)
             try context.save()
         } catch {
-
+            print("Error removing entries | \(error.localizedDescription)")
         }
     }
     
