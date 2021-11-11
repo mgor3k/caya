@@ -7,7 +7,7 @@ import Foundation
 
 class HistoryViewModel: ObservableObject {
     @Published var sections: [HistorySection]
-    @Published var selectedMenuItem: HomeMenuItem = .home
+    @Published var selectedMenuItem: HomeFeature.Page = .home
         
     var savings: Double {
         sections.flatMap(\.entries).map(\.savings).reduce(0, +)

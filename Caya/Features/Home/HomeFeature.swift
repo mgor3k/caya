@@ -9,7 +9,7 @@ struct HomeFeature: View {
     let action: (Action) -> Void
     
     var body: some View {
-        HomeContainerView { page in
+        HomeView { page in
             switch page {
             case .home:
                 HistoryView(
@@ -35,13 +35,5 @@ struct HomeFeature: View {
                 )
             }
         }
-    }
-}
-
-extension HomeFeature {
-    enum Action {
-        case add
-        case edit(Entry)
-        case showProfile(ProfileRoute)
     }
 }

@@ -3,31 +3,21 @@
 //
 
 import Foundation
-import SwiftUI
 
-enum HomeMenuItem: String, CaseIterable {
-    case home
-    case profile
-    
-    var id: String {
-        rawValue
+extension HomeFeature {
+    enum Page {
+        case home
+        case profile
     }
-    
-    var image: Image {
+}
+
+extension HomeFeature.Page: Identifiable, CaseIterable {
+    var id: Int {
         switch self {
         case .home:
-            return Image(systemName: "list.bullet.rectangle.fill")
+            return 0
         case .profile:
-            return Image(systemName: "person.fill")
-        }
-    }
-    
-    var gradientPosition: GradientBackgroundView.Position {
-        switch self {
-        case .home:
-            return .leading
-        case .profile:
-            return .center
+            return 1
         }
     }
 }
