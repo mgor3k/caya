@@ -1,7 +1,8 @@
 //
-//  Created by Maciej Górecki on 23/10/2021
+//  Created by Maciej Gorecki on 11/11/2021
 //
 
+import Foundation
 import SwiftUI
 
 enum HomeMenuItem: String, CaseIterable {
