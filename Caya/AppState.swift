@@ -5,7 +5,7 @@
 import Foundation
 
 class AppState: ObservableObject {
-    @Published private(set) var route: Route = .onboarding
+    @Published private(set) var route: Route
     
     init(preferences: Preferences) {
         if preferences.currencyCode == nil {
