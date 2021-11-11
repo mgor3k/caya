@@ -45,7 +45,7 @@ struct EntryDatePicker: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 ScrollViewReader { reader in
                     LazyHStack(spacing: 12) {
-                        ForEach(entries, id: \.self) { date in
+                        ForEach(entries) { date in
                             Button(action: { selectedDate = date }) {
                                 EntryDateView(
                                     date,
@@ -58,6 +58,11 @@ struct EntryDatePicker: View {
                         }
                         .onAppear {
                             reader.scrollTo(selectedDate, anchor: .center)
+                        }
+                        .onChange(of: selectedDate) { value in
+                            withAnimation {
+                                reader.scrollTo(value.id)
+                            }
                         }
                     }
                     .padding(.horizontal, 24)
