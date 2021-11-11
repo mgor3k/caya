@@ -4,9 +4,10 @@
 
 import Foundation
 
-class ProfileViewModel: ObservableObject {
+class ProfileStore: ObservableObject {
     private let preferences: Preferences
     
+    // TODO: Fix
     var currency: Currency? {
         if let code = preferences.currencyCode {
             return Currency(code: code)

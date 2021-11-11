@@ -1,15 +1,18 @@
 //
-//  Created by Maciej Górecki on 23/10/2021
+//  Created by Maciej Gorecki on 11/11/2021
 //
 
+import FloatingBar
 import SwiftUI
 
-enum HomeMenuItem: String, CaseIterable {
-    case home
-    case profile
-    
-    var id: String {
-        rawValue
+extension HomeStore.Page: Identifiable, FloatingBarItem {
+    var id: Int {
+        switch self {
+        case .home:
+            return 0
+        case .profile:
+            return 1
+        }
     }
     
     var image: Image {

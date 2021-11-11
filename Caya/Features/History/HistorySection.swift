@@ -16,10 +16,6 @@ struct HistorySection: Equatable {
     var title: String {
         "\(year.value)"
     }
-    
-    func isLast(_ entry: Entry) -> Bool {
-        entries[entries.count - 1] == entry
-    }
 }
 
 extension HistorySection: Identifiable {

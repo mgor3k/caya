@@ -4,23 +4,16 @@
 
 import SwiftUI
 
-struct Credit: Identifiable {
-    let id = UUID()
-    let value: LocalizedStringKey
-}
-
 struct CreditsView: View {
-    private let credits: [Credit] = [
-        .init(value: "App Icon\n[Made by Ctrlastudio](https://www.flaticon.com/authors/ctrlastudio)")
-    ]
+    @StateObject var store: CreditsStore
     
     var body: some View {
         ZStack {
             GradientBackgroundView(position: .trailing)
             
             ScrollView {
-                LazyVStack(alignment: .leading) {
-                    ForEach(credits) { credit in
+                LazyVStack(alignment: .leading, spacing: 16) {
+                    ForEach(store.credits) { credit in
                         Text(credit.value)
                     }
                     Spacer()
@@ -30,11 +23,23 @@ struct CreditsView: View {
             .padding(Padding.screenEdge)
         }
         .navigationTitle("Credits")
+        .task {
+            await store.fetch()
+        }
     }
 }
 
 struct CreditsView_Previews: PreviewProvider {
     static var previews: some View {
-        CreditsView()
+        CreditsView(
+            store: .init(
+                repository: PreviewCreditsRepository(
+                    credits: [
+                        .init(value: "Fist"),
+                        .init(value: "Second\n[link](www.google.com)")
+                    ]
+                )
+            )
+        )
     }
 }

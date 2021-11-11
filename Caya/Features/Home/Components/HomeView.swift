@@ -5,30 +5,30 @@
 import SwiftUI
 import FloatingBar
 
-struct HomeContainerView<Content: View>: View {
-    @State private var selectedMenuItem: HomeMenuItem = .home
+struct HomeView<Content: View>: View {
+    typealias Page = HomeFeature.Page
     
-    let items: [HomeMenuItem]
+    @StateObject private var store: HomeStore
     
     @ViewBuilder
-    var content: (HomeMenuItem) -> Content
+    var content: (Page) -> Content
 
     init(
-        items: [HomeMenuItem] = HomeMenuItem.allCases,
-        @ViewBuilder content: @escaping (HomeMenuItem) -> Content
+        pages: [Page] = Page.allCases,
+        @ViewBuilder content: @escaping (Page) -> Content
     ) {
-        self.items = items
+        self._store = StateObject(wrappedValue: HomeStore(pages: pages))
         self.content = content
     }
         
     var body: some View {
         ZStack {
             GradientBackgroundView(
-                position: selectedMenuItem.gradientPosition
+                position: store.currentPage.gradientPosition
             )
-                .animation(.default, value: selectedMenuItem)
+                .animation(.default, value: store.currentPage)
             
-            content(selectedMenuItem)
+            content(store.currentPage)
             
             LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top)
                 .frame(height: 150)
@@ -36,20 +36,23 @@ struct HomeContainerView<Content: View>: View {
                 .ignoresSafeArea()
             
             FloatingBar(
-                items: items,
-                selectedItem: $selectedMenuItem
+                items: store.pages,
+                selectedItem: $store.currentPage
             )
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
     }
 }
 
-extension HomeMenuItem: FloatingBarItem {}
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeContainerView(items: HomeMenuItem.allCases) { item in
-            Text("Test")
+        HomeView { item in
+            switch item {
+            case .home:
+                Text("Home")
+            case .profile:
+                Text("Profile")
+            }
         }
             .environment(\.colorScheme, .dark)
     }

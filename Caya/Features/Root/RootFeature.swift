@@ -5,11 +5,11 @@
 import SwiftUI
 import FlowStacks
 
-struct HomeCoordinator: View {
+struct RootFeature: View {
     @State private var stack = NFlow<Screen>(root: .main)
     @State private var modal = PFlow<Modal>(root: .main)
     
-    @Environment(\.dependencies) var dependencies
+    let dependencies: Dependencies
 
     var body: some View {
         PStack($modal) { modal in
@@ -18,28 +18,14 @@ struct HomeCoordinator: View {
                 NStack($stack) { screen in
                     switch screen {
                     case .main:
-                        HomeContainerView { page in
-                            switch page {
-                            case .home:
-                                HistoryView(
-                                    viewModel: .init(
-                                        repository: dependencies.repository,
-                                        preference: dependencies.preferences
-                                    ),
-                                    onAdd: showNewEntry,
-                                    onEdit: showEditEntry
-                                )
-                            case .profile:
-                                ProfileView(
-                                    viewModel: .init(
-                                        preferences: dependencies.preferences
-                                    ),
-                                    onRoute: showProfileDetail
-                                )
-                            }
-                        }
+                        HomeFeature(
+                            dependencies: dependencies,
+                            action: handleHomeAction
+                        )
                     case .credits:
-                        CreditsView()
+                        CreditsFeature(
+                            dependencies: dependencies
+                        )
                     }
                 }
             case .newEntry:
@@ -70,7 +56,7 @@ struct HomeCoordinator: View {
     }
 }
 
-extension HomeCoordinator {
+extension RootFeature {
     enum Screen {
         case main
         case credits
@@ -82,18 +68,17 @@ extension HomeCoordinator {
         case editEntry(Entry)
     }
     
-    func showNewEntry() {
-        modal.present(.newEntry)
-    }
-    
-    func showEditEntry(_ entry: Entry) {
-        modal.present(.editEntry(entry))
-    }
-    
-    func showProfileDetail(_ route: ProfileRoute) {
-        switch route {
-        case .credits:
-            stack.push(.credits)
+    func handleHomeAction(_ action: HomeFeature.Action) {
+        switch action {
+        case .add:
+            modal.present(.newEntry)
+        case let .edit(entry):
+            modal.present(.editEntry(entry))
+        case let .showProfile(route):
+            switch route {
+            case .credits:
+                stack.push(.credits)
+            }
         }
     }
 }

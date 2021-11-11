@@ -2,10 +2,10 @@
 //  Created by Maciej Górecki on 09/10/2021
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
-struct HistoryCell: View {
+struct HistoryEntryView: View {
     let entry: Entry
     let currency: Currency
     
@@ -23,22 +23,15 @@ struct HistoryCell: View {
             
             Spacer()
             
-            VStack(alignment: .trailing, spacing: 6) {
-                Text(currency.formatted(entry.savings))
-                    .font(.headline)
-                
-                // TODO: Compute
-//                Text("-20%")
-//                    .font(.caption)
-//                    .foregroundColor(.red)
-            }
+            Text(currency.formatted(entry.savings))
+                .font(.headline)
         }
     }
 }
 
 struct HistoryCell_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryCell(
+        HistoryEntryView(
             entry: .init(
                 date: .init(
                     month: .january,
