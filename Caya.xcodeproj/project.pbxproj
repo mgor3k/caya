@@ -41,7 +41,6 @@
 		B9D0B06B271B68330018EC15 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06A271B68330018EC15 /* Currency.swift */; };
 		B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B06C271B69390018EC15 /* MockPreferences.swift */; };
 		B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B070271B78C50018EC15 /* Model.xcdatamodeld */; };
-		B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B09E271B95A10018EC15 /* EditEntryView.swift */; };
 		B9D0B0A1271B9A190018EC15 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A0271B9A190018EC15 /* Padding.swift */; };
 		B9D0B0A5271C3F5C0018EC15 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A4271C3F5C0018EC15 /* HistorySection.swift */; };
 		B9D0B0A8271C45D20018EC15 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */; };
@@ -115,7 +114,6 @@
 		B9D0B06A271B68330018EC15 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B9D0B06C271B69390018EC15 /* MockPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPreferences.swift; sourceTree = "<group>"; };
 		B9D0B071271B78C60018EC15 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		B9D0B09E271B95A10018EC15 /* EditEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryView.swift; sourceTree = "<group>"; };
 		B9D0B0A0271B9A190018EC15 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		B9D0B0A4271C3F5C0018EC15 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
 		B9D0B0A7271C45D20018EC15 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 				B9E6C4C6272584EA00328AEA /* Profile */,
 				B9D0B0A6271C45710018EC15 /* Onboarding */,
 				B97F792127124F90003C97EC /* New Entry */,
-				B9D0B09B271B95780018EC15 /* Edit Entry */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -379,14 +376,6 @@
 				B9ADAAD3271378F2009762C7 /* EntryDateView.swift */,
 			);
 			path = "Entry  Picker";
-			sourceTree = "<group>";
-		};
-		B9D0B09B271B95780018EC15 /* Edit Entry */ = {
-			isa = PBXGroup;
-			children = (
-				B9D0B09E271B95A10018EC15 /* EditEntryView.swift */,
-			);
-			path = "Edit Entry";
 			sourceTree = "<group>";
 		};
 		B9D0B0A2271B9B480018EC15 /* Constants */ = {
@@ -656,7 +645,6 @@
 				B97F78F3271239EB003C97EC /* Dependencies.swift in Sources */,
 				B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */,
 				B97F790127123A75003C97EC /* Month.swift in Sources */,
-				B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */,
 				B9F33356273DAB7B00E0B5BA /* ProfileFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
