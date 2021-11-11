@@ -24,11 +24,9 @@ struct HomeFeature: View {
                     }
                 )
             case .profile:
-                ProfileView(
-                    viewModel: .init(
-                        preferences: dependencies.preferences
-                    ),
-                    onRoute: {
+                ProfileFeature(
+                    dependencies: dependencies,
+                    action: {
                         action(.showProfile($0))
                     }
                 )
@@ -41,7 +39,7 @@ extension HomeFeature {
     enum Action {
         case add
         case edit(Entry)
-        case showProfile(ProfileRoute)
+        case showProfile(ProfileFeature.Action)
     }
 }
 

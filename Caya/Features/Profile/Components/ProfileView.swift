@@ -5,15 +5,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var viewModel: ProfileViewModel
+    @StateObject var store: ProfileStore
     
-    let onRoute: (ProfileRoute) -> Void
-    
-    init(viewModel: ProfileViewModel, onRoute: @escaping (ProfileRoute) -> Void) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
-        self.onRoute = onRoute
-        UITableView.appearance().backgroundColor = .clear
-    }
+    let onCredits: () -> Void
     
     var body: some View {
         List {
@@ -22,7 +16,7 @@ struct ProfileView: View {
                     HStack {
                         Text("Currency")
                         Spacer()
-                        Text(viewModel.currency?.symbol ?? "")
+                        Text(store.currency?.symbol ?? "")
                     }
                 }
                 .buttonStyle(CustomButtonStyle())
@@ -43,7 +37,7 @@ struct ProfileView: View {
             .listRowSeparatorTint(.white)
             
             Section {
-                Button(action: { onRoute(.credits) }) {
+                Button(action: onCredits) {
                     HStack {
                         Text("Credits")
                         Spacer()
@@ -60,16 +54,19 @@ struct ProfileView: View {
         }
         .listStyle(.insetGrouped)
         .navigationTitle("Profile")
+        .onAppear {
+            UITableView.appearance().backgroundColor = .clear
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(
-            viewModel: .init(
+            store: .init(
                 preferences: MockPreferences()
             ),
-            onRoute: { _ in }
+            onCredits: {}
         )
             .background(Color.blue)
     }
