@@ -1,11 +1,11 @@
 //
-//  Created by Maciej Górecki on 09/10/2021
+//  Created by Maciej Gorecki on 11/11/2021
 //
 
 import Combine
 import Foundation
 
-class HistoryViewModel: ObservableObject {
+final class HistoryStore: ObservableObject {
     @Published var sections: [HistorySection]
     @Published var selectedMenuItem: HomeFeature.Page = .home
         
@@ -34,11 +34,20 @@ class HistoryViewModel: ObservableObject {
     }
 }
 
-private extension HistoryViewModel {
+private extension HistoryStore {
     func setupBindings() {
         repository
             .getEntriesUpdates()
             .map(\.groupedByYear)
             .assign(to: &$sections)
+    }
+}
+
+private extension Collection where Element == Entry {
+    var groupedByYear: [HistorySection] {
+        let groupedByYear = Dictionary(grouping: self, by: { $0.date.year })
+        return groupedByYear.keys
+            .map { HistorySection(year: $0, entries: groupedByYear[$0]?.sorted(by: { $0.date.month > $1.date.month }) ?? []) }
+            .sorted(by: { $0.title > $1.title })
     }
 }

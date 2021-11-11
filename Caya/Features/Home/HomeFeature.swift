@@ -12,16 +12,15 @@ struct HomeFeature: View {
         HomeView { page in
             switch page {
             case .home:
-                HistoryView(
-                    viewModel: .init(
-                        repository: dependencies.repository,
-                        preference: dependencies.preferences
-                    ),
-                    onAdd: {
-                        action(.add)
-                    },
-                    onEdit: {
-                        action(.edit($0))
+                HistoryFeature(
+                    dependencies: dependencies,
+                    action: {
+                        switch $0 {
+                        case .new:
+                            action(.add)
+                        case let .edit(entry):
+                            action(.edit(entry))
+                        }
                     }
                 )
             case .profile:
@@ -35,5 +34,20 @@ struct HomeFeature: View {
                 )
             }
         }
+    }
+}
+
+extension HomeFeature {
+    enum Action {
+        case add
+        case edit(Entry)
+        case showProfile(ProfileRoute)
+    }
+}
+
+extension HomeFeature {
+    enum Page: CaseIterable {
+        case home
+        case profile
     }
 }

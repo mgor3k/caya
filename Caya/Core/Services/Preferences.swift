@@ -4,6 +4,7 @@
 
 import Foundation
 
+// TODO: Its ugly
 protocol Preferences: AnyObject {
     var currencyCode: String? { get set }
 }

@@ -5,7 +5,16 @@
 import FloatingBar
 import SwiftUI
 
-extension HomeStore.Page: FloatingBarItem {
+extension HomeStore.Page: Identifiable, FloatingBarItem {
+    var id: Int {
+        switch self {
+        case .home:
+            return 0
+        case .profile:
+            return 1
+        }
+    }
+    
     var image: Image {
         switch self {
         case .home:
