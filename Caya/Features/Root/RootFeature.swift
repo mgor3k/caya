@@ -5,7 +5,7 @@
 import SwiftUI
 import FlowStacks
 
-struct RootCoordinator: View {
+struct RootFeature: View {
     @State private var stack = NFlow<Screen>(root: .main)
     @State private var modal = PFlow<Modal>(root: .main)
     
@@ -54,7 +54,7 @@ struct RootCoordinator: View {
     }
 }
 
-extension RootCoordinator {
+extension RootFeature {
     enum Screen {
         case main
         case credits

@@ -34,7 +34,7 @@ private extension CayaApp {
         switch state.route {
         case .home:
             NavigationView {
-                RootCoordinator(dependencies: dependencies)
+                RootFeature(dependencies: dependencies)
             }
         case .onboarding:
             OnboardingView(
