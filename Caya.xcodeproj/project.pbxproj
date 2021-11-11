@@ -12,7 +12,7 @@
 		B95C0553273D993400BB495E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0552273D993400BB495E /* UserRepository.swift */; };
 		B95C0559273D9D3F00BB495E /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0556273D9D3F00BB495E /* HomeContainerView.swift */; };
 		B95C055A273D9D3F00BB495E /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0557273D9D3F00BB495E /* HomeMenuItem.swift */; };
-		B95C055B273D9D3F00BB495E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0558273D9D3F00BB495E /* HomeCoordinator.swift */; };
+		B95C055B273D9D3F00BB495E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0558273D9D3F00BB495E /* RootCoordinator.swift */; };
 		B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78BA27122AC4003C97EC /* CayaApp.swift */; };
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
@@ -59,6 +59,7 @@
 		B9E6C4DC2725EA4B00328AEA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4DB2725EA4B00328AEA /* HistoryViewModel.swift */; };
 		B9E6C4E02726093D00328AEA /* NewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4DF2726093D00328AEA /* NewEntryController.swift */; };
 		B9E6C4E22726094A00328AEA /* EditEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6C4E12726094A00328AEA /* EditEntryController.swift */; };
+		B9F3333B273D9DFE00E0B5BA /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3333A273D9DFE00E0B5BA /* HomeFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +78,7 @@
 		B95C0552273D993400BB495E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		B95C0556273D9D3F00BB495E /* HomeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
 		B95C0557273D9D3F00BB495E /* HomeMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
-		B95C0558273D9D3F00BB495E /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		B95C0558273D9D3F00BB495E /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		B97F78B727122AC4003C97EC /* Caya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F78BA27122AC4003C97EC /* CayaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayaApp.swift; sourceTree = "<group>"; };
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		B9E6C4DB2725EA4B00328AEA /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		B9E6C4DF2726093D00328AEA /* NewEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryController.swift; sourceTree = "<group>"; };
 		B9E6C4E12726094A00328AEA /* EditEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryController.swift; sourceTree = "<group>"; };
+		B9F3333A273D9DFE00E0B5BA /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +182,7 @@
 				B97F78BA27122AC4003C97EC /* CayaApp.swift */,
 				B9D0B0A9271C4A0B0018EC15 /* AppState.swift */,
 				B97F78C827122B3C003C97EC /* Core */,
-				B97F78CC27122B57003C97EC /* Scenes */,
+				B97F78CC27122B57003C97EC /* Features */,
 				B9ADAACF2713779D009762C7 /* Components */,
 				B97F78DA27123549003C97EC /* Extensions */,
 				B97F78DB27123550003C97EC /* Resources */,
@@ -224,10 +226,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B97F78CC27122B57003C97EC /* Scenes */ = {
+		B97F78CC27122B57003C97EC /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				B97F78DE27123619003C97EC /* Root */,
+				B9F33339273D9DF000E0B5BA /* Home */,
 				B9E6C4D62725E1DD00328AEA /* Credits */,
 				B9E6C4CB2725A26500328AEA /* History */,
 				B9E6C4C6272584EA00328AEA /* Profile */,
@@ -235,7 +238,7 @@
 				B97F792127124F90003C97EC /* New Entry */,
 				B9D0B09B271B95780018EC15 /* Edit Entry */,
 			);
-			path = Scenes;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		B97F78D727123437003C97EC /* Mocks */ = {
@@ -267,8 +270,8 @@
 		B97F78DE27123619003C97EC /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				B95C0558273D9D3F00BB495E /* RootCoordinator.swift */,
 				B95C0556273D9D3F00BB495E /* HomeContainerView.swift */,
-				B95C0558273D9D3F00BB495E /* HomeCoordinator.swift */,
 				B95C0557273D9D3F00BB495E /* HomeMenuItem.swift */,
 			);
 			path = Root;
@@ -438,6 +441,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		B9F33339273D9DF000E0B5BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B9F3333A273D9DFE00E0B5BA /* HomeFeature.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,7 +558,7 @@
 			files = (
 				B97F78CB27122B51003C97EC /* Entry.swift in Sources */,
 				B9E6C4D82725E1FC00328AEA /* CreditsView.swift in Sources */,
-				B95C055B273D9D3F00BB495E /* HomeCoordinator.swift in Sources */,
+				B95C055B273D9D3F00BB495E /* RootCoordinator.swift in Sources */,
 				B9E6C4C8272584F400328AEA /* ProfileView.swift in Sources */,
 				B9D0B0A5271C3F5C0018EC15 /* HistorySection.swift in Sources */,
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
@@ -584,6 +595,7 @@
 				B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */,
 				B95C0553273D993400BB495E /* UserRepository.swift in Sources */,
 				B9A5C9AE2731BF7C00381363 /* EntryRepository.swift in Sources */,
+				B9F3333B273D9DFE00E0B5BA /* HomeFeature.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
 				B95C0559273D9D3F00BB495E /* HomeContainerView.swift in Sources */,
 				B97F78F3271239EB003C97EC /* Dependencies.swift in Sources */,
