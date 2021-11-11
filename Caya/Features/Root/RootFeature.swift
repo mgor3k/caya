@@ -23,7 +23,9 @@ struct RootFeature: View {
                             action: handleHomeAction
                         )
                     case .credits:
-                        CreditsView()
+                        CreditsFeature(
+                            dependencies: dependencies
+                        )
                     }
                 }
             case .newEntry:

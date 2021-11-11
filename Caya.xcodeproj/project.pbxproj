@@ -63,6 +63,11 @@
 		B9F33340273DA0AB00E0B5BA /* HomeFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3333F273DA0AB00E0B5BA /* HomeFeature+Action.swift */; };
 		B9F33342273DA1F000E0B5BA /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F33341273DA1F000E0B5BA /* HomeStore.swift */; };
 		B9F33344273DA3F400E0B5BA /* HomeStore+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F33343273DA3F400E0B5BA /* HomeStore+UI.swift */; };
+		B9F33347273DA48800E0B5BA /* CreditsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F33346273DA48800E0B5BA /* CreditsFeature.swift */; };
+		B9F33349273DA4BC00E0B5BA /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F33348273DA4BC00E0B5BA /* Credit.swift */; };
+		B9F3334B273DA4ED00E0B5BA /* CreditsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3334A273DA4ED00E0B5BA /* CreditsRepository.swift */; };
+		B9F3334D273DA56500E0B5BA /* CreditsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3334C273DA56500E0B5BA /* CreditsStore.swift */; };
+		B9F3334F273DA5ED00E0B5BA /* PreviewCreditsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3334E273DA5ED00E0B5BA /* PreviewCreditsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +138,11 @@
 		B9F3333F273DA0AB00E0B5BA /* HomeFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeFeature+Action.swift"; sourceTree = "<group>"; };
 		B9F33341273DA1F000E0B5BA /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		B9F33343273DA3F400E0B5BA /* HomeStore+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeStore+UI.swift"; sourceTree = "<group>"; };
+		B9F33346273DA48800E0B5BA /* CreditsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsFeature.swift; sourceTree = "<group>"; };
+		B9F33348273DA4BC00E0B5BA /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		B9F3334A273DA4ED00E0B5BA /* CreditsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsRepository.swift; sourceTree = "<group>"; };
+		B9F3334C273DA56500E0B5BA /* CreditsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsStore.swift; sourceTree = "<group>"; };
+		B9F3334E273DA5ED00E0B5BA /* PreviewCreditsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCreditsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				B9A5C9B12731C62900381363 /* PreviewEntryRepository.swift */,
+				B9F3334E273DA5ED00E0B5BA /* PreviewCreditsRepository.swift */,
 				B97F78D727123437003C97EC /* Mocks */,
 				B97F78C127122AC6003C97EC /* Preview Assets.xcassets */,
 			);
@@ -223,6 +234,7 @@
 		B97F78C927122B40003C97EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9F33348273DA4BC00E0B5BA /* Credit.swift */,
 				B97F78CA27122B51003C97EC /* Entry.swift */,
 				B9ADAAD527137C96009762C7 /* EntryDate.swift */,
 				B97F78FF27123A75003C97EC /* Month.swift */,
@@ -329,6 +341,7 @@
 			children = (
 				B9A5C9AD2731BF7C00381363 /* EntryRepository.swift */,
 				B95C0552273D993400BB495E /* UserRepository.swift */,
+				B9F3334A273DA4ED00E0B5BA /* CreditsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -431,7 +444,8 @@
 		B9E6C4D62725E1DD00328AEA /* Credits */ = {
 			isa = PBXGroup;
 			children = (
-				B9E6C4D72725E1FC00328AEA /* CreditsView.swift */,
+				B9F33345273DA47D00E0B5BA /* Components */,
+				B9F33346273DA48800E0B5BA /* CreditsFeature.swift */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -462,6 +476,15 @@
 				B95C0556273D9D3F00BB495E /* HomeView.swift */,
 				B9F33341273DA1F000E0B5BA /* HomeStore.swift */,
 				B9F33343273DA3F400E0B5BA /* HomeStore+UI.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B9F33345273DA47D00E0B5BA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B9E6C4D72725E1FC00328AEA /* CreditsView.swift */,
+				B9F3334C273DA56500E0B5BA /* CreditsStore.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -581,6 +604,7 @@
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */,
+				B9F3334B273DA4ED00E0B5BA /* CreditsRepository.swift in Sources */,
 				B9A5C9B22731C62900381363 /* PreviewEntryRepository.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
 				B9E6C4DC2725EA4B00328AEA /* HistoryViewModel.swift in Sources */,
@@ -589,6 +613,7 @@
 				B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */,
 				B9E6C4CF2725A42200328AEA /* Collection+HistorySection.swift in Sources */,
 				B91D367C27248847003EC604 /* ModalView.swift in Sources */,
+				B9F3334F273DA5ED00E0B5BA /* PreviewCreditsRepository.swift in Sources */,
 				B9F33342273DA1F000E0B5BA /* HomeStore.swift in Sources */,
 				B97F792927125440003C97EC /* NewEntryViewModel.swift in Sources */,
 				B9E6C4CA2725A12300328AEA /* ProfileViewModel.swift in Sources */,
@@ -609,13 +634,16 @@
 				B9D0B0A1271B9A190018EC15 /* Padding.swift in Sources */,
 				B9D0B072271B78C60018EC15 /* Model.xcdatamodeld in Sources */,
 				B97F792327124F9C003C97EC /* NewEntryView.swift in Sources */,
+				B9F33349273DA4BC00E0B5BA /* Credit.swift in Sources */,
 				B97F78D127122B63003C97EC /* HistoryCell.swift in Sources */,
 				B9F33344273DA3F400E0B5BA /* HomeStore+UI.swift in Sources */,
 				B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */,
 				B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */,
 				B95C0553273D993400BB495E /* UserRepository.swift in Sources */,
+				B9F3334D273DA56500E0B5BA /* CreditsStore.swift in Sources */,
 				B9A5C9AE2731BF7C00381363 /* EntryRepository.swift in Sources */,
 				B9F3333B273D9DFE00E0B5BA /* HomeFeature.swift in Sources */,
+				B9F33347273DA48800E0B5BA /* CreditsFeature.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
 				B95C0559273D9D3F00BB495E /* HomeView.swift in Sources */,
 				B97F78F3271239EB003C97EC /* Dependencies.swift in Sources */,
