@@ -35,17 +35,10 @@ struct EntryDatePicker: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if !isDisabled {
-                Text("Select a date")
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal, 24)
-            }
-            
             ScrollView(.horizontal, showsIndicators: false) {
                 ScrollViewReader { reader in
                     LazyHStack(spacing: 12) {
-                        ForEach(entries) { date in
+                        ForEach(entries, id: \.self) { date in
                             Button(action: { selectedDate = date }) {
                                 EntryDateView(
                                     date,
@@ -61,7 +54,7 @@ struct EntryDatePicker: View {
                         }
                         .onChange(of: selectedDate) { value in
                             withAnimation {
-                                reader.scrollTo(value.id)
+                                reader.scrollTo(selectedDate)
                             }
                         }
                     }

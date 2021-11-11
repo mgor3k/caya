@@ -6,12 +6,14 @@ struct Dependencies {
     let preferences: Preferences
     let repository: EntryRepositoryProtocol
     let credits: CreditsRepositoryProtocol
+    let currencies: CurrencyRepositoryProtocol
 }
 
 extension Dependencies {
     static let live = Dependencies(
         preferences: Defaults(.standard),
         repository: EntryRepository(storage: .init(inMemory: false)),
-        credits: CreditsRepository()
+        credits: CreditsRepository(),
+        currencies: CurrencyRepository()
     )
 }

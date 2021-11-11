@@ -29,7 +29,8 @@ struct EntryDateView: View {
             Text(String(date.year.value))
                 .font(.caption)
         }
-        .padding(24)
+        .padding(.vertical, 16)
+        .padding(.horizontal, 22)
         .background(background)
         .cornerRadius(12)
     }

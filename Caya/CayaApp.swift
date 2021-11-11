@@ -34,12 +34,19 @@ private extension CayaApp {
         switch state.route {
         case .home:
             NavigationView {
-                RootFeature(dependencies: dependencies)
+                RootFeature(
+                    dependencies: dependencies
+                )
             }
         case .onboarding:
-            OnboardingView(
-                viewModel: .init(preferences: dependencies.preferences),
-                onCompleted: state.showHome
+            OnboardingFeature(
+                dependencies: dependencies,
+                action: {
+                    switch $0 {
+                    case .finished:
+                        state.showHome()
+                    }
+                }
             )
         }
     }

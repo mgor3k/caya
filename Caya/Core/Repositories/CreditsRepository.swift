@@ -10,6 +10,8 @@ protocol CreditsRepositoryProtocol {
 
 final class CreditsRepository: CreditsRepositoryProtocol {
     func fetchCredits() async -> [Credit] {
-        [.init(value: "App Icon\n[Made by Ctrlastudio](https://www.flaticon.com/authors/ctrlastudio)")]
+        [
+            .init(value: "App Icon\n[Made by Ctrlastudio](https://www.flaticon.com/authors/ctrlastudio)")
+        ]
     }
 }

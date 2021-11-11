@@ -7,6 +7,7 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject var store: ProfileStore
     
+    let onTaxes: () -> Void
     let onCredits: () -> Void
     
     var body: some View {
@@ -21,14 +22,15 @@ struct ProfileView: View {
                 }
                 .buttonStyle(CustomButtonStyle())
                 
+                DisclosureButton("Taxes", action: onTaxes)
+                
             } header: {
                 Text("Settings")
             }
             .listRowBackground(Color.white.opacity(0.2))
-            .listRowSeparator(.hidden)
+            .listRowSeparatorTint(.white)
             
             Section {
-                Text("Export to CSV")
                 Text("Clear all data")
             } header: {
                 Text("Data")
@@ -37,15 +39,7 @@ struct ProfileView: View {
             .listRowSeparatorTint(.white)
             
             Section {
-                Button(action: onCredits) {
-                    HStack {
-                        Text("Credits")
-                        Spacer()
-                        Image(systemName: "chevron.forward")
-                    }
-                }
-                .buttonStyle(CustomButtonStyle())
-                
+                DisclosureButton("Credits", action: onCredits)
             } header: {
                 Text("Other")
             }
@@ -66,6 +60,7 @@ struct ProfileView_Previews: PreviewProvider {
             store: .init(
                 preferences: MockPreferences()
             ),
+            onTaxes: {},
             onCredits: {}
         )
             .background(Color.blue)

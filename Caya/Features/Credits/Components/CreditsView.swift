@@ -20,7 +20,7 @@ struct CreditsView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(Padding.screenEdge)
+            .padding(24)
         }
         .navigationTitle("Credits")
         .task {

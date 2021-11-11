@@ -13,8 +13,11 @@ struct ProfileFeature: View {
             store: .init(
                 preferences: dependencies.preferences
             ),
+            onTaxes: {
+                action(.showTaxes)
+            },
             onCredits: {
-                action(.credits)
+                action(.showCredits)
             }
         )
     }
@@ -22,6 +25,7 @@ struct ProfileFeature: View {
 
 extension ProfileFeature {
     enum Action {
-        case credits
+        case showCredits
+        case showTaxes
     }
 }

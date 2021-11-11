@@ -9,11 +9,17 @@ struct MoneyInputTextField: View {
     let currencySymbol: String
     @Binding var value: Double?
     
+    static let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .font(.footnote)
-                .foregroundColor(.gray)
+//                .foregroundColor(.gray)
             
             HStack {
                 Text(currencySymbol)
@@ -21,19 +27,20 @@ struct MoneyInputTextField: View {
                 
                 Spacer()
                 
-                TextField("-", value: $value, format: .currency(code: "US"))
-                    .font(.title)
+                TextField("-", value: $value, formatter: Self.formatter)
+                    .font(.body)
                     .keyboardType(.decimalPad)
                     .multilineTextAlignment(.trailing)
-                    .allowsHitTesting(false)
+//                    .allowsHitTesting(false)
             }
         }
         .foregroundColor(.white)
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
-        )
+        .padding(.vertical, 12)
+//        .padding()
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 16)
+//                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+//        )
     }
 }
 

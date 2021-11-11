@@ -4,11 +4,7 @@
 
 import Foundation
 
-struct EntryDate: Hashable, Equatable, Identifiable {
+struct EntryDate: Hashable, Equatable {
     let month: Month
     let year: Year
-    
-    var id: String {
-        "\(year.value)+\(month.value)"
-    }
 }

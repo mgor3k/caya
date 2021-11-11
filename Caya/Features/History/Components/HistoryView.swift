@@ -34,7 +34,7 @@ extension HistoryView {
     var titleHeader: some View {
         Section {
             Text("Your **History**")
-                .padding(.horizontal, Padding.screenEdge)
+                .padding(.horizontal, 24)
                 .font(.title)
         }
         .listRowBackground(Color.clear)

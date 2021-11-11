@@ -22,6 +22,8 @@ struct RootFeature: View {
                             dependencies: dependencies,
                             action: handleHomeAction
                         )
+                    case .taxes:
+                        Text("TODO")
                     case .credits:
                         CreditsFeature(
                             dependencies: dependencies
@@ -30,25 +32,16 @@ struct RootFeature: View {
                 }
             case .newEntry:
                 ModalView {
-                    NewEntryView(
-                        viewModel: .init(
-                            NewEntryController(
-                                preferences: dependencies.preferences,
-                                repository: dependencies.repository
-                            )
-                        )
+                    EntryDetailsFeature(
+                        dependencies: dependencies,
+                        mode: .new
                     )
                 }
             case let .editEntry(entry):
                 ModalView {
-                    NewEntryView(
-                        viewModel: .init(
-                            EditEntryController(
-                                entry: entry,
-                                preferences: dependencies.preferences,
-                                repository: dependencies.repository
-                            )
-                        )
+                    EntryDetailsFeature(
+                        dependencies: dependencies,
+                        mode: .edit(entry)
                     )
                 }
             }
@@ -60,6 +53,7 @@ extension RootFeature {
     enum Screen {
         case main
         case credits
+        case taxes
     }
     
     enum Modal {
@@ -76,7 +70,9 @@ extension RootFeature {
             modal.present(.editEntry(entry))
         case let .showProfile(route):
             switch route {
-            case .credits:
+            case .showTaxes:
+                stack.push(.taxes)
+            case .showCredits:
                 stack.push(.credits)
             }
         }
