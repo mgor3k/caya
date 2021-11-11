@@ -7,11 +7,14 @@ import Foundation
 struct Currency {
     private let formatter: NumberFormatter
     
+    let code: String
+    
     init(code: String) {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = code
         self.formatter = formatter
+        self.code = code
     }
     
     var symbol: String {

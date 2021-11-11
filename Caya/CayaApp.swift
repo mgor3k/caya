@@ -6,12 +6,11 @@ import SwiftUI
 
 @main
 struct CayaApp: App {
-    @StateObject var state: AppState
-    
-    let dependencies: DependencyManager
+    @StateObject private var state: AppState
+    private let dependencies: Dependencies
     
     init() {
-        let dependencies = DependencyManager()
+        let dependencies: Dependencies = .live
         
         self.dependencies = dependencies
         self._state = StateObject(
@@ -25,7 +24,6 @@ struct CayaApp: App {
         WindowGroup {
             content
                 .animation(.default, value: state.route)
-                .environment(\.dependencies, dependencies)
         }
     }
 }
@@ -36,7 +34,7 @@ private extension CayaApp {
         switch state.route {
         case .home:
             NavigationView {
-                HomeCoordinator()
+                HomeCoordinator(dependencies: dependencies)
             }
         case .onboarding:
             OnboardingView(

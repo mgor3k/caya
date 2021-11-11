@@ -10,14 +10,14 @@
 		B91D367C27248847003EC604 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91D367B27248847003EC604 /* ModalView.swift */; };
 		B944145E2724A45600EE0A69 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944145D2724A45600EE0A69 /* HomeMenuItem.swift */; };
 		B94414622724A62600EE0A69 /* FloatingBar in Frameworks */ = {isa = PBXBuildFile; productRef = B94414612724A62600EE0A69 /* FloatingBar */; };
+		B95C0553273D993400BB495E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C0552273D993400BB495E /* UserRepository.swift */; };
 		B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78BA27122AC4003C97EC /* CayaApp.swift */; };
 		B97F78BF27122AC6003C97EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78BE27122AC6003C97EC /* Assets.xcassets */; };
 		B97F78C227122AC6003C97EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97F78C127122AC6003C97EC /* Preview Assets.xcassets */; };
 		B97F78CB27122B51003C97EC /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CA27122B51003C97EC /* Entry.swift */; };
 		B97F78D027122B63003C97EC /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CD27122B63003C97EC /* HomeContainerView.swift */; };
 		B97F78D127122B63003C97EC /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78CE27122B63003C97EC /* HistoryCell.swift */; };
-		B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F1271239EB003C97EC /* DependencyManager.swift */; };
-		B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */; };
+		B97F78F3271239EB003C97EC /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F1271239EB003C97EC /* Dependencies.swift */; };
 		B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78F727123A2B003C97EC /* HomeCoordinator.swift */; };
 		B97F78FE27123A5F003C97EC /* Month+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FD27123A5F003C97EC /* Month+Mocks.swift */; };
 		B97F790127123A75003C97EC /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97F78FF27123A75003C97EC /* Month.swift */; };
@@ -75,6 +75,7 @@
 		B91D367B27248847003EC604 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		B944145D2724A45600EE0A69 /* HomeMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
 		B944145F2724A5D100EE0A69 /* FloatingBar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FloatingBar; sourceTree = "<group>"; };
+		B95C0552273D993400BB495E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		B97F78B727122AC4003C97EC /* Caya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97F78BA27122AC4003C97EC /* CayaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayaApp.swift; sourceTree = "<group>"; };
 		B97F78BE27122AC6003C97EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,8 +83,7 @@
 		B97F78CA27122B51003C97EC /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		B97F78CD27122B63003C97EC /* HomeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
 		B97F78CE27122B63003C97EC /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		B97F78F1271239EB003C97EC /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = ../../../../Caya/Caya/Core/Dependencies/DependencyManager.swift; sourceTree = "<group>"; };
-		B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DependencyManager+Env.swift"; path = "../../../../Caya/Caya/Core/Dependencies/DependencyManager+Env.swift"; sourceTree = "<group>"; };
+		B97F78F1271239EB003C97EC /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B97F78F727123A2B003C97EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCoordinator.swift; path = ../../../../Caya/Caya/Scenes/Home/HomeCoordinator.swift; sourceTree = "<group>"; };
 		B97F78FD27123A5F003C97EC /* Month+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Month+Mocks.swift"; sourceTree = "<group>"; };
 		B97F78FF27123A75003C97EC /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = ../../../../Caya/Caya/Core/Models/Month.swift; sourceTree = "<group>"; };
@@ -285,8 +285,7 @@
 		B97F78E327123749003C97EC /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				B97F78F1271239EB003C97EC /* DependencyManager.swift */,
-				B97F78F2271239EB003C97EC /* DependencyManager+Env.swift */,
+				B97F78F1271239EB003C97EC /* Dependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -322,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				B9A5C9AD2731BF7C00381363 /* EntryRepository.swift */,
+				B95C0552273D993400BB495E /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -552,7 +552,6 @@
 				B9D0B0AA271C4A0B0018EC15 /* AppState.swift in Sources */,
 				B9D0B068271B67450018EC15 /* Preferences.swift in Sources */,
 				B9E6C4D22725A51C00328AEA /* ProfileRoute.swift in Sources */,
-				B97F78F4271239EB003C97EC /* DependencyManager+Env.swift in Sources */,
 				B9A5C9B22731C62900381363 /* PreviewEntryRepository.swift in Sources */,
 				B9D0B0AE271CBE370018EC15 /* Currency+Mocks.swift in Sources */,
 				B9E6C4DC2725EA4B00328AEA /* HistoryViewModel.swift in Sources */,
@@ -584,9 +583,10 @@
 				B97F78F927123A2B003C97EC /* HomeCoordinator.swift in Sources */,
 				B9D0B06D271B69390018EC15 /* MockPreferences.swift in Sources */,
 				B9E6C4CD2725A26E00328AEA /* HistoryView.swift in Sources */,
+				B95C0553273D993400BB495E /* UserRepository.swift in Sources */,
 				B9A5C9AE2731BF7C00381363 /* EntryRepository.swift in Sources */,
 				B97F78BB27122AC4003C97EC /* CayaApp.swift in Sources */,
-				B97F78F3271239EB003C97EC /* DependencyManager.swift in Sources */,
+				B97F78F3271239EB003C97EC /* Dependencies.swift in Sources */,
 				B9ADAADC271384B5009762C7 /* CustomButtonStyle.swift in Sources */,
 				B97F790127123A75003C97EC /* Month.swift in Sources */,
 				B9D0B09F271B95A10018EC15 /* EditEntryView.swift in Sources */,

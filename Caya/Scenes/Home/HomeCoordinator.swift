@@ -9,7 +9,7 @@ struct HomeCoordinator: View {
     @State private var stack = NFlow<Screen>(root: .main)
     @State private var modal = PFlow<Modal>(root: .main)
     
-    @Environment(\.dependencies) var dependencies
+    let dependencies: Dependencies
 
     var body: some View {
         PStack($modal) { modal in
